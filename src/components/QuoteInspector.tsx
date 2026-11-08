@@ -21,7 +21,7 @@ export function QuoteInspector({ quote }: QuoteInspectorProps) {
         <div className="flex items-center gap-2">
           <DollarSign className="w-4 h-4 text-celo-gold" />
           <h3 className="text-sm font-semibold tracking-wide uppercase text-foreground">
-            Authoritative HTTP 402 Quote Challenge
+            {isFree ? "Free SQD Capability — No Payment" : "Authoritative HTTP 402 Quote Challenge"}
           </h3>
         </div>
         <div className="flex items-center gap-2">
@@ -94,7 +94,7 @@ export function QuoteInspector({ quote }: QuoteInspectorProps) {
             <span>{offer.timeoutSeconds}s Max Timeout</span>
           </div>
           <span className="text-[11px] font-mono text-foreground/50 block mt-1">
-            One-shot EIP-3009 Nonce
+            EIP-3009 nonce only if payment is signed
           </span>
         </div>
 

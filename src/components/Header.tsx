@@ -56,7 +56,7 @@ export function Header({ balances, trustInfo, onRefresh, isLoading }: HeaderProp
               title={trustInfo?.verificationNotes || "Checking ERC-8004 agent registry..."}
             >
               <ShieldCheck className="w-3.5 h-3.5" />
-              <span>ERC-8004: {trustInfo?.verified ? "VERIFIED" : "CHECKING"}</span>
+              <span>Provider ERC-8004: {trustInfo?.verified ? "VERIFIED" : "UNVERIFIED"}</span>
             </div>
 
             {/* Dynamic Wallet Balances */}

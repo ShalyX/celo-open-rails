@@ -41,7 +41,14 @@ export function isSameOriginRequest(request: Request): boolean {
   const origin = request.headers.get("origin");
   if (!origin) return false;
   try {
-    return new URL(origin).origin === new URL(request.url).origin;
+    const candidate = new URL(origin);
+    const target = new URL(request.url);
+    if (candidate.origin === target.origin) return true;
+    // Next.js may normalize Request.url to localhost while preserving the
+    // real request Host header (e.g. 127.0.0.1). Compare both explicitly.
+    const host = request.headers.get("host");
+    const proto = request.headers.get("x-forwarded-proto") || target.protocol.replace(":", "");
+    return Boolean(host && candidate.host === host && candidate.protocol === proto + ":");
   } catch {
     return false;
   }

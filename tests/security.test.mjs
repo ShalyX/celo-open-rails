@@ -59,6 +59,10 @@ test("operator login validates secret and signed session and rejects cross-origi
     });
     assert.equal(isOperatorAuthenticated(req), true);
     assert.equal(isSameOriginRequest(req), true);
+    const loopbackHost = new Request("http://localhost:4320/api/operator", {
+      headers: { origin: "http://127.0.0.1:4320", host: "127.0.0.1:4320" },
+    });
+    assert.equal(isSameOriginRequest(loopbackHost), true);
     const foreign = new Request("http://localhost:4319/api/procure", { headers: { origin: "https://evil.example" } });
     assert.equal(isSameOriginRequest(foreign), false);
     assert.equal(isOperatorAuthenticated(foreign), false);

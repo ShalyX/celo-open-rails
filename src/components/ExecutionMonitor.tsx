@@ -123,12 +123,12 @@ export function ExecutionMonitor({ record }: ExecutionMonitorProps) {
             </div>
             <div>
               <span className="text-foreground/40 block mb-0.5">Wallet Spend Recorded:</span>
-              <span className="text-celo-green font-semibold">$0.00 (Wallet Unchanged)</span>
+              <span className="text-celo-green font-semibold">$0.00 (No payment dispatched by this task)</span>
             </div>
           </div>
 
           <div className="text-[11px] font-mono text-foreground/50">
-            Note: This request did not substitute historical transactions. It reflects genuine single-attempt payment protection with policy bounds.
+            Note: No wallet transaction or EIP-3009 authorization was created. Historical payment evidence is displayed separately.
           </div>
         </div>
       )}

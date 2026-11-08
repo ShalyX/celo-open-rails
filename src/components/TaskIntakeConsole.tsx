@@ -71,7 +71,7 @@ export function TaskIntakeConsole({
         </div>
         <div className="flex items-center gap-2 text-xs text-foreground/50 font-mono">
           <Layers className="w-3.5 h-3.5" />
-          <span>{capabilities.length} Gateway Capabilities Active</span>
+          <span>{capabilities.length ? `${capabilities.length} Live Gateway Capabilities` : "Loading gateway catalog..."}</span>
         </div>
       </div>
 

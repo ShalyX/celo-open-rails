@@ -118,7 +118,7 @@ export function ApprovalBarrier({
           <p>
             {isFree
               ? "This capability is part of the free decentralized SQD tier and will execute live without spending funds."
-              : "Spend Guard is ACTIVE. Upon approval, payment parameters will be verified and prepared with one-shot nonces, but execution will halt honestly at the policy barrier to guarantee zero wallet spend."}
+              : "Spend Guard is ACTIVE. Approval records your selected cap and token, but execution halts before any payment authorization is signed, submitted, or debited."}
           </p>
         </div>
       </div>

@@ -36,7 +36,9 @@ export function IntentReasoningCard({ intent }: IntentReasoningCardProps) {
             </div>
           )}
           <span className="text-xs font-mono text-foreground/40">
-            Confidence: {(intent.confidenceScore * 100).toFixed(0)}%
+            {intent.isAiReasoning
+              ? `Model score: ${(intent.confidenceScore * 100).toFixed(0)}% (self-reported)`
+              : "Rule-based selection · no model confidence"}
           </span>
         </div>
       </div>
