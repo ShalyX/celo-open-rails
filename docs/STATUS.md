@@ -1,7 +1,7 @@
 # Project Status — Celo Agent Procurement Desk
 
 **Updated:** 2026-11-08
-**Status:** Locally built and security-hardened, **not yet full live end-to-end verified**.
+**Status:** Zero-spend live API end-to-end verified; **not yet Operator-complete or eligible for submission**. See `OPERATOR_PHASE_AUDIT.md`.
 **Track:** Celo Agents on Open Rails — Build with buy.
 
 ## Milestone audit
@@ -23,6 +23,6 @@
 
 ## Next
 
-Live zero-spend E2E passed; genuine Chrome screenshots captured at `docs/evidence/`. Produce final narrated judge demo, decide public-repo visibility, and submit before event close. No public deployment, disclosure of secrets or new financial action without authorization.
+**Operator audit action order:** (1) verify Loops enrollment and register OWN agent ERC-8004 identity; (2) close new paid-service execution and independent-user evidence; (3) obtain approval for public repo and release; (4) finish genuine demo assets and submit. Official deadline 2026-11-09 09:00 GMT (10:00 WAT). Real zero-spend E2E and browser evidence captured under `docs/evidence/`. No deployment, financial action or public distribution without authorization.
 
 For exact evidence and limitations, see `docs/QA_REPORT.md`.
