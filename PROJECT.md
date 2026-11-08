@@ -1,0 +1,38 @@
+# Celo Agent Procurement Desk — Hackathon Operator HQ checkpoint
+
+**Correct Operator:** ChatGPT plugin `hackathon-operator/hackathon-operator`, not the older local `hackathon-workflow`.
+**Project:** `C:\Users\USER\Documents\Codex\2026-11-08\celo-open-rails`
+**Proof classification:** PARTIAL_PRODUCT / SPIKE_VERIFIED; free SQD vertical slice verified, full paid journey not.
+**Original approved source:** `docs/PROJECT_BRIEF.md`, `docs/REQUIREMENTS.md`, approved implementation plan in conversation. Formal HQ product lock not yet reconstructed.
+**Full audit:** `docs/OPERATOR_HQ_AUDIT.md`. Previous `docs/OPERATOR_PHASE_AUDIT.md` used wrong workflow and is superseded.
+
+## Product integrity
+- Original value: task-driven intelligent selection, real live gateway quote, bounded approval, purchase a service, useful outcome, auditable receipt.
+- Working: live catalog, exact unpaid 402, operator auth, free SQD result, local ledger, old paid transaction clearly separated.
+- Missing core: live paid execution in the actual app, model-backed selector when configured, service-to-useful-result follow-through.
+- No permission to spend additional USDC or publish source/submission has been received.
+- Status: **BLOCKED**, not JUDGE_READY or READY_TO_SUBMIT.
+
+## Operator stage
+HQ phases and evidence mapped in `docs/OPERATOR_HQ_AUDIT.md`. Earliest canonical-source prerequisite not yet formally passed: complete intake/rubric and reconstruct product lock with immutable coverage ledger. In parallel prioritize Build with buy paid workflow and own ERC-8004 identity because they are deadline-critical.
+
+## Highest-priority blockers
+1. Own agent ERC-8004 identity and Loops enrollment not confirmed.
+2. Current GitHub repo PRIVATE; contest expects public.
+3. Real paid execution hard-disarmed; previous $0.005 payment belongs to the spike.
+4. Independent user qualifier without evidence.
+5. No final demo recording, Product Hygiene audit, brand/name lock or judge simulation.
+
+## Verified useful assets
+- Last pre-checkpoint commit: `e1619e8` (or later)
+- Tests: 12 passing unit/security and 12 live zero-spend smoke steps
+- Local isolated Next.js production build passed
+- Real screenshots: `docs/evidence/` (3 captured)
+- Historical Celo tx: `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43`
+- Official deadline: 2026-11-09 09:00 GMT / 10:00 WAT
+
+## Human gate
+Permissions needed only when actually making payments, registering an onchain identity if it costs funds, making repo public or submitting. Continue non-spending engineering and research without additional approval.
+
+## Next recommended action
+Reconcile original P0 baseline and fix paid-service integration without spending; then secure needed permission for genuine paid proof, identity registration and public submission. Preserve existing working implementation and security checks.

@@ -1,0 +1,78 @@
+{
+  "schema_version": 4,
+  "revision": 1,
+  "project_root": "C:\\Users\\USER\\Documents\\Codex\\2026-11-08\\celo-open-rails",
+  "phase": "INTAKE",
+  "active_specialist": "HQ",
+  "human_input_required": false,
+  "pending_gate": null,
+  "product_locked": false,
+  "product_lock_revision": null,
+  "original_product_reference": "docs/PROJECT_BRIEF.md + approved implementation feedback",
+  "locked_P0_total": null,
+  "verified_P0_ids": [],
+  "unverified_P0_ids": [],
+  "product_integrity_verdict": "BLOCKED",
+  "last_product_integrity_check": "2026-11-08",
+  "spike_verified": true,
+  "vertical_slice_complete": false,
+  "full_product_verified": false,
+  "name_locked": false,
+  "name_lock_revision": null,
+  "brand_kit_complete": false,
+  "demo_architecture_complete": false,
+  "evidence_plan_complete": false,
+  "dependency_attack_complete": false,
+  "technical_risks_cleared": false,
+  "happy_path_complete": false,
+  "art_direction_complete": false,
+  "references_synthesized": false,
+  "visual_asset_strategy_complete": false,
+  "motion_storyboard_complete": false,
+  "design_locked": false,
+  "design_lock_revision": null,
+  "visual_qa_static_complete": false,
+  "visual_qa_motion_complete": false,
+  "evidence_status": "PARTIAL_UNMAPPED",
+  "critical_claims_open": 5,
+  "proof_engine_passed": false,
+  "red_team_passed": false,
+  "product_hygiene_skill_found": null,
+  "product_hygiene_fallback_used": null,
+  "product_hygiene_passed": false,
+  "demo_production_complete": false,
+  "demo_qa_passed": false,
+  "judge_simulation_complete": false,
+  "feature_freeze": false,
+  "freeze_at": null,
+  "deadline": "2026-11-09T09:00:00Z",
+  "submission_ready": false,
+  "submission_status": "NOT_STARTED",
+  "submission_receipt": null,
+  "milestones": {
+    "historical_paid_spike": {
+      "status": "VERIFIED",
+      "artifact": "docs/RESEARCH_AND_RESOURCES.md"
+    },
+    "free_sqd_api_slice": {
+      "status": "VERIFIED",
+      "artifact": "docs/QA_REPORT.md"
+    },
+    "integrated_paid_procurement": {
+      "status": "BLOCKED",
+      "reason": "New paid dispatch not implemented and no permission to spend"
+    },
+    "submission": {
+      "status": "NOT_STARTED"
+    }
+  },
+  "blockers": [
+    "Own agent ERC-8004 identity not verified",
+    "GitHub repo private; event requires public",
+    "Integrated paid Buy transaction not available; no user authorization for spend",
+    "Independent-user qualifier unverified",
+    "Brand/hygiene/demo/judge gates incomplete"
+  ],
+  "next_action": "Reconcile official entry requirements and immutable original P0 baseline; then implement complete paid flow with spending disabled until authorized.",
+  "updated_at": "2026-11-08"
+}
