@@ -18,7 +18,7 @@
 
 ## 2. Key Problem Solved
 
-**Demo honesty:** The historical 0.005 USDC transaction is verified proof of the Buy mechanism; this build currently forbids NEW paid purchases. The free SQD path can deliver new results when the gateway is reachable. Model-driven selection requires a configured API key.
+**Demo honesty:** The historical 0.005 USDC transaction is verified proof of the Buy mechanism; this build currently forbids NEW paid purchases. A safe live API smoke run successfully delivered a fresh SQD dataset response, retrieved a real unpaid 402 quote, enforced the human spend gate, and rejected duplicate dispatches. Model-driven selection requires a configured API key.
 
 Autonomous AI agents face a critical security and operational dilemma:
 1. **Unconstrained Credential Risk**: Handing master API keys or corporate credit cards to AI agents creates catastrophic financial and security attack surfaces.

@@ -57,7 +57,7 @@ All wallet keystores, local `.data/`, and `.env.local` are ignored by Git. Never
 
 See [QA report](docs/QA_REPORT.md), [project status](docs/STATUS.md), and [submission package](docs/SUBMISSION.md).
 
-The production build and safety tests pass, but the current application has **not** demonstrated a new paid purchase. The most recent local attempt to reach `gateway.usebuy.ai` suffered DNS failure, so live catalog/free SQD delivery remains unverified in the final QA run. ERC-8004 identity status must be determined from a fresh real chain response.
+The production build and security tests pass. An isolated, live production-server smoke run verified gateway catalog discovery (171 capabilities), real unpaid 402 quote, free SQD payload delivery, operator approval, safe paid-policy halt, replay prevention, and local persistence. **There was no new paid purchase.** ERC-8004 identity status still requires a fresh verified chain response.
 
 This is a local judge-evaluation build, **not production-ready for public wallet operation**. Before deployment, implement a transactional shared ledger, robust operator identity, deployed keystore signing strategy, real paid execution after explicit authorization, and run full live end-to-end/regression tests.
 

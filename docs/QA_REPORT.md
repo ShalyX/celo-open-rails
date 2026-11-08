@@ -12,13 +12,13 @@ This report supersedes the original overly optimistic "READY / no blockers" clai
 | App source / frontend / API routes | PASS | Next.js App Router source, task intake, quotes, approval, execution status, receipt history, trust drawer present. |
 | Automated tests | PASS | `npm test`: 12/12 passing on Windows; four original tests assert fixtures or mock logic, the newer guards test actual pure functions. |
 | TypeScript | PASS | `npx tsc --noEmit --pretty false`: exit 0 after security changes. |
-| Operator auth | PARTIAL PASS | Local `GET /api/operator` returned 200 with `configured:true, authenticated:false`. GET routes `/api/procure`, `/api/account`, `/api/receipts` returned 401 without auth. Interactive credential login not yet verified end-to-end. |
-| Approved-spend gate | UNIT-TESTED | Server checks real quoted token and integer atomic cap, rejects unauthorized requests and repeat approvals. No paid transaction executed during this QA. |
+| Operator auth | PASS (API), UI review pending | Anonymous history/account/receipts returned 401; wrong credential 401; test-only operator login 200; cross-origin mutation 403. Browser form interaction still to be captured. |
+| Approved-spend gate | PASS (safe live API smoke) | Authenticated PUT for real 402 quote returned policy halt BEFORE signing. Both free and paid duplicate PUTs returned 409. No additional paid transaction executed. |
 | SSRF and route isolation | UNIT-TESTED | Official HTTPS buy gateway URL allowlist; arbitrary host, internal routes and non-SQD free paths rejected. Test direct API response separately. |
 | Mainnet historical settlement | PREVIOUSLY VERIFIED | 0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43 is an earlier real purchase. It is NOT evidence that the new app has completed an additional paid procurement. |
 | Zero-spend | CODE-PROVEN | `POLICY_DISALLOW_SPEND=true` and debit path is disarmed. No additional payments authorized or attempted. |
 | Real AI reasoning | NOT VERIFIED | Requires configured working model credential; deterministic matching is explicitly the fallback. |
-| Live catalog, quote, free result | BLOCKED | This PC experienced gateway DNS-resolution failure. A successful live task-to-result flow was not established in this QA pass. |
+| Live catalog, quote, free result | PASS (safe live API smoke) | Independent test on loopback production server fetched 171 catalog capabilities, delivered authentic free SQD output, and received unpaid real 402 quote for 5,000 atomic USDC units. |
 | Current ERC-8004 identity | NOT VERIFIED | Identity UI must display registration only after on-chain verification; no confirmed current registry response in this QA. |
 | Persistence and deployment | PARTIAL | Local JSON ledger present. Not hardened for parallel serverless deployment or cross-device durable storage. |
 | Visual / judge walkthrough | PENDING | Must inspect app in browser, capture screen and working interaction. |
@@ -33,8 +33,8 @@ This report supersedes the original overly optimistic "READY / no blockers" clai
 
 ## Explicit release gates
 
-1. Record a live catalog fetch, exact unpaid 402 quote, and authentic free SQD result, or report the network blocker.
-2. Prove the operator can log in, create a task, review quote, and trigger an honest policy halt or real free result through the actual UI.
+1. [x] Live catalog fetch, exact unpaid 402 quote, and authentic free SQD result verified by `tests/e2e-smoke.mjs` against an isolated local production server with test-only auth and data directory.
+2. [ ] Browser UI walkthrough remains to be captured. The full equivalent API workflow passed in the isolated live smoke run (12/12 checks).
 3. Verify that invalid budget, token mismatch, stale quote, replay, and blocked remote URL fail through real routes.
 4. Re-run production build after all edits.
 5. Publish source to GitHub with no credential files, mark historical evidence clearly, and prepare the judge-facing demo/submission.

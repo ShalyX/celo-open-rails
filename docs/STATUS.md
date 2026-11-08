@@ -14,8 +14,8 @@
 
 ## Observed QA blockers
 
-1. PC DNS query to `gateway.usebuy.ai` recently failed. Must recheck live catalog, 402 quote, and free SQD delivery when network works.
-2. Full UI operator-login and task-to-result end-to-end path not yet recorded as passed.
+1. [RESOLVED] Gateway DNS recovered: safe live API smoke confirmed 171 capabilities, exact 5,000-atomic-unit 402 quote, and authentic free SQD delivery. Initial DNS failure was transient.
+2. Full API login-to-task-to-result workflow PASSED with a test-only token and isolated ledger; browser-based UI walkthrough and visual capture remain pending.
 3. Model-assisted intent routing not verified with a configured API key; deterministic fallback is honest but weaker.
 4. A fresh ERC-8004 registry verification is needed for identity claims.
 5. Paid execution remains intentionally **disarmed**, under explicit no-new-spend instructions. New production purchases require separate authorization and implementation verification.
