@@ -30,6 +30,36 @@ export default function ProcurementDeskPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isProcessingApproval, setIsProcessingApproval] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [operatorStatus, setOperatorStatus] = useState<"checking" | "locked" | "authenticated">("checking");
+  const [operatorToken, setOperatorToken] = useState("");
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/operator", { cache: "no-store" })
+      .then((res) => res.json())
+      .then((data) => setOperatorStatus(data.authenticated ? "authenticated" : "locked"))
+      .catch(() => setOperatorStatus("locked"));
+  }, []);
+
+  const handleOperatorLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoggingIn(true);
+    setErrorMessage(null);
+    try {
+      const res = await fetch("/api/operator", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: operatorToken }),
+      });
+      if (!res.ok) throw new Error("Operator credential was rejected");
+      setOperatorToken("");
+      setOperatorStatus("authenticated");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : String(error));
+    } finally {
+      setIsLoggingIn(false);
+    }
+  };
 
   // Load account balances
   const loadAccountBalances = useCallback(async () => {
@@ -107,12 +137,13 @@ export default function ProcurementDeskPage() {
 
   // Initial load
   useEffect(() => {
+    if (operatorStatus !== "authenticated") return;
     loadAccountBalances();
     loadCatalog();
     loadTrust();
     loadReceipts();
     loadProcurements();
-  }, [loadAccountBalances, loadCatalog, loadTrust, loadReceipts, loadProcurements]);
+  }, [operatorStatus, loadAccountBalances, loadCatalog, loadTrust, loadReceipts, loadProcurements]);
 
   // Handle task submission
   const handleSubmitTask = async (objective: string, capabilityId?: string) => {
@@ -204,15 +235,43 @@ export default function ProcurementDeskPage() {
           </div>
         )}
 
+        {operatorStatus !== "authenticated" && (
+          <form onSubmit={handleOperatorLogin} className="max-w-xl mx-auto rounded-xl border border-celo-green/30 bg-surface p-8 space-y-5 shadow-lg">
+            <div className="flex items-center gap-3">
+              <Shield className="w-6 h-6 text-celo-green" />
+              <div>
+                <h2 className="font-semibold text-lg">Operator access</h2>
+                <p className="text-xs text-foreground/60 mt-1">Unlock task history, live account data, and approval controls.</p>
+              </div>
+            </div>
+            <label htmlFor="operator-token" className="block text-xs uppercase tracking-wider font-mono text-foreground/60">Local operator credential</label>
+            <input
+              id="operator-token"
+              type="password"
+              autoComplete="off"
+              value={operatorToken}
+              onChange={(event) => setOperatorToken(event.target.value)}
+              className="w-full rounded-md border border-surface-border bg-surface-subtle px-4 py-3 text-sm font-mono focus:outline-none focus:border-celo-green"
+              placeholder="Enter credential from local .env.local"
+              required
+            />
+            <button type="submit" disabled={isLoggingIn || operatorStatus === "checking"}
+              className="w-full bg-celo-green text-background font-semibold py-3 rounded-md disabled:opacity-50">
+              {operatorStatus === "checking" ? "Checking access..." : isLoggingIn ? "Authenticating..." : "Unlock procurement desk"}
+            </button>
+            <p className="text-xs text-foreground/50 leading-relaxed">Local-only evaluation. Wallet debiting remains disabled even after login.</p>
+          </form>
+        )}
+
         {/* Top Area: Task Intake Console */}
-        <TaskIntakeConsole
+        {operatorStatus === "authenticated" && <TaskIntakeConsole
           onSubmitTask={handleSubmitTask}
           isLoading={isLoading}
           capabilities={capabilities}
-        />
+        />}
 
         {/* Active Workflow Workspace */}
-        {activeRecord && (
+        {operatorStatus === "authenticated" && activeRecord && (
           <div className="space-y-6">
             
             {/* Step 1: Intent Analysis Result */}
@@ -243,7 +302,7 @@ export default function ProcurementDeskPage() {
         )}
 
         {/* Bottom Section: Audit Trail, Historical Proof & Trust Info */}
-        <div className="space-y-6 pt-4 border-t border-surface-border">
+        {operatorStatus === "authenticated" && <div className="space-y-6 pt-4 border-t border-surface-border">
           
           {/* Durable Procurement Ledger */}
           <DurableLedger
@@ -258,7 +317,7 @@ export default function ProcurementDeskPage() {
           {/* ERC-8004 Identity & Registry Trust Drawer */}
           <Erc8004TrustDrawer trustInfo={trustInfo} />
 
-        </div>
+        </div>}
 
       </main>
 
@@ -266,7 +325,7 @@ export default function ProcurementDeskPage() {
       <footer className="border-t border-surface-border py-4 bg-surface text-center text-xs font-mono text-foreground/50">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>Celo Agents on Open Rails — Build with buy Hackathon Product</span>
-          <span>Zero-Spend Evaluation Safe | Celo Mainnet 42220 | ERC-8004 Registered</span>
+          <span>Zero-Spend Evaluation Safe | Celo Mainnet 42220 | ERC-8004: On-chain verification required</span>
         </div>
       </footer>
     </div>

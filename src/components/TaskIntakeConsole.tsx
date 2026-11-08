@@ -19,9 +19,9 @@ const PRESET_TASKS = [
     platform: "x",
   },
   {
-    title: "SQD Multi-Chain Stream",
-    description: "Inspect Celo block heads & timestamp mappings (Free unmetered SQD tier)",
-    prompt: "Fetch finalized block head and timestamps on Celo via SQD decentralized portal",
+    title: "SQD Dataset Discovery",
+    description: "Retrieve the real live SQD chain dataset directory (free tier)",
+    prompt: "List available SQD datasets across supported chains",
     capabilityId: "sqd.datasets",
     platform: "sqd",
   },

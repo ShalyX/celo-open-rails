@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { fetch402Quote } from "@/lib/gateway";
+import { isOperatorAuthenticated, isSameOriginRequest } from "@/lib/operatorAuth";
 
 export async function POST(request: Request) {
+  if (!isOperatorAuthenticated(request)) return NextResponse.json({ error: "Operator login required" }, { status: 401 });
+  if (!isSameOriginRequest(request)) return NextResponse.json({ error: "Same-origin request required" }, { status: 403 });
   try {
     const body = await request.json();
     const { url, method = "POST", requestBody = {} } = body;

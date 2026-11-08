@@ -4,6 +4,7 @@ import {
   AuthoritativeQuote,
   ChallengeAccept,
 } from "./types";
+import { assertTrustedGatewayUrl, assertSafeGatewayMethod, assertFreeSqdPath } from "./requestSafety";
 
 const GATEWAY_BASE_URL = "https://gateway.usebuy.ai";
 const CATALOG_URL = `${GATEWAY_BASE_URL}/v1/catalog`;
@@ -35,6 +36,27 @@ export async function getLiveCatalog(forceFresh = false): Promise<CatalogRespons
   }
 
   const data: CatalogResponse = await res.json();
+  // The catalog represents SQD under freeServices, not in paid capabilities.
+  // Expose only a documented GET endpoint as a discoverable free capability.
+  const sqd = data.freeServices?.find((service) =>
+    service.id?.toLowerCase().includes("sqd") || service.url?.includes("/sqd/")
+  );
+  const datasetEndpoint = sqd?.endpoints?.find((endpoint) =>
+    endpoint.method?.toUpperCase() === "GET" && endpoint.path === "/sqd/datasets"
+  );
+  if (datasetEndpoint && !data.capabilities.some((cap) => cap.id === "sqd.datasets")) {
+    data.capabilities.push({
+      id: "sqd.datasets",
+      title: "SQD available chain datasets",
+      description: "List real supported blockchain datasets from the free SQD service",
+      available: true,
+      method: "GET",
+      url: "https://gateway.usebuy.ai/sqd/datasets",
+      platform: "sqd",
+      price: { atomic: "0", usd: "0", tokens: ["FREE"] },
+      pricingModel: "free",
+    });
+  }
   cachedCatalog = data;
   catalogCacheTime = now;
   return data;
@@ -51,16 +73,21 @@ export async function fetch402Quote(
   method = "POST",
   body: Record<string, unknown> = {}
 ): Promise<AuthoritativeQuote> {
+  assertTrustedGatewayUrl(targetUrl);
+  const safeMethod = assertSafeGatewayMethod(method);
+  if (JSON.stringify(body).length > 12000) throw new Error("Quote request payload too large");
   const quoteId = `quote-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
-  const hasBody = method.toUpperCase() === "POST" || method.toUpperCase() === "PUT";
+  const hasBody = safeMethod === "POST";
 
   const fetchOptions: RequestInit = {
-    method: method.toUpperCase(),
+    method: safeMethod,
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
     cache: "no-store",
+    redirect: "error",
+    signal: AbortSignal.timeout(12000),
   };
 
   if (hasBody) {
@@ -174,8 +201,11 @@ export async function fetch402Quote(
  * Executes a free query against SQD multi-chain endpoints.
  */
 export async function executeSqdQuery(path: string, options: RequestInit = {}) {
-  const url = `${GATEWAY_BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+  const safePath = assertFreeSqdPath(path);
+  const url = `${GATEWAY_BASE_URL}${safePath}`;
+  const method = assertSafeGatewayMethod(options.method || "GET");
   const res = await fetch(url, {
+    method,
     ...options,
     headers: {
       Accept: "application/json",
@@ -183,6 +213,8 @@ export async function executeSqdQuery(path: string, options: RequestInit = {}) {
       ...options.headers,
     },
     cache: "no-store",
+    redirect: "error",
+    signal: AbortSignal.timeout(12000),
   });
 
   if (!res.ok) {

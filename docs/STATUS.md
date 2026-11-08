@@ -1,42 +1,28 @@
 # Project Status — Celo Agent Procurement Desk
 
-**Date**: 2026-11-08  
-**Operator Account**: `celo-open-rails` (`0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b`)  
-**Current Phase**: M3/M4 Core Implementation & Frontend Assembly
+**Updated:** 2026-11-08
+**Status:** Locally built and security-hardened, **not yet full live end-to-end verified**.
+**Track:** Celo Agents on Open Rails — Build with buy.
 
----
+## Milestone audit
 
-## 1. Verified Evidence & Artifacts
+- [x] **M1 — Verified mechanism:** One earlier genuine $0.005 USDC Buy gateway payment on Celo mainnet. Historical transaction: `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43`. This is a prior spike, not a new desk purchase.
+- [x] **M2 — Product brief and architecture:** task-first procurement flow, exact quotes, human controls, receipt history and trust checks documented.
+- [x] **M3 — Backend skeleton and policy guards:** real catalog/402 clients, local JSON history, RPC readers, operator session, same-origin check, spend caps, single attempt local lock, zero-spend disarm.
+- [x] **M4 — UI implementation:** task intake, intent reasoning view, quote inspector, approval, result display, ledger, trust drawer, historical card and operator login.
+- [/] **M5 — QA/release:** 12 unit/security tests passing, TypeScript passing, production build passing, unauthenticated read routes rejecting with HTTP 401. Live network task/result and judge walkthrough still outstanding.
 
-- [x] **Buy CLI & Keystore Verified**:
-  - Binary installed and responsive at `@celo/buy` dist path.
-  - Dedicated account `celo-open-rails` configured.
-  - Balances queried dynamically: ~2 CELO, ~0.062383 USDC.
-- [x] **Real Mainnet Settlement Proven**:
-  - Tx `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43` confirmed on Celo block 82246474.
-  - Recorded in `~/.config/cpay/receipts.1.json`.
-- [x] **Live Buy API Gateway Accessible**:
-  - Live catalog retrieved from `https://gateway.usebuy.ai/v1/catalog`.
-  - Live HTTP 402 challenge quoter tested: returns exact `5000` atomic units ($0.005 USDC) for `x.posts.search`.
-- [x] **Documentation Pack Synchronized**:
-  - `docs/PROJECT_BRIEF.md`, `docs/REQUIREMENTS.md`, `docs/ARCHITECTURE.md`, `docs/PRODUCTION_PLAN.md`, `docs/RESEARCH_AND_RESOURCES.md`, `docs/STATUS.md` aligned with mandatory corrections.
+## Observed QA blockers
 
----
+1. PC DNS query to `gateway.usebuy.ai` recently failed. Must recheck live catalog, 402 quote, and free SQD delivery when network works.
+2. Full UI operator-login and task-to-result end-to-end path not yet recorded as passed.
+3. Model-assisted intent routing not verified with a configured API key; deterministic fallback is honest but weaker.
+4. A fresh ERC-8004 registry verification is needed for identity claims.
+5. Paid execution remains intentionally **disarmed**, under explicit no-new-spend instructions. New production purchases require separate authorization and implementation verification.
+6. Local JSON storage and local cpay secrets are not suitable for public serverless production without redesign.
 
-## 2. Active Implementation Tasks
+## Next
 
-- [x] Milestone M1: Real Paid Proof Verification.
-- [x] Milestone M2: Architecture & Documentation Lock.
-- [/] Milestone M3: Backend Services & API Routes (in progress).
-- [ ] Milestone M4: User-Facing Next.js UI & Audit Console.
-- [ ] Milestone M5: QA Report, Submission Package, and Git Commit.
+Re-run live E2E when reachable; record UI demo and screenshots; prepare final submission assets; if desired, make private GitHub repo public only when ready for the hackathon submission. No deployment or financial action without authorization.
 
----
-
-## 3. Mandatory Constraints & Compliance
-
-- **Zero Unauthorized Spend**: Enforced by server policy guard.
-- **Zero Historical Substitution**: Historical tx `0x7e51...` restricted to audit archive only.
-- **Dynamic Balances**: Live RPC queries to Celo mainnet (`forno.celo.org`).
-- **Honest AI Fallback**: Deterministic matcher clearly labeled when no AI key is present.
-- **ERC-8004 Verification**: On-chain RPC verification before displaying trust badge.
+For exact evidence and limitations, see `docs/QA_REPORT.md`.

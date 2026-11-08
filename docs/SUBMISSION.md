@@ -4,7 +4,7 @@
 **Target Track**: Build with buy  
 **Reviewed Build**: `v1.0.0` (commit verified locally)  
 **Date**: 2026-11-08  
-**QA Status**: PASS (10/10 Acceptance Gates Verified in `docs/QA_REPORT.md`)
+**QA Status**: UNDER INDEPENDENT REVIEW — see `docs/QA_REPORT.md` for verified tests and remaining integration gates.
 
 ---
 
@@ -17,6 +17,8 @@
 ---
 
 ## 2. Key Problem Solved
+
+**Demo honesty:** The historical 0.005 USDC transaction is verified proof of the Buy mechanism; this build currently forbids NEW paid purchases. The free SQD path can deliver new results when the gateway is reachable. Model-driven selection requires a configured API key.
 
 Autonomous AI agents face a critical security and operational dilemma:
 1. **Unconstrained Credential Risk**: Handing master API keys or corporate credit cards to AI agents creates catastrophic financial and security attack surfaces.
@@ -59,11 +61,11 @@ The **Celo Agent Procurement Desk** implements an end-to-end, human-governed pro
    npm run start
    ```
 2. **Open the Dashboard**:
-   Navigate to `http://localhost:3000`.
+   Navigate to `http://localhost:3000`. Create a local `.env.local` with a unique `OPERATOR_ACCESS_TOKEN` of at least 24 characters and `POLICY_DISALLOW_SPEND=true` before starting; authenticate through the operator access screen. Never commit or publish this secret.
 3. **Verify Dynamic Live Balances**:
-   Observe the top header displaying the active dedicated account `celo-open-rails` with real balances fetched dynamically from Celo Mainnet via `forno.celo.org` (~2 CELO, ~0.062383 USDC). Click the refresh icon to verify live RPC queries.
+   Observe the top header displaying the active dedicated account `celo-open-rails` with real balances fetched dynamically from Celo Mainnet via `forno.celo.org` (the current amount varies with the chain state). Click the refresh icon to verify live RPC queries.
 4. **Test Task Intake & Intent Reasoning**:
-   Select a preset (e.g. "X Sentiment Analysis" or "SQD Multi-Chain Stream") or enter a custom prompt. Click **Analyze Procurement Intent**.
+   Select a preset (e.g. "X Sentiment Analysis" or "SQD Dataset Discovery") or enter a custom prompt. Click **Analyze Procurement Intent**.
    Observe the intent analysis card detailing the selected capability, rationale, and model transparency badge.
 5. **Inspect the Authoritative 402 Quote**:
    Examine the exact atomic price (`5000`), human amount (`0.005000 USDC`), recipient address, token contract, and raw 402 challenge header.

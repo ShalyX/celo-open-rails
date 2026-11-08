@@ -221,7 +221,10 @@ function runDeterministicMatcher(
   let rationale = "";
 
   if (!target) {
-    if (lower.includes("x") || lower.includes("twitter") || lower.includes("tweet") || lower.includes("social") || lower.includes("sentiment") || lower.includes("minipay") || lower.includes("celo")) {
+    if (lower.includes("sqd") || lower.includes("dataset") || lower.includes("block head") || lower.includes("multi-chain")) {
+      target = capabilities.find((c) => c.id === "sqd.datasets");
+      rationale = "Selected official free SQD dataset directory for chain discovery; no payment needed.";
+    } else if (/\b(x|twitter|tweet|tweets|social|sentiment|minipay)\b/.test(lower)) {
       target = capabilities.find((c) => c.id === "x.posts.search");
       rationale = "Targeted public X posts search based on keywords: 'x', 'twitter', 'tweet', 'celo', or 'sentiment'.";
     } else if (lower.includes("browser") || lower.includes("crawl") || lower.includes("inspect web") || lower.includes("html") || lower.includes("rent")) {
@@ -265,7 +268,9 @@ function runDeterministicMatcher(
   // Build input body complying with capability inputSchema
   let requestBody: Record<string, unknown> = {};
 
-  if (resolvedTarget.id === "x.posts.search") {
+  if (resolvedTarget.id === "sqd.datasets") {
+    requestBody = {};
+  } else if (resolvedTarget.id === "x.posts.search") {
     // Clean query text
     const cleanQuery = objective.replace(/(search for|find|look up|get|query)\s+/i, "").trim() || "Celo agents";
     requestBody = {

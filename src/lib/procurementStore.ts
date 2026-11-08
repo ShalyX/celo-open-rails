@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
+import { randomUUID } from "node:crypto";
+import { assertFreeSqdPath, assertSafeGatewayMethod } from "./requestSafety";
 import {
   ProcurementRecord,
   ProcurementStatus,
@@ -8,8 +10,26 @@ import {
 } from "./types";
 import { executeSqdQuery } from "./gateway";
 
-const DATA_DIR = path.join(process.cwd(), ".data");
+// Keep QA fixtures isolated from the real operator ledger when explicitly configured.
+const DATA_DIR = path.resolve(process.cwd(), process.env.PROCUREMENT_DATA_DIR || ".data");
 const PROCUREMENTS_FILE = path.join(DATA_DIR, "procurements.json");
+
+/**
+ * Local execution lock. A crashed run leaves a lock requiring manual recovery:
+ * failing closed is safer than blindly re-executing a paid operation.
+ */
+export async function withProcurementLock<T>(recordId: string, action: () => Promise<T>): Promise<T> {
+  if (!/^task-[a-zA-Z0-9-]+$/.test(recordId)) throw new Error("Invalid task identifier");
+  ensureDataDir();
+  const lockFile = path.join(DATA_DIR, recordId + ".lock");
+  const fd = fs.openSync(lockFile, "wx", 0o600);
+  try {
+    return await action();
+  } finally {
+    fs.closeSync(fd);
+    fs.unlinkSync(lockFile);
+  }
+}
 
 // Ensure data directory exists
 function ensureDataDir() {
@@ -147,18 +167,24 @@ export async function executeProcurement(recordId: string): Promise<ProcurementR
   if (!record.approval) {
     throw new Error("Cannot execute procurement without prior operator approval.");
   }
+  if (record.execution) {
+    // Never dispatch twice for the same approved task, including failed / uncertain states.
+    return record;
+  }
 
-  // One-shot idempotency token
-  const idempotencyKey = `exec-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+  const idempotencyKey = randomUUID();
 
   // Check if target is a free SQD route
-  const isFreeSqd = record.capabilityId.startsWith("sqd") || record.intent.requestEnvelope.url.includes("/sqd/");
+  const isFreeSqd = record.capabilityId === "sqd.datasets" &&
+    record.intent.requestEnvelope.url === "https://gateway.usebuy.ai/sqd/datasets" &&
+    record.quote?.selectedOffer.tokenSymbol === "FREE";
 
   if (isFreeSqd) {
     try {
-      const sqdPath = record.intent.requestEnvelope.url.replace(/^https?:\/\/[^/]+/, "");
+      const sqdUrl = new URL(record.intent.requestEnvelope.url);
+      const sqdPath = assertFreeSqdPath(sqdUrl.pathname + sqdUrl.search);
       const resultData = await executeSqdQuery(sqdPath, {
-        method: record.intent.requestEnvelope.method,
+        method: assertSafeGatewayMethod(record.intent.requestEnvelope.method),
       });
 
       record.execution = {
@@ -195,7 +221,7 @@ export async function executeProcurement(recordId: string): Promise<ProcurementR
       idempotencyKey,
       status: "halted_by_policy",
       policyGuardTriggered: true,
-      policyHaltReason: "Zero-Spend Safety Policy Guard is active (Hackathon evaluation mode). Payment authorization was verified and prepared, but on-chain fund transfer was halted to preserve wallet balance.",
+      policyHaltReason: "Zero-Spend Safety Policy Guard is active. The operator approved the quoted budget; no payment authorization was signed or submitted and no new result was delivered.",
       settlementDetails: {
         network: "celo",
         asset: record.quote?.selectedOffer.assetContract || "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",

@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import { loadKeystoreReceipts } from "@/lib/procurementStore";
 import { getOnChainTransactionReceipt } from "@/lib/celoRpc";
+import { isOperatorAuthenticated } from "@/lib/operatorAuth";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
+  if (!isOperatorAuthenticated(request)) return NextResponse.json({ error: "Operator login required" }, { status: 401 });
   try {
     const receipts = loadKeystoreReceipts();
 
