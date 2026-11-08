@@ -4,14 +4,14 @@
 **Project:** `C:\Users\USER\Documents\Codex\2026-11-08\celo-open-rails`
 **Proof classification:** PARTIAL_PRODUCT / SPIKE_VERIFIED; free SQD vertical slice verified, full paid journey not.
 **Original approved source:** `docs/PROJECT_BRIEF.md`, `docs/REQUIREMENTS.md`, approved implementation plan in conversation. Formal HQ product lock not yet reconstructed.
-**Full audit:** `docs/OPERATOR_HQ_AUDIT.md`. Previous `docs/OPERATOR_PHASE_AUDIT.md` used wrong workflow and is superseded.
+**Full audit:** `docs/OPERATOR_HQ_AUDIT.md`. Previous `docs/OPERATOR_PHASE_AUDIT.md` used wrong workflow and is superseded. Canonical HQ files now include `HACKATHON.md`, `PRODUCT.md`, `SCORECARD.md`, `EVIDENCE.md`.
 
 ## Product integrity
 - Original value: task-driven intelligent selection, real live gateway quote, bounded approval, purchase a service, useful outcome, auditable receipt.
 - Working: live catalog, exact unpaid 402, operator auth, free SQD result, local ledger, old paid transaction clearly separated.
 - Missing core: live paid execution in the actual app, model-backed selector when configured, service-to-useful-result follow-through.
 - No permission to spend additional USDC or publish source/submission has been received.
-- Status: **BLOCKED**, not JUDGE_READY or READY_TO_SUBMIT.
+- Status: **BLOCKED**, not JUDGE_READY or READY_TO_SUBMIT. `PRODUCT.md` has 12 reconstructed original P0s; P0-01,03,04,05,08 verified in scoped tests, 7 remain incomplete. Own ERC-8004 registration was read-only checked and balance = 0.
 
 ## Operator stage
 HQ phases and evidence mapped in `docs/OPERATOR_HQ_AUDIT.md`. Earliest canonical-source prerequisite not yet formally passed: complete intake/rubric and reconstruct product lock with immutable coverage ledger. In parallel prioritize Build with buy paid workflow and own ERC-8004 identity because they are deadline-critical.
