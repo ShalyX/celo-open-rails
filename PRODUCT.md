@@ -30,7 +30,7 @@ Statuses: VERIFIED = directly tested; IMPLEMENTED = present but unverified; BLOC
 | ID | Locked P0 / user value | Surface | Implementation | Acceptance scenario / proof | Status | Gap |
 |---|---|---|---|---|---|---|
 | P0-01 | Accept an actual research task | Task console | `src/components/TaskIntakeConsole.tsx`, `/api/procure` | Authenticated API creates task from user input; browser screenshot | VERIFIED (API) | Full browser click-through not captured |
-| P0-02 | Agent selects appropriate capabilities, explains why | Intent reasoning card | `src/lib/intentEngine.ts`, `src/lib/hermesIntent.ts` | Real Hermes model selects valid live provider and request payload; human can inspect rationale | IMPLEMENTED / LIVE UNVERIFIED | 35 tests and build pass; VPS authenticated model endpoint and actual model response still need proof; fallback is opt-in |
+| P0-02 | Agent selects appropriate capabilities, explains why | Intent reasoning card | `src/lib/intentEngine.ts`, `src/lib/hermesIntent.ts` | Real Hermes model selects valid live provider and request payload; human can inspect rationale | VERIFIED (scoped) | Real authenticated /api/intent calls selected x.posts.search and sqd.datasets via Hermes forge against live catalog, with AI-generated schema-valid request bodies; zero exposed Hermes tools; no spending |
 | P0-03 | Discover actual Buy services dynamically | Capability chooser | `src/lib/gateway.ts`, `/api/catalog` | Live catalog returned 171 capabilities during smoke run | VERIFIED | May change with gateway |
 | P0-04 | Present exact unpaid quote, asset and payee | 402 quote inspector | `/api/quote`, `src/lib/gateway.ts` | Live 402 quotes 5,000 atomic USDC units | VERIFIED | Quote revalidation on eventual paid dispatch needed |
 | P0-05 | Only authorized bounded spending | Approval barrier | `/api/operator`, `/api/procure`, `requestSafety.ts` | Operator login, spend/token caps, same-origin guard, policy halt smoke | VERIFIED (safe path) | One authorized live API run verified; default mode disarmed |
@@ -40,10 +40,10 @@ Statuses: VERIFIED = directly tested; IMPLEMENTED = present but unverified; BLOC
 | P0-09 | Durable auditable task/settlement history | History and receipts | `procurementStore.ts`, `/api/receipts` | Disabled-mode server restart returns same delivered task/hash; E19 | VERIFIED (local single-instance) | Local JSON is not transactional across hosted instances |
 | P0-10 | Handle uncertainty, replays, and failures safely | Backend / statuses | `withProcurementLock`, `readOnlyRecovery.ts`, `/api/reconcile` | Repeat PUT 409; mocked uncertain states plus real read-only onchain recovery using only original tx | VERIFIED (scoped) | No automatic repeat charge; abrupt OS-crash and multi-instance recovery remain unverified |
 | P0-11 | Verify own agent identity and show provider identity truthfully | Trust drawer + submission | Registry / public metadata; `/api/trust` separately verifies provider | Own ID 10059 ownerOf and tokenURI match entry wallet, E07; provider remains ID 9895 | VERIFIED (chain identity) | Own-ID UI integration and official enrollment remain separate |
-| P0-12 | Make results usable beyond raw API response | Paid result / history / public proof | `PaidXResearch.tsx`, `xResearch.ts`, `ExecutionMonitor.tsx`, `/proof` | Real local Chrome expands 18 paid X posts with 18 source links; original record and Celo tx remain inspectable; anonymous proof Chrome passes desktop/mobile | VERIFIED (local browser) | No model-generated research synthesis claimed; proof URL not hosted publicly |
+| P0-12 | Make results usable beyond raw API response | Paid result / history / public proof | `PaidXResearch.tsx`, `xResearch.ts`, `ExecutionMonitor.tsx`, `/proof` | Real local Chrome expands 18 paid X posts with 18 source links; original record and Celo tx remain inspectable; anonymous proof Chrome passes desktop/mobile | VERIFIED (local browser) | No model-generated research synthesis claimed; public static proof is hosted, but no public purchasing backend |
 
-**Verified P0 IDs (scoped):** P0-01, P0-03, P0-04, P0-05, P0-06, P0-07, P0-08, P0-09, P0-10, P0-11, P0-12.
-**P0 not yet fully verified:** P0-02 (live model-backed selection). Verified rows retain local/single-instance limits; P0-10 actual process-crash recovery and P0-12 public HTTPS hosting remain unproven production-level variants, not silently omitted.
+**Verified P0 IDs (scoped):** P0-01, P0-02, P0-03, P0-04, P0-05, P0-06, P0-07, P0-08, P0-09, P0-10, P0-11, P0-12.
+**All 12 P0s have scoped local verification.** P0-02 was tested with two genuine Hermes inferences through the authenticated desk API. Production variants remain unverified: P0-10 process-crash/multi-instance recovery; independent-user usage; hosted multi-user purchasing backend. The static read-only public HTTPS proof is online.
 **P0 total:** 12. Neither a historical Celo transaction nor a green build satisfies this inventory.
 
 ## Separate feasibility spikes
@@ -63,14 +63,14 @@ No unlimited autonomous spend, no synthetic paid result, no fake user data, no w
 approved_product: Original task-to-paid-outcome agent procurement desk, revision 1 reconstructed from approved sources.
 current_deliverable: PARTIAL_PRODUCT.
 mechanism_proven: Historical Buy settlement, genuine free-data flow, and ONE new 0.005 USDC product task with authentic provider output and chain receipt.
-full_user_journey: API login -> task -> quote -> approval -> paid result -> confirmed receipt -> persisted history -> 18-post browser view VERIFIED locally; model-driven selection remains UNPROVEN, standalone public proof not hosted.
+full_user_journey: Authenticated API login -> Hermes model-driven capability selection (two real distinct intents) VERIFIED as a separate safe run; earlier one paid task -> quote -> approval -> 18 real results -> chain receipt -> local browser follow-through VERIFIED. These two proofs are separate operations; NO combined second paid AI-selected execution or independent-user hosted flow is claimed.
 locked_P0_total: 12.
-P0_verified (scoped): 01,03,04,05,06,07,08,09,10,11,12.
-P0_missing_or_blocked: 02 (live model selection). Additional deployment-level limits: abrupt crash/multi-instance recovery, no public hosted proof or independent users.
-differentiators_retained: task-first purchase, exact cap, real data and Celo audit; model-driven reasoning and polished result follow-through remain unverified.
+P0_verified (scoped): 01,02,03,04,05,06,07,08,09,10,11,12.
+P0_missing_or_blocked: none at scoped local core. Deployment-level limits: abrupt crash/multi-instance recovery, no public multi-user purchasing backend or independent users.
+differentiators_retained: task-first purchase, real Hermes reasoning for capability selection, exact cap, real data and Celo audit; only the single-operator local core is verified, not multi-user production adoption.
 new_or_replaced_thesis: **NO approved rewrite; YES danger of falsely substituting demo spike as product**.
-next_action: verify available real model reasoning without paid calls, complete hygiene/demo/judge and official submission gates, keep original purchase authorization consumed.
-verdict: **BLOCKED**.
+next_action: maintain Caraxes SSH tunnel for local Hermes inference; assess public multi-user backend, crash recovery, independent-user access and judge-facing Hermes demo. Prior purchase authorization remains consumed; zero additional spending.
+verdict: **SCOPED CORE VERIFIED; PRODUCTION / INDEPENDENT USER GATES OPEN**.
 
 ## Scope and decisions
 

@@ -39,3 +39,12 @@ PARTIAL_PRODUCT, local paid API SLICE_VERIFIED with 18-post browser followthroug
 ## Hermes P0-02 reasoning evidence (new)
 
 **Code implemented; live proof BLOCKED:** `src/lib/hermesIntent.ts`, `src/lib/intentEngine.ts`, and `tests/hermes-intent.test.mjs` contain seven new unit/negative cases. 35 automated tests passed and TypeScript validation passed. The Caraxes VPS Hermes v0.19.0 gateway is active with an existing provider/model configured, but its new authenticated API is not yet listening on `127.0.0.1:8642`; real provider selection through the desk is **not verified**. No false fallback, no new payment and no claim of P0-02 completion. An actual run and tool-permissions verification remain mandatory. See `docs/HERMES_INTEGRATION.md`.
+
+
+## E20 — Real Hermes model reasoning through the actual Desk API (2026-11-09)
+
+**VERIFIED — locally scoped.** Caraxes Hermes v0.19.0 runs an authenticated OpenAI-compatible server on VPS loopback; the Windows desk reaches it via a local SSH tunnel. Bare `/v1/models` returned HTTP 401, authenticated `/v1/models` returned `forge`, and authenticated `/v1/toolsets` showed **zero executable tools**. The active forge profile explicitly disables MCP and selects an empty executable-tool set.
+
+Two distinct authenticated `POST /api/intent` calls fetched the **real current Buy catalog** and obtained genuine model replies: (1) Celo MiniPay posts → `x.posts.search`, valid `POST` request with search query and latest type, confidence 0.98; (2) SQD chain datasets → `sqd.datasets`, valid `GET` request with empty body, confidence 1. Both have `isAiReasoning=true` and `engineModel=Hermes Agent (forge)`. Model-proposed routes are rejected unless in the real Buy catalog and pass schema/safety validation. Both were inference-only: **zero paid calls**. Exact sanitized evidence: `docs/evidence/hermes-live-selection-20261109.json`, implementation `src/lib/hermesIntent.ts`, detailed acceptance notes `docs/HERMES_INTEGRATION.md`.
+
+**P0-02 is now VERIFIED for the original single-operator research-selection scenario.** This does not prove multi-user production readiness, onchain repeated settlement, or a single combined new Hermes-selected paid purchase. Existing 0.005 USDC completed task remains separate. Previous E20-unverified or legacy descriptions are superseded by this scoped evidence.

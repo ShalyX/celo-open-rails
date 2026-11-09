@@ -1,6 +1,6 @@
 {
     "schema_version":  4,
-    "revision":  9,
+    "revision":  10,
     "project_root":  "C:\\Users\\USER\\Documents\\Codex\\2026-11-08\\celo-open-rails",
     "phase":  "VALIDATION",
     "active_specialist":  "Engineering / Proof",
@@ -12,6 +12,7 @@
     "locked_P0_total":  12,
     "verified_P0_ids":  [
                             "P0-01",
+                            "P0-02",
                             "P0-03",
                             "P0-04",
                             "P0-05",
@@ -24,9 +25,9 @@
                             "P0-12"
                         ],
     "unverified_P0_ids":  [
-                              "P0-02"
+
                           ],
-    "product_integrity_verdict":  "BLOCKED",
+    "product_integrity_verdict":  "SCOPED_CORE_VERIFIED_DEPLOYMENT_GATES_OPEN",
     "last_product_integrity_check":  "2026-11-09",
     "spike_verified":  true,
     "vertical_slice_complete":  true,
@@ -152,11 +153,14 @@
                                                   "tag":  "celo_dd8616266527"
                                               },
                        "hermes_reasoning":  {
-                                                "tests_total":  35,
-                                                "status":  "IMPLEMENTED_UNIT_TESTED_LIVE_UNVERIFIED",
-                                                "vps_api":  "NOT_LISTENING",
-                                                "requires":  "User reviewed VPS service configuration then authenticated zero-tool live test",
-                                                "artifact":  "docs/HERMES_INTEGRATION.md"
+                                                "artifact":  "docs/evidence/hermes-live-selection-20261109.json",
+                                                "authenticated":  true,
+                                                "model_alias":  "forge",
+                                                "status":  "VERIFIED_LIVE_TWO_DISTINCT_CAPABILITIES",
+                                                "scope":  "Local authenticated single-operator API",
+                                                "tool_count":  0,
+                                                "ai_reasoning":  true,
+                                                "new_purchases":  0
                                             }
                    },
     "blockers":  [
@@ -167,8 +171,8 @@
                      "Official enrollment/submission unverified",
                      "Brand/hygiene/demo/judge gates incomplete"
                  ],
-    "next_action":  "Hermes P0-02 code and 35 tests are complete; the VPS API listener is not live yet. Await authorized server configuration and verify 0-tool API, real model responses, task API. Keep all paid transactions disabled.",
-    "updated_at":  "2026-11-09T04:48:37.9668469+01:00",
+    "next_action":  "All 12 original core P0 requirements have scoped local verification. P0-02 genuine Hermes forge model selection verified for two live Buy capabilities through authenticated /api/intent. Multi-user purchasing backend, crash resilience, independent users and actual Loops confirmation remain open. No new spend.",
+    "updated_at":  "2026-11-09T05:44:43.4324956+01:00",
     "approved_actions":  {
                              "source":  "Explicit user approval in continuation request 2026-11-09",
                              "repository_public":  true,

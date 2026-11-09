@@ -34,3 +34,10 @@ Next: continue non-spending validation of the original P0s, beginning with the e
 ## Hermes integration checkpoint — 2026-11-09
 
 Hermes model-driven capability planning has been implemented in `src/lib/hermesIntent.ts` and made the preferred intent engine. The local parser rejects unavailable/out-of-catalog capabilities, incorrect schemas, changed URLs, unsupported HTTP methods and external/insecure model endpoints. Real model inference still requires a healthy authenticated VPS API server; **P0-02 stays unverified**. Missing Hermes now fails closed rather than silently pretending deterministic routing is an AI agent. No additional Buy purchase is authorized. See `docs/HERMES_INTEGRATION.md` for VPS and SSH connection requirements.
+
+
+## Hackathon Operator HQ — Hermes live acceptance (2026-11-09)
+
+**12/12 original P0 requirements now have scoped local proof.** Genuine Hermes `forge` model decisions from two authenticated desk `/api/intent` requests correctly selected `x.posts.search` and `sqd.datasets`. Caraxes endpoint is authenticated, bound to private loopback, tunneled by SSH, and exposes zero executable tools. No additional payment was made. Proof: `docs/evidence/hermes-live-selection-20261109.json`.
+
+**Do not confuse the original locked product with the demo:** the public Vercel site remains read-only; proper multi-user accounts, durable hosted storage, per-user wallet/payment rights, crash recovery and independent users are not verified. Loops submission receipt remains unconfirmed. Live Hermes reasoning repairs the missing P0-02 core feature, not public product availability.

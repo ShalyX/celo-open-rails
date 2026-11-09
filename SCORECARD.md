@@ -7,7 +7,7 @@
 | Actual criterion | Existing observable proof | Missing judge-facing proof | Current verdict | Highest-value correction |
 |---|---|---|---|---|
 | Solves a real user problem | Task-first operator procurement UI and explicit budget cap; plausible need | Evidence from named independent user and a concrete recurring research task | PARTIAL / low confidence | Obtain one genuine outside-user task, recorded with consent |
-| Depth of integration with buy | Real catalog, exact quote, one paid product task and 18 rendered posts in actual Chrome; E06/E18 | Live model-reasoned selection; hosted judge access | VERIFIED scoped local flow / PARTIAL full product | Present paid result and transaction together; model claim unproven |
+| Depth of integration with buy | Live Buy catalog, one paid 0.005 USDC task, 18 Chrome-rendered posts and two real Hermes-selected service tasks; E06/E18/E20 | Hosted multi-user purchasing and independent users | VERIFIED scoped local core / PARTIAL public product | Present honest separate paid-task and live Hermes reasoning evidence |
 | Verified paid external services | New 0.005 USDC task, exact chain Transfer and provider run bound to result; E06/E16 | Broader real demand | VERIFIED one purchase | Present exact recorded evidence; no additional spend authorized |
 | Demand/growth for outside services | Two team-owned payments total: historical spike plus one product task | Real repeat/independent purchases; quantification unavailable | UNVERIFIED | Never fabricate demand; collect honest available evidence |
 | Independent users | None found | Independent user/wallet using the product and attributable proof | BLOCKED eligibility | Genuine external user adoption, do not self-fund another wallet |
@@ -25,7 +25,7 @@ No numerical simulated score is assigned without an organizer rubric and compara
 ## Priority order
 
 1. Official enrollment remains unverified; own agent registration and public repo are VERIFIED.
-2. Paid API slice and 18-post browser result are VERIFIED locally. P0-02 real LLM selection remains unverified without a model endpoint; preserve explicit fallback label.
+2. Paid API slice and 18-post browser result VERIFIED locally. P0-02 real Hermes forge model selection now VERIFIED with two distinct authenticated app API tasks; fallback remains opt-in. No repeat Buy payment.
 3. Independent user and task, user-result evidence.
 4. Judge-readable 48s real browser screencast with captions and honest limits, then audit actual submission fields (final video QA pending).
 5. Naming/brand/art QA and Product Hygiene; avoid cosmetic work before sponsor P0s.

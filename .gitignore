@@ -51,3 +51,4 @@ next-env.d.ts
 /.next-hq-results/
 /.next-hq-finalproof/
 /.next-hermes-qa/
+/.next-hermes-live/

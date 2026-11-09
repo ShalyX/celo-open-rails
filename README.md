@@ -85,3 +85,10 @@ This is one team-owned local paid API slice. The purchased 18-post research resu
 Celo Procurement Desk now has a first-class Hermes Agent planner, connected through a private authenticated localhost SSH tunnel when configured. The selected service must exist in the **live Buy catalog**; the backend checks its method, URL, required JSON fields and confidence before any quote or human spending approval. The model never receives wallet credentials or permission to purchase. A configured Hermes inference error now fails closed by default instead of silently substituting keyword routing. See [Hermes integration and prerequisites](docs/HERMES_INTEGRATION.md).
 
 **Current verification:** 35/35 automated tests, TypeScript checks, and a production build passed. **Real Hermes inference in the Desk remains unverified** until the VPS API is running with an authenticated, no-tools configuration; this is still P0-02. The public Vercel proof site remains static and cannot submit tasks or spend funds.
+
+
+## Live Hermes AI reasoning verified (November 9, 2026)
+
+Hermes on the private Caraxes VPS is now connected to the local authenticated Desk through an SSH tunnel. Two genuinely distinct research tasks selected the correct live Buy capabilities via `Hermes Agent (forge)`, not deterministic keyword routing. The model endpoint and tool permissions were checked: Bearer auth required; no executable model tools; all payment controls remain disabled.
+
+**Evidence:** [Hermes live selection record](docs/evidence/hermes-live-selection-20261109.json) · [integration and safety QA](docs/HERMES_INTEGRATION.md). The local operator application supports task selection; the **public Vercel URL is a read-only judge viewer**, not a public purchasing desk. The separate paid 0.005 USDC task was completed before Hermes integration; do not confuse that prior purchase with the two new reasoning checks.

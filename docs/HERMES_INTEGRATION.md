@@ -1,39 +1,36 @@
-# Hermes Agent reasoning — Celo Procurement Desk
+# Hermes Agent integration — live verification checkpoint
 
-**Status: IMPLEMENTED, UNIT-TESTED, NOT YET LIVE-VERIFIED.** This does not satisfy PRODUCT P0-02 until a genuine inference succeeds through the working interface with the real catalog.
+**Status (2026-11-09): VERIFIED in the authenticated single-operator desk API; no new payment.** Hermes is the actual model-driven service selector, replacing the previously mandatory deterministic matcher. The public Vercel judge site is still a separate read-only static showcase, **not** the live purchasing application.
 
-## Architecture
+## Architecture and security
 
-The authenticated Next.js backend calls the operator's Caraxes VPS Hermes Agent through a private **SSH tunnel**. The HTTP service must be bound exclusively to `127.0.0.1:8642`, protected by a strong `API_SERVER_KEY`. The browser never sees this key or directly reaches Hermes. The public Vercel site remains read-only and has no API or wallet backend.
+- Caraxes VPS: Hermes Agent **v0.19.0**, API alias **`forge`**, with configured `openai-codex` backend. The exact underlying provider model is subject to Hermes's active profile.
+- A host-local HTTP listener `127.0.0.1:8642` is enabled via a systemd environment-file drop-in. Remote users cannot reach it directly.
+- Windows developer machine connects over an SSH local port forward `127.0.0.1:8642 -> caraxes-vps:127.0.0.1:8642`. The tunnel's currently observed process ID was **4476**; this will change after a restart.
+- Strong API key exists only in a private 0600 file on Caraxes and in the local ignored `.env.local`. The key does not appear in GitHub and is never delivered to a browser.
+- HTTP `GET /health` returned **200**. Unauthenticated `GET /v1/models` returned **401**. Authenticated `GET /v1/models` returned **200** with model `forge`.
+- The active Hermes **forge** profile explicitly selects `platform_toolsets.api_server = [stt, no_mcp]`. Here, the `stt` toolset has **zero executable tools** and `no_mcp` suppresses MCP servers. Authenticated `GET /v1/toolsets` confirmed an enabled `stt` toolset with `tools: []` and **zero exposed tool names**. Other Hermes messaging and CLI profile permissions were not changed.
+- The desk uses `src/lib/hermesIntent.ts`, bound to trusted loopback HTTP with bearer authentication. It never supplies wallet secrets, payment credentials, a terminal or browser tools. The model may only propose a capability ID, rationale, confidence and JSON body; the backend resolves URLs and methods from the live Buy catalog, validates schemas and requires separate human spending authorization.
+- `HERMES_MODEL=forge`, `HERMES_ALLOW_DETERMINISTIC_FALLBACK=false`, `HERMES_REQUIRED=true`. When inference fails, the authenticated app returns an error instead of silently substituting keyword matching.
+- `POLICY_DISALLOW_SPEND=true`, `LIVE_BUY_MODE=DISABLED` remain in force. No `/api/procure`, payment or blockchain call was made in the Hermes tests.
 
-- Implementation: `src/lib/hermesIntent.ts`, invoked from `src/lib/intentEngine.ts`.
-- Expected Hermes endpoint: `http://127.0.0.1:8642/v1/chat/completions`.
-- Backend environment keys: `HERMES_API_BASE_URL`, `HERMES_API_KEY`, `HERMES_MODEL`, `HERMES_REQUIRED=true`, `HERMES_ALLOW_DETERMINISTIC_FALLBACK=false`.
-- The connection only accepts a localhost SSH tunnel; it rejects externally addressable API URLs, preventing accidental public exposure or SSRF.
-- Hermes proposes a capability ID, confidence, reasoning and JSON request body. The backend resolves **method and URL only from the live Buy catalog** and checks the proposed ID, schema, required fields, types, spending-safe gateway host and operator-selected capability.
-- Hermes never receives the Buy wallet keys, operator cookie, local payment history or API key for any other service.
-- The original approval and spending guards remain intact. `POLICY_DISALLOW_SPEND=true` and `LIVE_BUY_MODE=DISABLED` must stay enforced; inference itself cannot pay.
+## Live model evidence
 
-## Host reality / observed checks
+Authenticated requests were sent **through the working Next.js `POST /api/intent` route** with the actual current Buy catalog, not through a mocked model.
 
-- VPS: existing Caraxes host, Hermes Agent v0.19.0, `hermes-gateway` active.
-- Existing Hermes provider: `openai-codex`; configured model: `gpt-5.6-sol`. This is a **configuration observation**, not proof of a successful model call.
-- The official Hermes documentation supports OpenAI-compatible `POST /v1/chat/completions`.
-- The API listener is **not yet confirmed healthy**. An initial attempt to enable `API_SERVER_ENABLED` in `/root/.hermes/.env` and restart the existing gateway left the listener unopened; the missing systemd environment injection is under review.
-- Hermes API server grants agent tool access by default. For this desk, `platform_toolsets.api_server` has been set to `[no_mcp]`, intended to expose no agent tools. **Do not trust this until authenticated `/v1/toolsets` confirms zero enabled tools.**
-- A private API key was generated and stored on the VPS, **never in GitHub**. The systemd service drop-in and local SSH key handoff are not yet complete.
-- Existing scheduled gateway work can be interrupted by restart. Avoid repeated restarts and protect the user's other processes.
+| User objective | Actual Hermes selection | Validated model output | Status |
+|---|---|---|---|
+| Recent X posts about Celo MiniPay merchant adoption and USDC wallets | `x.posts.search` | `POST`, query containing MiniPay merchant/adoption/USDC terms; `type: latest`; reasoning, confidence **0.98** | PASS |
+| List supported SQD blockchain datasets and networks, not social posts | `sqd.datasets` | `GET`, empty body; relevant rationale, confidence **1.00** | PASS |
 
-## QA and acceptance
+Both returned `isAiReasoning: true`, `engineModel: Hermes Agent (forge)` and live-catalog-supported routes. First request returned authenticated HTTP **200**; second also passed. The results are saved, without credentials, in `docs/evidence/hermes-live-selection-20261109.json`.
 
-- Existing 28 tests + 7 new Hermes inference/validation tests = **35 passing**.
-- TypeScript validation passed.
-- Production build: see latest Operator checkpoint / build output.
-- **P0-02 requires:** authenticated private server + zero tool permissions; a real Gemini/OpenAI-compatible Hermes response; two meaningfully different research objectives selecting valid live capabilities with traceable model explanations; zero purchases; normal operator API/browser task experience; evidence in EVIDENCE.md.
-- If Hermes is unavailable, a configured deployment **fails closed**, showing the failure. Deterministic fallback only runs when `HERMES_ALLOW_DETERMINISTIC_FALLBACK=true` is explicitly set. Old fallback code remains as a labeled opt-in compatibility path.
+## QA and remaining limits
 
-## Reference
+- Unit/negative tests: **35 passed** before the live acceptance; final rerun is recorded in the Operator checkpoint.
+- TypeScript and production build were previously green; rerun after latest aliases before final gate.
+- No product-wide public multi-user purchasing rollout, wallet account segregation, or independent-user adoption is claimed.
+- The previous real paid task (0.005 USDC for 18 X posts) and the two new real Hermes inference tests are separate verified events. **Do not combine them into a fictitious second paid transaction.**
+- CLI/agent profiles remain distinct. The inactive default Hermes configuration is not evidence of the active `forge` profile; the live `/v1/toolsets` and inference responses are the primary acceptance records.
 
-Hermes official API server docs: https://hermes-agent.nousresearch.com/docs/user-guide/features/api-server
-
-**Safety limits:** No extra on-chain transactions or Buy spending, no public API bind, no giving Hermes shell access from the procurement task, no claims that P0-02 is verified without a real response.
+**P0-02 verdict:** VERIFIED **for the live, authenticated, local single-operator desk**. Remaining product readiness work belongs to public access / durable multi-user backend / independent users, not model integration.

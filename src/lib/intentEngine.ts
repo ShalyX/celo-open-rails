@@ -26,7 +26,7 @@ export async function analyzeIntent(
       return await inferWithHermes(taskId, objective, capabilities, {
         baseUrl: hermesBase,
         apiKey: hermesKey,
-        model: process.env.HERMES_MODEL || "hermes-agent",
+        model: process.env.HERMES_MODEL || "forge",
       }, preselectedCapabilityId);
     } catch (error) {
       if (process.env.HERMES_ALLOW_DETERMINISTIC_FALLBACK !== "true") {

@@ -208,7 +208,7 @@ export async function inferWithHermes(
         "X-Hermes-Session-Id": `celo-desk-${taskId}`,
       },
       body: JSON.stringify({
-        model: connection.model || "hermes-agent",
+        model: connection.model || "forge",
         stream: false,
         messages: [
           {role:"system",content:
