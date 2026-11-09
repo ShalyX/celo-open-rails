@@ -38,12 +38,12 @@ Statuses: VERIFIED = directly tested; IMPLEMENTED = present but unverified; BLOC
 | P0-07 | Receive useful result from purchased capability | Result panel | `src/components/ExecutionMonitor.tsx` | Real TikHub output for Celo MiniPay query, 18 tweet records tied to new task and tx, E06 | VERIFIED (API payload) | Paid UI readability still P0-12; no invented interpretation |
 | P0-08 | Provide genuine free blockchain-data route | SQD preset/results | `executeSqdQuery`, `/api/procure` | Real free SQD dataset response persists | VERIFIED | None in tested path |
 | P0-09 | Durable auditable task/settlement history | History and receipts | `procurementStore.ts`, `/api/receipts` | Disabled-mode server restart returns same delivered task/hash; E19 | VERIFIED (local single-instance) | Local JSON is not transactional across hosted instances |
-| P0-10 | Handle uncertainty, replays, and failures safely | Backend / statuses | `withProcurementLock` and task state | Duplicate PUT 409; failure/uncertain settlement requires manual verification | IMPLEMENTED | Paid replay returned 409; full post-send uncertainty case and crash recovery unverified |
+| P0-10 | Handle uncertainty, replays, and failures safely | Backend / statuses | `withProcurementLock`, `readOnlyRecovery.ts`, `/api/reconcile` | Repeat PUT 409; mocked uncertain states plus real read-only onchain recovery using only original tx | VERIFIED (scoped) | No automatic repeat charge; abrupt OS-crash and multi-instance recovery remain unverified |
 | P0-11 | Verify own agent identity and show provider identity truthfully | Trust drawer + submission | Registry / public metadata; `/api/trust` separately verifies provider | Own ID 10059 ownerOf and tokenURI match entry wallet, E07; provider remains ID 9895 | VERIFIED (chain identity) | Own-ID UI integration and official enrollment remain separate |
-| P0-12 | Make results usable beyond raw API response | Delivery/history view | `ExecutionMonitor.tsx`, `resultDigest.ts`, persisted data | User sees authentic field-extracted outcome, can inspect/copy raw data, revisit task | IMPLEMENTED (free path) | Paid data received; timeline digest/browser usability and model-generated research analysis remain unverified |
+| P0-12 | Make results usable beyond raw API response | Paid result / history / public proof | `PaidXResearch.tsx`, `xResearch.ts`, `ExecutionMonitor.tsx`, `/proof` | Real local Chrome expands 18 paid X posts with 18 source links; original record and Celo tx remain inspectable; anonymous proof Chrome passes desktop/mobile | VERIFIED (local browser) | No model-generated research synthesis claimed; proof URL not hosted publicly |
 
-**Verified P0 IDs (scoped):** P0-01, P0-03, P0-04, P0-05, P0-06, P0-07, P0-08, P0-09, P0-11.
-**P0 not yet fully verified:** P0-02, P0-10, P0-12. Verified rows retain their API/local limits; full paid browser acceptance remains open.
+**Verified P0 IDs (scoped):** P0-01, P0-03, P0-04, P0-05, P0-06, P0-07, P0-08, P0-09, P0-10, P0-11, P0-12.
+**P0 not yet fully verified:** P0-02 (live model-backed selection). Verified rows retain local/single-instance limits; P0-10 actual process-crash recovery and P0-12 public HTTPS hosting remain unproven production-level variants, not silently omitted.
 **P0 total:** 12. Neither a historical Celo transaction nor a green build satisfies this inventory.
 
 ## Separate feasibility spikes
@@ -63,13 +63,13 @@ No unlimited autonomous spend, no synthetic paid result, no fake user data, no w
 approved_product: Original task-to-paid-outcome agent procurement desk, revision 1 reconstructed from approved sources.
 current_deliverable: PARTIAL_PRODUCT.
 mechanism_proven: Historical Buy settlement, genuine free-data flow, and ONE new 0.005 USDC product task with authentic provider output and chain receipt.
-full_user_journey: API login -> task -> quote -> approval -> actual paid data -> confirmed receipt -> persisted history VERIFIED locally; paid browser usefulness and model reasoning remain INCOMPLETE.
+full_user_journey: API login -> task -> quote -> approval -> paid result -> confirmed receipt -> persisted history -> 18-post browser view VERIFIED locally; model-driven selection remains UNPROVEN, standalone public proof not hosted.
 locked_P0_total: 12.
-P0_verified (scoped): 01,03,04,05,06,07,08,09,11.
-P0_missing_or_blocked: 02 (model selection), 10 (uncertainty/crash recovery), 12 (paid result readability/follow-through).
+P0_verified (scoped): 01,03,04,05,06,07,08,09,10,11,12.
+P0_missing_or_blocked: 02 (live model selection). Additional deployment-level limits: abrupt crash/multi-instance recovery, no public hosted proof or independent users.
 differentiators_retained: task-first purchase, exact cap, real data and Celo audit; model-driven reasoning and polished result follow-through remain unverified.
 new_or_replaced_thesis: **NO approved rewrite; YES danger of falsely substituting demo spike as product**.
-next_action: non-spending browser acceptance of saved paid result, uncertainty recovery and original P0 follow-through; never repeat the consumed purchase approval.
+next_action: verify available real model reasoning without paid calls, complete hygiene/demo/judge and official submission gates, keep original purchase authorization consumed.
 verdict: **BLOCKED**.
 
 ## Scope and decisions

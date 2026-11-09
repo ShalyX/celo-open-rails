@@ -71,7 +71,7 @@ This is a local judge-evaluation build, **not production-ready for public wallet
 - Task `task-1794186340719-t3y6`: **Search for Celo MiniPay**, TikHub `x.posts.search`, **0.005 USDC**, **18 returned tweet records**. [Payment transaction](https://celoscan.io/tx/0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61), block 82285602. [Exact task, response and receipt](docs/evidence/paid-task-20261109.json).
 - On-chain Transfer matched token, operator wallet, payee and exact amount; wallet balance decreased from 0.062383 to 0.057383 USDC. Saved task survived a server restart, and replay returned 409. Paid mode is off.
 
-This is one team-owned local API slice. Model-assisted selection, paid browser result usability, uncertainty recovery, independent users, finished demo and official enrollment/submission remain unverified. The original product scope remains in [PRODUCT.md](PRODUCT.md).
+This is one team-owned local paid API slice. The purchased 18-post research result is independently browser-tested in the operator workspace and in the anonymous, local read-only proof route (`/proof`, run the app before opening); a read-only recovery scenario was checked against the existing Celo receipt without additional purchases. Real model-assisted selection, full abrupt-crash/multi-instance recovery, independent users, final narrated demo, public HTTPS hosting and official enrollment/submission remain unverified. The original product scope remains in [PRODUCT.md](PRODUCT.md).
 
 ## Core references
 

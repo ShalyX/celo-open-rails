@@ -29,6 +29,7 @@ export default function ProcurementDeskPage() {
   const [activeRecord, setActiveRecord] = useState<ProcurementRecord | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isProcessingApproval, setIsProcessingApproval] = useState(false);
+  const [isReconciling, setIsReconciling] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [operatorStatus, setOperatorStatus] = useState<"checking" | "locked" | "authenticated">("checking");
   const [operatorToken, setOperatorToken] = useState("");
@@ -202,6 +203,26 @@ export default function ProcurementDeskPage() {
     }
   };
 
+  const handleReconcile = async (recordId: string) => {
+    setIsReconciling(true);
+    setErrorMessage(null);
+    try {
+      const res = await fetch("/api/reconcile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ recordId }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Read-only reconciliation failed");
+      setActiveRecord(data);
+      await loadProcurements();
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : String(err));
+    } finally {
+      setIsReconciling(false);
+    }
+  };
+
   const handleCancelApproval = () => {
     if (activeRecord && !activeRecord.approval) {
       // Discard active view or leave as draft
@@ -260,6 +281,9 @@ export default function ProcurementDeskPage() {
               {operatorStatus === "checking" ? "Checking access..." : isLoggingIn ? "Authenticating..." : "Unlock procurement desk"}
             </button>
             <p className="text-xs text-foreground/50 leading-relaxed">Local-only evaluation. Wallet debiting remains disabled even after login.</p>
+            <a href="/proof" className="block text-center text-sm text-celo-green underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-celo-green">
+              View the recorded paid research proof without signing in
+            </a>
           </form>
         )}
 
@@ -295,7 +319,11 @@ export default function ProcurementDeskPage() {
 
             {/* Step 4: Execution Pipeline & Delivered Results (if approved or executed) */}
             {activeRecord.approval && (
-              <ExecutionMonitor record={activeRecord} />
+              <ExecutionMonitor
+                record={activeRecord}
+                onReconcile={handleReconcile}
+                isReconciling={isReconciling}
+              />
             )}
 
           </div>
@@ -324,8 +352,8 @@ export default function ProcurementDeskPage() {
       {/* Institutional Footer */}
       <footer className="border-t border-surface-border py-4 bg-surface text-center text-xs font-mono text-foreground/50">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>Celo Agents on Open Rails — Build with buy Hackathon Product</span>
-          <span>Zero-Spend Evaluation Safe | Celo Mainnet 42220 | ERC-8004: On-chain verification required</span>
+          <span>Celo Procurement Desk | Agents on Open Rails | Build with buy</span>
+          <span>Recorded paid proof: 0.005 USDC | Agent #10059 | New spending disabled</span>
         </div>
       </footer>
     </div>

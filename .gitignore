@@ -46,3 +46,7 @@ next-env.d.ts
 # Approved-action local build and private execution scratch
 /.next-approved/
 /work/
+/.next-hq-dev/
+
+/.next-hq-results/
+/.next-hq-finalproof/

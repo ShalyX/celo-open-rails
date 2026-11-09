@@ -224,6 +224,12 @@ export interface ProcurementRecord {
     resultData?: unknown;
     deliveredAt?: string;
     errorMessage?: string;
+    reconciliation?: {
+      checkedAt: string;
+      readOnly: true;
+      paymentVerified: boolean;
+      note: string;
+    };
   };
 }
 

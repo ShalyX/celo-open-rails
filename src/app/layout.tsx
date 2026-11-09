@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Celo Agents on Open Rails — Agent Procurement Desk",
+  title: "Celo Procurement Desk | Task-first Buy research on Celo",
   description:
-    "Institutional AI Agent Procurement Desk on Celo Mainnet: Live HTTP 402 Gateway Discovery, Exact Unpaid Quoting, Human-in-the-Loop Governance, Durable Audit Ledger, and ERC-8004 Trust Verification.",
+    "Operator-governed external service procurement on Celo: discover live APIs, inspect exact HTTP 402 quotes, approve bounded purchases and audit genuine outcomes. One paid research task is verified; new spending is disabled.",
 };
 
 export default function RootLayout({

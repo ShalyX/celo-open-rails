@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck, Wallet, Cpu, ExternalLink, RefreshCw, AlertCircle } from "lucide-react";
+import { ShieldCheck, Wallet, ExternalLink, RefreshCw, AlertCircle } from "lucide-react";
+import { BrandMark } from "./BrandMark";
 import { WalletBalances, Erc8004AgentVerification } from "@/lib/types";
 
 interface HeaderProps {
@@ -20,19 +21,19 @@ export function Header({ balances, trustInfo, onRefresh, isLoading }: HeaderProp
           {/* Logo & Network Identity */}
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded bg-surface-elevated border border-surface-border flex items-center justify-center text-celo-green">
-              <Cpu className="w-5 h-5" />
+              <BrandMark className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-mono text-sm font-semibold tracking-wider text-foreground">
-                  CELO OPEN RAILS
+                  CELO PROCUREMENT DESK
                 </span>
                 <span className="text-xs px-2 py-0.5 rounded-full bg-celo-green/10 text-celo-green border border-celo-green/20 font-mono">
                   Mainnet 42220
                 </span>
               </div>
               <p className="text-xs text-foreground/60">
-                Autonomous & Human-in-the-Loop Agent Procurement Desk
+                Discover services · approve spend · inspect verified outcomes
               </p>
             </div>
           </div>

@@ -1,147 +1,163 @@
 {
-  "schema_version": 4,
-  "revision": 5,
-  "project_root": "C:\\Users\\USER\\Documents\\Codex\\2026-11-08\\celo-open-rails",
-  "phase": "VALIDATION",
-  "active_specialist": "Engineering / Proof",
-  "human_input_required": false,
-  "pending_gate": null,
-  "product_locked": true,
-  "product_lock_revision": "reconstructed-v1-from-approved-plan",
-  "original_product_reference": "PRODUCT.md; docs/PROJECT_BRIEF.md; docs/REQUIREMENTS.md; user-approved Antigravity plan",
-  "locked_P0_total": 12,
-  "verified_P0_ids": [
-    "P0-01",
-    "P0-03",
-    "P0-04",
-    "P0-05",
-    "P0-06",
-    "P0-07",
-    "P0-08",
-    "P0-09",
-    "P0-11"
-  ],
-  "unverified_P0_ids": [
-    "P0-02",
-    "P0-10",
-    "P0-12"
-  ],
-  "product_integrity_verdict": "BLOCKED",
-  "last_product_integrity_check": "2026-11-09",
-  "spike_verified": true,
-  "vertical_slice_complete": true,
-  "full_product_verified": false,
-  "name_locked": false,
-  "name_lock_revision": null,
-  "brand_kit_complete": false,
-  "demo_architecture_complete": false,
-  "evidence_plan_complete": true,
-  "dependency_attack_complete": false,
-  "technical_risks_cleared": false,
-  "happy_path_complete": false,
-  "art_direction_complete": false,
-  "references_synthesized": false,
-  "visual_asset_strategy_complete": false,
-  "motion_storyboard_complete": false,
-  "design_locked": false,
-  "design_lock_revision": null,
-  "visual_qa_static_complete": false,
-  "visual_qa_motion_complete": false,
-  "evidence_status": "REGISTERED_CRITICAL_CLAIMS_OPEN",
-  "critical_claims_open": 4,
-  "proof_engine_passed": false,
-  "red_team_passed": false,
-  "product_hygiene_skill_found": null,
-  "product_hygiene_fallback_used": null,
-  "product_hygiene_passed": false,
-  "demo_production_complete": false,
-  "demo_qa_passed": false,
-  "judge_simulation_complete": false,
-  "feature_freeze": false,
-  "freeze_at": null,
-  "deadline": "2026-11-09T09:00:00Z",
-  "submission_ready": false,
-  "submission_status": "NOT_STARTED",
-  "submission_receipt": null,
-  "milestones": {
-    "historical_paid_spike": {
-      "status": "VERIFIED",
-      "artifact": "docs/RESEARCH_AND_RESOURCES.md"
-    },
-    "free_sqd_api_slice": {
-      "status": "VERIFIED",
-      "artifact": "docs/QA_REPORT.md"
-    },
-    "integrated_paid_procurement": {
-      "status": "VERIFIED_LOCAL_API_SLICE",
-      "artifact": "docs/evidence/paid-task-20261109.json",
-      "task_id": "task-1794186340719-t3y6",
-      "tx_hash": "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
-      "usdc_spent": "0.005",
-      "paid_calls": 1,
-      "paid_mode": "DISARMED_AFTER_RUN"
-    },
-    "submission": {
-      "status": "NOT_STARTED"
-    },
-    "intake": {
-      "status": "VERIFIED_SCOPE_RECONCILED",
-      "open_external_requirements": [
-        "entry_enrollment"
-      ],
-      "artifact": "HACKATHON.md"
-    },
-    "rubric_decode": {
-      "status": "COMPLETE_UNKNOWN_WEIGHTS",
-      "artifact": "SCORECARD.md"
-    },
-    "research": {
-      "status": "IN_PROGRESS",
-      "independent_user_evidence": "MISSING",
-      "artifact": "docs/MARKET_RESEARCH.md"
-    },
-    "strategy_validation": {
-      "status": "MODIFY",
-      "user_decision": "Preserve original approved procurement thesis",
-      "artifact": "docs/STRATEGY_VALIDATION.md"
-    },
-    "paid_executor": {
-      "tests": "19/19 passing",
-      "status": "LIVE_VERIFIED_ONCE",
-      "policy": "DISARMED_AFTER_APPROVED_SINGLE_RUN",
-      "artifact": "src/lib/buyExecutor.ts; tests/buy-plan.test.mjs",
-      "production_build": "PASS .next-approved",
-      "limitations": "local single-instance; post-dispatch crash recovery unverified"
-    },
-    "own_erc8004": {
-      "status": "VERIFIED",
-      "agent_id": 10059,
-      "artifact": "docs/evidence/erc8004-registration-20261109.json",
-      "fee_celo": "0.04531464"
-    },
-    "public_repo": {
-      "status": "VERIFIED",
-      "url": "https://github.com/ShalyX/celo-open-rails"
-    }
-  },
-  "blockers": [
-    "Independent-user and demand validation unverified",
-    "P0-02 live model reasoning unverified",
-    "P0-10 uncertainty/crash recovery unverified",
-    "P0-12 paid result readability/browser follow-through unverified",
-    "Official enrollment/submission unverified",
-    "Brand/hygiene/demo/judge gates incomplete"
-  ],
-  "next_action": "Non-spending browser acceptance of saved real paid task; complete remaining original P0s and Operator gates. Do not register or purchase again: approvals consumed.",
-  "updated_at": "2026-11-09T01:09:04.249860+00:00",
-  "approved_actions": {
-    "source": "Explicit user approval in continuation request 2026-11-09",
-    "repository_public": true,
-    "own_identity_registration_max_celo": "0.07",
-    "real_buy_count": 1,
-    "real_buy_max_usdc": "0.005",
-    "other_spend_or_public_actions": false,
-    "consumed": true
-  },
-  "proof_classification": "SLICE_VERIFIED_LOCAL_PAID_API"
+    "schema_version":  4,
+    "revision":  6,
+    "project_root":  "C:\\Users\\USER\\Documents\\Codex\\2026-11-08\\celo-open-rails",
+    "phase":  "VALIDATION",
+    "active_specialist":  "Engineering / Proof",
+    "human_input_required":  false,
+    "pending_gate":  null,
+    "product_locked":  true,
+    "product_lock_revision":  "reconstructed-v1-from-approved-plan",
+    "original_product_reference":  "PRODUCT.md; docs/PROJECT_BRIEF.md; docs/REQUIREMENTS.md; user-approved Antigravity plan",
+    "locked_P0_total":  12,
+    "verified_P0_ids":  [
+                            "P0-01",
+                            "P0-03",
+                            "P0-04",
+                            "P0-05",
+                            "P0-06",
+                            "P0-07",
+                            "P0-08",
+                            "P0-09",
+                            "P0-10",
+                            "P0-11",
+                            "P0-12"
+                        ],
+    "unverified_P0_ids":  [
+                              "P0-02"
+                          ],
+    "product_integrity_verdict":  "BLOCKED",
+    "last_product_integrity_check":  "2026-11-09",
+    "spike_verified":  true,
+    "vertical_slice_complete":  true,
+    "full_product_verified":  false,
+    "name_locked":  false,
+    "name_lock_revision":  null,
+    "brand_kit_complete":  true,
+    "demo_architecture_complete":  false,
+    "evidence_plan_complete":  true,
+    "dependency_attack_complete":  false,
+    "technical_risks_cleared":  false,
+    "happy_path_complete":  false,
+    "art_direction_complete":  false,
+    "references_synthesized":  false,
+    "visual_asset_strategy_complete":  false,
+    "motion_storyboard_complete":  false,
+    "design_locked":  false,
+    "design_lock_revision":  null,
+    "visual_qa_static_complete":  true,
+    "visual_qa_motion_complete":  false,
+    "evidence_status":  "SCOPED_PROOFS_VERIFIED_WITH_EXTERNAL_GATES_OPEN",
+    "critical_claims_open":  4,
+    "proof_engine_passed":  false,
+    "red_team_passed":  false,
+    "product_hygiene_skill_found":  false,
+    "product_hygiene_fallback_used":  true,
+    "product_hygiene_passed":  false,
+    "demo_production_complete":  true,
+    "demo_qa_passed":  false,
+    "judge_simulation_complete":  false,
+    "feature_freeze":  false,
+    "freeze_at":  null,
+    "deadline":  "2026-11-09T09:00:00Z",
+    "submission_ready":  false,
+    "submission_status":  "NOT_STARTED",
+    "submission_receipt":  null,
+    "milestones":  {
+                       "historical_paid_spike":  {
+                                                     "status":  "VERIFIED",
+                                                     "artifact":  "docs/RESEARCH_AND_RESOURCES.md"
+                                                 },
+                       "free_sqd_api_slice":  {
+                                                  "status":  "VERIFIED",
+                                                  "artifact":  "docs/QA_REPORT.md"
+                                              },
+                       "integrated_paid_procurement":  {
+                                                           "status":  "VERIFIED_LOCAL_API_SLICE",
+                                                           "artifact":  "docs/evidence/paid-task-20261109.json",
+                                                           "task_id":  "task-1794186340719-t3y6",
+                                                           "tx_hash":  "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
+                                                           "usdc_spent":  "0.005",
+                                                           "paid_calls":  1,
+                                                           "paid_mode":  "DISARMED_AFTER_RUN"
+                                                       },
+                       "submission":  {
+                                          "status":  "NOT_STARTED"
+                                      },
+                       "intake":  {
+                                      "status":  "VERIFIED_SCOPE_RECONCILED",
+                                      "open_external_requirements":  [
+                                                                         "entry_enrollment"
+                                                                     ],
+                                      "artifact":  "HACKATHON.md"
+                                  },
+                       "rubric_decode":  {
+                                             "status":  "COMPLETE_UNKNOWN_WEIGHTS",
+                                             "artifact":  "SCORECARD.md"
+                                         },
+                       "research":  {
+                                        "status":  "IN_PROGRESS",
+                                        "independent_user_evidence":  "MISSING",
+                                        "artifact":  "docs/MARKET_RESEARCH.md"
+                                    },
+                       "strategy_validation":  {
+                                                   "status":  "MODIFY",
+                                                   "user_decision":  "Preserve original approved procurement thesis",
+                                                   "artifact":  "docs/STRATEGY_VALIDATION.md"
+                                               },
+                       "paid_executor":  {
+                                             "tests":  "19/19 passing",
+                                             "status":  "LIVE_VERIFIED_ONCE",
+                                             "policy":  "DISARMED_AFTER_APPROVED_SINGLE_RUN",
+                                             "artifact":  "src/lib/buyExecutor.ts; tests/buy-plan.test.mjs",
+                                             "production_build":  "PASS .next-approved",
+                                             "limitations":  "local single-instance; post-dispatch crash recovery unverified"
+                                         },
+                       "own_erc8004":  {
+                                           "status":  "VERIFIED",
+                                           "agent_id":  10059,
+                                           "artifact":  "docs/evidence/erc8004-registration-20261109.json",
+                                           "fee_celo":  "0.04531464"
+                                       },
+                       "public_repo":  {
+                                           "status":  "VERIFIED",
+                                           "url":  "https://github.com/ShalyX/celo-open-rails"
+                                       },
+                       "paid_result_browser":  {
+                                                   "status":  "VERIFIED_SCOPED",
+                                                   "posts":  18,
+                                                   "new_purchases":  0,
+                                                   "artifact":  "docs/evidence/12-public-proof-all-18.png"
+                                               },
+                       "read_only_recovery":  {
+                                                  "status":  "VERIFIED_SCOPED",
+                                                  "limit":  "Does not prove OS crash recovery",
+                                                  "artifact":  "scripts/accept-recovery-readonly.mjs"
+                                              },
+                       "demo_video":  {
+                                          "status":  "PRODUCED_CAPTIONED_SILENT",
+                                          "seconds":  48,
+                                          "artifact":  "docs/evidence/celo-paid-proof-walkthrough.mp4"
+                                      }
+                   },
+    "blockers":  [
+                     "Independent-user and demand validation unverified",
+                     "P0-02 live model reasoning unverified",
+                     "P0-10 uncertainty/crash recovery unverified",
+                     "P0-12 paid result readability/browser follow-through unverified",
+                     "Official enrollment/submission unverified",
+                     "Brand/hygiene/demo/judge gates incomplete"
+                 ],
+    "next_action":  "Model reasoning P0-02 remains unverified. Confirm Loops entry, independent users, public HTTPS judge access; submit before deadline only with user authorization and actual receipt. No more paid transactions.",
+    "updated_at":  "2026-11-09T03:41:26.3492118+01:00",
+    "approved_actions":  {
+                             "source":  "Explicit user approval in continuation request 2026-11-09",
+                             "repository_public":  true,
+                             "own_identity_registration_max_celo":  "0.07",
+                             "real_buy_count":  1,
+                             "real_buy_max_usdc":  "0.005",
+                             "other_spend_or_public_actions":  false,
+                             "consumed":  true
+                         },
+    "proof_classification":  "SLICE_VERIFIED_LOCAL_PAID_API"
 }

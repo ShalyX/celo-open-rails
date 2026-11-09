@@ -151,8 +151,11 @@ export async function executeAuthorizedPaidBuy(
       !priorHashes.has(receipt.txHash.toLowerCase()) &&
       receipt.account === plan.account &&
       receipt.url === plan.url &&
-      (receipt.asset.toLowerCase() === record.quote!.selectedOffer.assetContract.toLowerCase() ||
-       receipt.asset.toUpperCase() === plan.token)
+      receipt.amount === record.quote!.selectedOffer.atomicAmount &&
+      (receipt.network === "celo" || receipt.network === "eip155:42220") &&
+      Number.isFinite(Date.parse(receipt.timestamp)) &&
+      Date.parse(receipt.timestamp) >= Date.parse(startedAt) - 60000 &&
+      receipt.asset.toLowerCase() === record.quote!.selectedOffer.assetContract.toLowerCase()
     );
     if (!candidate) {
       record.execution.status = "settle_uncertain";
@@ -162,6 +165,12 @@ export async function executeAuthorizedPaidBuy(
       persist(record);
       return record;
     }
+
+    // Durable binding before the read-only chain verification: if the server
+    // crashes, recovery can still attribute this exact receipt to this task.
+    record.execution.settlementDetails!.txHash = candidate.txHash;
+    record.execution.settlementDetails!.outcome = "receipt_saved_chain_verification_pending";
+    persist(record);
 
     const chain = await verifyExactTokenSettlement(
       candidate.txHash,

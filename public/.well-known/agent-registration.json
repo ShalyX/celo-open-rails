@@ -1,17 +1,21 @@
 {
-  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
-  "name": "Celo Agent Procurement Desk",
-  "description": "Task-first Celo agent procurement desk: discovers live buy gateway capabilities, displays exact unpaid HTTP 402 quotes, requires bounded human authorization, and records authentic service outcomes and settlement evidence. One authorized 0.005 USDC paid task verified locally; paid mode is disabled by default.",
-  "image": "https://raw.githubusercontent.com/ShalyX/celo-open-rails/master/docs/evidence/01-dashboard-authenticated.png",
-  "services": [],
-  "registrations": [
-    {
-      "agentRegistry": "eip155:42220:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
-      "agentId": 10059
-    }
-  ],
-  "supportedTrust": [],
-  "active": false,
-  "xOwnerWallet": "0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b",
-  "xReleaseStatus": "Local evaluation: one real paid API task verified; no public production service, independent-user or full-product claim."
+    "type":  "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+    "name":  "Celo Procurement Desk",
+    "description":  "Task-first Celo agent procurement desk: discovers live buy gateway capabilities, displays exact unpaid HTTP 402 quotes, requires bounded human authorization, and records authentic service outcomes and settlement evidence. One authorized 0.005 USDC paid task verified locally; paid mode is disabled by default.",
+    "image":  "https://raw.githubusercontent.com/ShalyX/celo-open-rails/master/docs/evidence/10-public-proof-first-fold.png",
+    "services":  [
+
+                 ],
+    "registrations":  [
+                          {
+                              "agentRegistry":  "eip155:42220:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+                              "agentId":  10059
+                          }
+                      ],
+    "supportedTrust":  [
+
+                       ],
+    "active":  false,
+    "xOwnerWallet":  "0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b",
+    "xReleaseStatus":  "Local evaluation: one real paid API task verified; no public production service, independent-user or full-product claim."
 }

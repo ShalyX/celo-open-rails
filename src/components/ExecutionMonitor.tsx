@@ -12,19 +12,26 @@ import {
   AlertCircle,
   Copy,
   Check,
+  RefreshCw,
 } from "lucide-react";
 import { ProcurementRecord } from "@/lib/types";
 import { digestProviderResponse } from "@/lib/resultDigest";
+import { extractXSearchResults } from "@/lib/xResearch";
+import { PaidXResearch } from "./PaidXResearch";
 
 interface ExecutionMonitorProps {
   record: ProcurementRecord;
+  onReconcile?: (recordId: string) => Promise<void>;
+  isReconciling?: boolean;
 }
 
-export function ExecutionMonitor({ record }: ExecutionMonitorProps) {
+export function ExecutionMonitor({ record, onReconcile, isReconciling = false }: ExecutionMonitorProps) {
   const [copied, setCopied] = useState(false);
   const exec = record.execution;
   const digest = exec?.status === "delivered" && exec.resultData
     ? digestProviderResponse(exec.resultData) : null;
+  const xResearch = exec?.status === "delivered" && exec.resultData
+    ? extractXSearchResults(exec.resultData) : null;
 
   const handleCopyResult = () => {
     if (!exec?.resultData) return;
@@ -136,10 +143,50 @@ export function ExecutionMonitor({ record }: ExecutionMonitorProps) {
         </div>
       )}
 
+      {/* Read-only recovery: never signs, quotes, retries or pays. */}
+      {(exec?.status === "settle_uncertain" || exec?.status === "executing") && (
+        <section className="p-4 rounded-lg border border-amber-500/40 bg-amber-500/5 space-y-3" aria-label="Uncertain settlement">
+          <div className="flex items-center gap-2 text-amber-400 text-xs font-mono font-semibold">
+            <ShieldAlert className="w-4 h-4" aria-hidden="true" />
+            Settlement not fully resolved — do not retry purchase
+          </div>
+          <p className="text-sm text-foreground/80 leading-relaxed">
+            The previous payment may already have settled. Reconciliation checks existing local receipts
+            and Celo chain records only. It never starts another service purchase.
+          </p>
+          {exec.errorMessage && <p className="text-xs text-foreground/65">{exec.errorMessage}</p>}
+          {exec.reconciliation && (
+            <p className="rounded border border-surface-border p-3 text-xs text-foreground/75">
+              Checked {new Date(exec.reconciliation.checkedAt).toLocaleString()}: {exec.reconciliation.note}
+            </p>
+          )}
+          {exec.settlementDetails?.txHash && (
+            <a href={`https://celoscan.io/tx/${exec.settlementDetails.txHash}`}
+              target="_blank" rel="noopener noreferrer"
+              className="inline-block text-xs underline text-celo-green">Inspect recorded Celo transfer</a>
+          )}
+          {onReconcile && (
+            <button type="button" disabled={isReconciling} onClick={() => void onReconcile(record.id)}
+              className="flex items-center gap-2 rounded-md px-4 py-2 border border-amber-500/40 text-sm text-amber-300 hover:bg-amber-500/10 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400">
+              <RefreshCw className={`w-4 h-4 ${isReconciling ? "animate-spin" : ""}`} aria-hidden="true" />
+              {isReconciling ? "Checking receipts..." : "Reconcile existing payment (read-only)"}
+            </button>
+          )}
+        </section>
+      )}
+
       {/* Delivered Real Output (e.g. SQD Live Multi-Chain Stream) */}
       {exec?.status === "delivered" && Boolean(exec.resultData) && (
         <div className="space-y-3">
-          {digest && (
+          {xResearch && <PaidXResearch key={record.id} data={exec.resultData} objective={record.objective} />}
+          {xResearch && exec.settlementDetails?.txHash && (
+            <a className="inline-flex items-center gap-2 rounded-md border border-celo-green/30 bg-celo-green/5 px-4 py-3 text-xs text-celo-green hover:underline"
+              href={`https://celoscan.io/tx/${exec.settlementDetails.txHash}`} rel="noopener noreferrer" target="_blank">
+              <FileCheck className="w-4 h-4" aria-hidden="true" />
+              Verify this task's paid Celo receipt — {record.quote?.selectedOffer.humanAmount} {record.quote?.selectedOffer.tokenSymbol}
+            </a>
+          )}
+          {digest && !xResearch && (
             <div className="rounded-lg border border-celo-green/25 bg-celo-green/5 px-4 py-4 space-y-2">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-celo-green">
                 <FileCheck className="w-4 h-4" />
@@ -192,11 +239,16 @@ export function ExecutionMonitor({ record }: ExecutionMonitorProps) {
             </button>
           </div>
 
-          <div className="p-3.5 rounded bg-black/50 border border-surface-border max-h-80 overflow-y-auto">
-            <pre className="text-xs font-mono text-foreground/90 whitespace-pre-wrap">
-              {JSON.stringify(exec.resultData, null, 2)}
-            </pre>
-          </div>
+          <details className="rounded bg-black/50 border border-surface-border group">
+            <summary className="cursor-pointer p-3 text-xs font-mono text-foreground/70 hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-celo-green">
+              Inspect original provider JSON
+            </summary>
+            <div className="p-3.5 border-t border-surface-border max-h-80 overflow-y-auto">
+              <pre className="text-xs font-mono text-foreground/90 whitespace-pre-wrap break-all">
+                {JSON.stringify(exec.resultData, null, 2)}
+              </pre>
+            </div>
+          </details>
         </div>
       )}
 

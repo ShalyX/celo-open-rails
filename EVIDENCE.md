@@ -21,7 +21,7 @@
 | E15 | Free Buy CLI invocation | VERIFIED, previous free run | Zero-cap SQD CLI call succeeded | Separate from the new paid purchase |
 | E16 | Exact new settlement from operator wallet | VERIFIED | Raw chain receipt and Transfer in paid-task artifact: USDC `0xcebA9300f2b948710d2653dD7B07f33A8B32118C`, from `0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b`, to `0x20faAca5F980E29639A0FCC6dcA6988E18ed333B`, amount 5000; wallet debit 0.005 | Facilitator sent settlement transaction; owner debit verified from token log |
 | E17 | Registration stayed within cap | MEASURED / VERIFIED | Gas 223776 × 202500000000 wei + reported zero L1 fee = 0.04531464 CELO < 0.07; signed fee bound with reserve 0.0642630175 | No further transaction authorized |
-| E18 | Useful result presentation | PARTIAL | Authentic 18-post output preserved, existing generic digest and raw payload viewer | Paid timeline has no dedicated digest yet; full browser usefulness not verified |
+| E18 | Useful result presentation | VERIFIED (scoped local browser) | Real Chrome operator paid task renders 18 original X posts and 18 source links after Show All; /proof anonymous page does likewise; screenshots `docs/evidence/07` to `13` | Source-backed field extraction, not sentiment/model synthesis; public proof page not yet hosted on HTTPS |
 | E19 | Paid task survives process restart | VERIFIED, local | Disabled-mode server restart: authenticated history returns same delivered task/hash; duplicate PUT 409 | Single Windows instance; not cross-device transactional storage |
 
 ## Approval consumption and provenance
@@ -34,4 +34,4 @@ A secondary receipt lookup briefly returned null; read-only RPC reconciliation c
 
 ## Product Integrity / Proof Engine
 
-PARTIAL_PRODUCT, local paid API SLICE_VERIFIED. Original 12 P0s preserved; remaining model selection, uncertainty recovery and useful paid-result/browser follow-through stay visible in PRODUCT.md. Proof Engine remains OPEN: E09, E11, E13 and E14 plus presentation/hygiene gates are unresolved. Not JUDGE_READY or submitted.
+PARTIAL_PRODUCT, local paid API SLICE_VERIFIED with 18-post browser followthrough. Original 12 P0s preserved, 11 scoped P0s verified; P0-02 live model-driven selection remains UNPROVEN. Read-only uncertain recovery matched original receipt in a safe in-memory test; a real process-crash rehearsal remains OPEN. Proof Engine remains OPEN: E09, E11, E13 and E14 plus name/hygiene/hosting/submission gates. Not JUDGE_READY or submitted.

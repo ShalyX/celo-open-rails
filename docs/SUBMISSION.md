@@ -1,91 +1,53 @@
-# Current submission status — NOT SUBMITTED
+# Celo Agents on Open Rails — Judge Submission Package
 
-**2026-11-09 correction:** The following older draft is historical and must be re-audited before use. Canonical current proof is `../EVIDENCE.md` and `../PROJECT.md`.
+**Status: READY-TO-REVIEW SOURCE AND PROOF / NOT FORMALLY SUBMITTED.**
+**Track:** Build with buy. **Deadline:** 2026-11-09 09:00 UTC / 10:00 WAT.
+**Project display name (provisional):** Celo Procurement Desk.
+**Public source:** https://github.com/ShalyX/celo-open-rails
+**Proof route:** `/proof` (read-only, anonymously accessible when running the app; **no public URL deployed as of this review**).
 
-The repository is now PUBLIC. Own agent **10059** is registered on Celo mainnet, registration fee **0.04531464 CELO**. One fresh paid product task `task-1794186340719-t3y6` bought `x.posts.search` for **0.005 USDC** and received 18 tweet records. Payment tx `0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61`, block 82285602. See `evidence/paid-task-20261109.json` and `evidence/erc8004-registration-20261109.json`.
+## Short submission pitch (factually supportable)
 
-The old `0x7e511...ac43` transaction remains historical mechanism proof. No independent users, model-driven selection, full product, finished demo, Loops enrollment or submission is claimed. The three approved actions are complete and spend authorization is consumed. No form was submitted.
+An operator-governed procurement desk for agent research on Celo. It discovers external Buy gateway services, obtains authoritative unpaid HTTP 402 quotes, asks the operator to approve an exact USDC budget, then makes at most one paid request and preserves its result, chain receipt and audit trail. A verified local task purchased X search for **0.005 USDC** and returned **18 genuine Celo MiniPay-related posts**. Our own registered ERC-8004 agent is **10059**. After the authorized purchase, live spending was disabled. The product also supports live free SQD data, and a read-only source-backed result viewer.
 
----
+## Judge-visible proof links
 
-## Historical draft (superseded where inconsistent above)
-
-# Hackathon Submission Package — Celo Agent Procurement Desk
-
-**Official Event**: Celo Agents on Open Rails Hackathon  
-**Target Track**: Build with buy  
-**Reviewed Build**: `v1.0.0` (commit verified locally)  
-**Date**: 2026-11-08  
-**QA Status**: UNDER INDEPENDENT REVIEW — see `docs/QA_REPORT.md` for verified tests and remaining integration gates.
-
----
-
-## 1. Project Overview
-
-- **Project Title**: Celo Agent Procurement Desk
-- **Short Pitch**: An institutional-grade procurement desk empowering autonomous AI agents and human operators to discover, quote, authorize, and settle external capabilities (social intelligence, web browsing, GPU compute, blockchain indexers) using HTTP 402 stablecoin payments on Celo Mainnet with ERC-8004 cryptographic trust verification.
-- **Repository**: Local Git Repository (`celo-open-rails`)
-
----
-
-## 2. Key Problem Solved
-
-**Demo honesty:** The historical 0.005 USDC transaction is verified proof of the Buy mechanism; this build currently forbids NEW paid purchases. A safe live API smoke run successfully delivered a fresh SQD dataset response, retrieved a real unpaid 402 quote, enforced the human spend gate, and rejected duplicate dispatches. Model-driven selection requires a configured API key.
-
-Autonomous AI agents face a critical security and operational dilemma:
-1. **Unconstrained Credential Risk**: Handing master API keys or corporate credit cards to AI agents creates catastrophic financial and security attack surfaces.
-2. **Paywall Roadblocks**: Web paywalls, dynamic API pricing, and fragmented provider authentication prevent agents from acquiring research data on demand.
-3. **Settlement Uncertainty**: Conventional crypto-agent demos suffer from double-spending on timeouts, blind retries on network drops, and lack of durable auditing.
-
----
-
-## 3. The Celo Open Rails Solution
-
-The **Celo Agent Procurement Desk** implements an end-to-end, human-governed procurement pipeline:
-1. **Provider-Neutral Discovery**: Direct integration with the live Buy API Gateway (`https://gateway.usebuy.ai/v1/catalog`), publishing real-time capabilities across social networks (X, Reddit, YouTube, Instagram, LinkedIn), browser rental, and free decentralized multi-chain data (SQD Network across 113+ chains).
-2. **Dual-Mode Intent Reasoning**: Real LLM reasoning when a model key is configured; honest rule-based deterministic fallback when unconfigured, explicitly labeled to prevent false claims of autonomy.
-3. **Authoritative HTTP 402 Preflight Quoting**: Zero-cost requests to target endpoints retrieve canonical 402 payment challenges, extracting exact atomic amounts (`5000` units = `$0.005000 USDC`), asset contracts, payTo recipients, and expiration windows.
-4. **Human-in-the-Loop Spend Governance**: Visual authorization barrier showing live dynamic wallet balances, spend caps, and one-shot execution nonces.
-5. **Payment Uncertainty Protection**: Zero blind retries on `500 settle_uncertain` or `retryable: false`; single-attempt idempotency.
-6. **Durable On-Chain Ledger & ERC-8004 Trust**: Real on-chain verification of Celo mainnet transaction receipts (`0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43`), local cpay keystore synchronization, and ERC-8004 Agent Identity Registry verification (`0x8004A169FB4a3325136EB29fA0ceB6D2e539a432`).
-
----
-
-## 4. Prepared Submission Fields
-
-| Field | Content |
+| Item | Proof |
 |---|---|
-| **Project Name** | Celo Agent Procurement Desk |
-| **Track** | Build with buy |
-| **Tech Stack** | Next.js 14, React 18, TypeScript, Tailwind CSS, Lucide Icons, Viem, @celo/buy Gateway, Celo Mainnet RPC (Forno) |
-| **Live Contract Integrations** | Celo Mainnet USDC (`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`), Gateway PayTo (`0x20faAca5F980E29639A0FCC6dcA6988E18ed333B`), ERC-8004 Agent Identity Registry (`0x8004A169FB4a3325136EB29fA0ceB6D2e539a432`) |
-| **Verified Settlement Evidence** | Tx `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43` (Celo Block 82246474, 0.005 USDC to buy gateway) |
-| **Evaluation Safety Guarantee** | Built with `POLICY_DISALLOW_SPEND=true` active to preserve operator wallet balance during evaluation while exercising live quotes, dynamic RPC balances, free SQD execution, and receipt verification. |
+| Public repository | https://github.com/ShalyX/celo-open-rails |
+| Agent identity #10059 | https://celoscan.io/tx/0xbac5c383f43d381d27313694cb4d5141d9d34817f266fdfa54e88eae7d88bd36 |
+| Exactly one new paid product task | https://celoscan.io/tx/0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61 |
+| Payment + task + provider response | [Recorded proof JSON](evidence/paid-task-20261109.json), task `task-1794186340719-t3y6`, block `82285602` |
+| Historical mechanism spike — distinct transaction | https://celoscan.io/tx/0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43 |
+| Screenshots | [Public desktop](evidence/10-public-proof-first-fold.png), [18 real posts](evidence/12-public-proof-all-18.png), [mobile](evidence/13-public-proof-mobile.png) |
+| Source of truth | [Product coverage](../PRODUCT.md), [Evidence](../EVIDENCE.md), [Product Hygiene](../HYGIENE.md), [Demo shot list](../DEMO.md) |
 
----
+## Inspect without a wallet and without spending
 
-## 5. Judge Access & Verification Instructions
+1. Clone the repository and run `npm install` then `npm run dev`. This uses the local default server.
+2. Open `http://127.0.0.1:3000/proof`. No login needed for the recorded proof page. It cannot initiate payments.
+3. Inspect the 18 posts and expand `Show all` to see their source URLs; click the onchain payment and registration explorer links.
+4. For safe operator-desk evaluation, create `.env.local` using `.env.example`, set a unique `OPERATOR_ACCESS_TOKEN` 24+ characters and keep `POLICY_DISALLOW_SPEND=true` and `LIVE_BUY_MODE=DISABLED`. Do not supply private wallet keys or enable a charge.
+5. Existing CLI wallet credentials are **not** included in public GitHub; the one paid task is recorded proof, not a repeatable free purchase.
 
-1. **Start the Procurement Desk**:
-   ```sh
-   npm install
-   npm run build
-   npm run start
-   ```
-2. **Open the Dashboard**:
-   Navigate to `http://localhost:3000`. Create a local `.env.local` with a unique `OPERATOR_ACCESS_TOKEN` of at least 24 characters and `POLICY_DISALLOW_SPEND=true` before starting; authenticate through the operator access screen. Never commit or publish this secret.
-3. **Verify Dynamic Live Balances**:
-   Observe the top header displaying the active dedicated account `celo-open-rails` with real balances fetched dynamically from Celo Mainnet via `forno.celo.org` (the current amount varies with the chain state). Click the refresh icon to verify live RPC queries.
-4. **Test Task Intake & Intent Reasoning**:
-   Select a preset (e.g. "X Sentiment Analysis" or "SQD Dataset Discovery") or enter a custom prompt. Click **Analyze Procurement Intent**.
-   Observe the intent analysis card detailing the selected capability, rationale, and model transparency badge.
-5. **Inspect the Authoritative 402 Quote**:
-   Examine the exact atomic price (`5000`), human amount (`0.005000 USDC`), recipient address, token contract, and raw 402 challenge header.
-6. **Test Human Approval & Policy Safety Barrier**:
-   Click **Authorize & Execute Procurement**.
-   - For paid routes: Observe the honest policy halt card displaying the one-shot idempotency token, prepared settlement parameters, and clear notice that zero wallet funds were debited.
-   - For free SQD routes: Observe the live delivered multi-chain blockchain data.
-7. **Inspect the Historical Mainnet Proof**:
-   Scroll to the Historical Mainnet Verification Evidence card to inspect the confirmed Celo transaction `0x7e51...ac43` and click the Celoscan link.
-8. **Inspect ERC-8004 Agent Trust Drawer**:
-   Expand the ERC-8004 drawer to verify on-chain registry binding (`0x8004...a432`) and TikHub agent metadata.
+## Genuine sponsor integrations
+
+- Buy gateway live catalog and exact 402 quote preflight.
+- `@celo/buy` one-shot CLI purchase, no auto-retry on uncertain settlement.
+- Celo mainnet USDC EIP-3009 token transfer; independently matched exact token, payee and 5,000 atomic units in tx `0xba529...3a61`.
+- ERC-8004 own agent #10059 with registration tx and public metadata (provider agent #9895 is separate).
+- Actual provider response for `x.posts.search` on topic Celo MiniPay: 18 posts, preserved without fabricated sentiment analysis.
+- Celo RPC verification and read-only recovery analysis. Safe free SQD data path.
+
+## Truthful limitations — DO NOT DELETE
+
+- This is **one team-owned research task**, not a verified independent user, user growth or market sentiment measurement.
+- The paid path was locally verified via authenticated API. New spending is now disabled. Public `/proof` presents a **recorded result**; it does not execute a live new purchase.
+- The selected capability was chosen by clearly labeled deterministic fallback; **real model reasoning has not been proven** (no available configured inference model during QA).
+- Local file ledger is not a multi-instance hosted transactional datastore. Crash uncertainty handling is tested by read-only chain reconciliation with the exact saved transaction hash; real abrupt-kill recovery is not yet independently verified.
+- No hosted public deployment, final narrated video, verified independent users, or official Loops form confirmation exists yet. A GitHub repo is not proof that the hackathon form was submitted.
+- Registered agent's public metadata currently declares `active:false`; do not claim a hosted production service.
+
+## Remaining submission gates
+
+Confirm Loops enrollment and actual required fields; produce/QA a truthful final video (if required by form); decide authorized public-hosting strategy for the read-only page; run judge/sponsor Q&A; submit through the real event form with user's approval and obtain visible receipt before deadline. No more onchain actions or payments are authorized.
