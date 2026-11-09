@@ -79,3 +79,9 @@ This is one team-owned local paid API slice. The purchased 18-post research resu
 - [Architecture](docs/ARCHITECTURE.md)
 - [Project requirements](docs/REQUIREMENTS.md)
 - [Submission evidence](docs/SUBMISSION.md)
+
+## Hermes Agent reasoning (new, pending live verification)
+
+Celo Procurement Desk now has a first-class Hermes Agent planner, connected through a private authenticated localhost SSH tunnel when configured. The selected service must exist in the **live Buy catalog**; the backend checks its method, URL, required JSON fields and confidence before any quote or human spending approval. The model never receives wallet credentials or permission to purchase. A configured Hermes inference error now fails closed by default instead of silently substituting keyword routing. See [Hermes integration and prerequisites](docs/HERMES_INTEGRATION.md).
+
+**Current verification:** 35/35 automated tests, TypeScript checks, and a production build passed. **Real Hermes inference in the Desk remains unverified** until the VPS API is running with an authenticated, no-tools configuration; this is still P0-02. The public Vercel proof site remains static and cannot submit tasks or spend funds.

@@ -35,3 +35,7 @@ A secondary receipt lookup briefly returned null; read-only RPC reconciliation c
 ## Product Integrity / Proof Engine
 
 PARTIAL_PRODUCT, local paid API SLICE_VERIFIED with 18-post browser followthrough. Original 12 P0s preserved, 11 scoped P0s verified; P0-02 live model-driven selection remains UNPROVEN. Read-only uncertain recovery matched original receipt in a safe in-memory test; a real process-crash rehearsal remains OPEN. Proof Engine remains OPEN: E09, E11, E13 and E14 plus name/hygiene/hosting/submission gates. Not JUDGE_READY or submitted.
+
+## Hermes P0-02 reasoning evidence (new)
+
+**Code implemented; live proof BLOCKED:** `src/lib/hermesIntent.ts`, `src/lib/intentEngine.ts`, and `tests/hermes-intent.test.mjs` contain seven new unit/negative cases. 35 automated tests passed and TypeScript validation passed. The Caraxes VPS Hermes v0.19.0 gateway is active with an existing provider/model configured, but its new authenticated API is not yet listening on `127.0.0.1:8642`; real provider selection through the desk is **not verified**. No false fallback, no new payment and no claim of P0-02 completion. An actual run and tool-permissions verification remain mandatory. See `docs/HERMES_INTEGRATION.md`.

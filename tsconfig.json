@@ -42,7 +42,8 @@
     ".next-approved/types/**/*.ts",
     ".next-hq-results/types/**/*.ts",
     ".next-hq-dev/types/**/*.ts",
-    ".next-hq-finalproof/types/**/*.ts"
+    ".next-hq-finalproof/types/**/*.ts",
+    ".next-hermes-qa/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

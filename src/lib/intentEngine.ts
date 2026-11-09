@@ -1,5 +1,6 @@
 import { IntentAnalysisResult, GatewayCapability } from "./types";
 import { getLiveCatalog } from "./gateway";
+import { inferWithHermes } from "./hermesIntent";
 
 /**
  * Analyzes research objectives and maps them to an authoritative Gateway capability.
@@ -13,7 +14,35 @@ export async function analyzeIntent(
   const catalog = await getLiveCatalog();
   const capabilities = catalog.capabilities;
 
-  // Check for AI model keys
+  // Hermes is the primary, actual reasoning engine. If configured, it
+  // FAILS CLOSED instead of quietly relabeling keyword matching as an agent.
+  const hermesBase = process.env.HERMES_API_BASE_URL;
+  const hermesKey = process.env.HERMES_API_KEY;
+  if (hermesBase || hermesKey) {
+    if (!hermesBase || !hermesKey) {
+      throw new Error("Hermes is only partially configured: API URL and key are both required");
+    }
+    try {
+      return await inferWithHermes(taskId, objective, capabilities, {
+        baseUrl: hermesBase,
+        apiKey: hermesKey,
+        model: process.env.HERMES_MODEL || "hermes-agent",
+      }, preselectedCapabilityId);
+    } catch (error) {
+      if (process.env.HERMES_ALLOW_DETERMINISTIC_FALLBACK !== "true") {
+        throw new Error(
+          "Hermes reasoning failed. No fallback was used. " +
+          (error instanceof Error ? error.message : "Model service unavailable")
+        );
+      }
+      console.warn("Explicitly enabled deterministic fallback after Hermes failure");
+    }
+  } else if (process.env.HERMES_ALLOW_DETERMINISTIC_FALLBACK !== "true") {
+    // Default to honest failure, never silently substitute keyword rules.
+    throw new Error("Hermes is required for AI procurement. Configure its private API connection.");
+  }
+
+  // Legacy providers exist for opt-in compatibility only when Hermes is absent.
   const geminiKey = process.env.GEMINI_API_KEY;
   const openaiKey = process.env.OPENAI_API_KEY;
 

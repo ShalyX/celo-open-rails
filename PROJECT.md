@@ -30,3 +30,7 @@ Independent-user/demand validation, P0-02 model-assisted selection, P0-10 post-d
 User explicitly approved public repository, own registration up to 0.07 CELO and exactly one Buy up to 0.005 USDC. These three actions are complete; budgets are consumed for this approval. Public Git evidence/checkpoint updates are within the requested work. No further spend, deployment, enrollment/submission or other public-account action authorized.
 
 Next: continue non-spending validation of the original P0s, beginning with the existing paid result in the actual browser and its useful presentation. Keep independent-user evidence and official enrollment as explicit external requirements. Do not repeat the paid task or registration to produce a demo. Reuse the authentic saved result and receipts.
+
+## Hermes integration checkpoint — 2026-11-09
+
+Hermes model-driven capability planning has been implemented in `src/lib/hermesIntent.ts` and made the preferred intent engine. The local parser rejects unavailable/out-of-catalog capabilities, incorrect schemas, changed URLs, unsupported HTTP methods and external/insecure model endpoints. Real model inference still requires a healthy authenticated VPS API server; **P0-02 stays unverified**. Missing Hermes now fails closed rather than silently pretending deterministic routing is an AI agent. No additional Buy purchase is authorized. See `docs/HERMES_INTEGRATION.md` for VPS and SSH connection requirements.
