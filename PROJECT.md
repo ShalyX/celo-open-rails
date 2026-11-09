@@ -14,7 +14,7 @@
 - Status: **BLOCKED**, not JUDGE_READY or READY_TO_SUBMIT. `PRODUCT.md` has 12 reconstructed original P0s; P0-01,03,04,05,08 verified in scoped tests, 7 remain incomplete. Own ERC-8004 registration was read-only checked and balance = 0.
 
 ## Operator stage
-HQ phases and evidence mapped in `docs/OPERATOR_HQ_AUDIT.md`. Earliest canonical-source prerequisite not yet formally passed: complete intake/rubric and reconstruct product lock with immutable coverage ledger. In parallel prioritize Build with buy paid workflow and own ERC-8004 identity because they are deadline-critical.
+HQ phases mapped in `docs/OPERATOR_HQ_AUDIT.md`. **Intake/rubric, P0 reconstruction and a retrospective idea comparison/competitive kill-search are documented. Validation is MODIFY (not PASS): outside-user demand and complete paid user outcome remain unverified.** Engineering has a double-disabled paid executor but needs authorized real settlement proof. Own ERC-8004 identity remains absent.
 
 ## Highest-priority blockers
 1. Own agent ERC-8004 identity absent: mainnet balanceOf(wallet)=0; read-only registration preflight estimated 229664 gas units (~0.05569352 CELO max estimate), proposed metadata URL is 404 while repo private. See docs/ERC8004_REGISTRATION_PLAN.md. Loops enrollment remains unverified.
@@ -25,7 +25,7 @@ HQ phases and evidence mapped in `docs/OPERATOR_HQ_AUDIT.md`. Earliest canonical
 
 ## Verified useful assets
 - Last pre-checkpoint commit: `e1619e8` (or later)
-- Tests: 16 passing unit/security and 12 previously completed live zero-spend smoke steps; new TypeScript + isolated production build passed after paid-executor change.
+- Tests: **19/19 passing** including paid-plan safety and result digest, plus 12 previously completed live zero-spend smoke steps. **2026-11-09 isolated Next.js production build exit 0** after guarded paid-executor changes (no live new payment).
 - Local isolated Next.js production build passed
 - Real screenshots: `docs/evidence/` (3 captured)
 - Historical Celo tx: `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43`
@@ -35,4 +35,4 @@ HQ phases and evidence mapped in `docs/OPERATOR_HQ_AUDIT.md`. Earliest canonical
 Permissions needed only when actually making payments, registering an onchain identity if it costs funds, making repo public or submitting. Continue non-spending engineering and research without additional approval.
 
 ## Next recommended action
-Reconcile original P0 baseline and fix paid-service integration without spending; then secure needed permission for genuine paid proof, identity registration and public submission. Preserve existing working implementation and security checks.
+Next highest-priority Operator gate: validate the full paid task result safely, then obtain user authorization for own ERC-8004 registration, a tightly capped real payment and public repo. Run actual Product Hygiene, demo and judge simulation before submission. No action that spends, publishes or submits without authorization.

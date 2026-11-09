@@ -36,7 +36,9 @@
     ".next-release/types/**/*.ts",
     ".next-final-qa/types/**/*.ts",
     ".next-operator-qa/types/**/*.ts",
-    ".next-operator-final/types/**/*.ts"
+    ".next-operator-final/types/**/*.ts",
+    ".next-hq-phase/types/**/*.ts",
+    ".next-operator-audit/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
