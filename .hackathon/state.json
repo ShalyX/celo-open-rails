@@ -1,6 +1,6 @@
 {
     "schema_version":  4,
-    "revision":  6,
+    "revision":  7,
     "project_root":  "C:\\Users\\USER\\Documents\\Codex\\2026-11-08\\celo-open-rails",
     "phase":  "VALIDATION",
     "active_specialist":  "Engineering / Proof",
@@ -61,7 +61,7 @@
     "freeze_at":  null,
     "deadline":  "2026-11-09T09:00:00Z",
     "submission_ready":  false,
-    "submission_status":  "NOT_STARTED",
+    "submission_status":  "PENDING_LOOPS_WEB_FORM",
     "submission_receipt":  null,
     "milestones":  {
                        "historical_paid_spike":  {
@@ -138,7 +138,19 @@
                                           "status":  "PRODUCED_CAPTIONED_SILENT",
                                           "seconds":  48,
                                           "artifact":  "docs/evidence/celo-paid-proof-walkthrough.mp4"
-                                      }
+                                      },
+                       "static_judge_site":  {
+                                                 "status":  "VERIFIED_PUBLIC_HTTP200",
+                                                 "url":  "https://celo-procurement-proof.vercel.app/",
+                                                 "source_commit":  "c86fb22",
+                                                 "type":  "static_no_payment_backend"
+                                             },
+                       "attribution_review":  {
+                                                  "status":  "RULES_RECONCILED",
+                                                  "exception":  "Build with buy FAQ no tag needed for x402 Buy",
+                                                  "artifact":  "docs/ATTRIBUTION_AND_PAYMENT_PROOF.md",
+                                                  "tag":  "celo_dd8616266527"
+                                              }
                    },
     "blockers":  [
                      "Independent-user and demand validation unverified",
@@ -148,8 +160,8 @@
                      "Official enrollment/submission unverified",
                      "Brand/hygiene/demo/judge gates incomplete"
                  ],
-    "next_action":  "Model reasoning P0-02 remains unverified. Confirm Loops entry, independent users, public HTTPS judge access; submit before deadline only with user authorization and actual receipt. No more paid transactions.",
-    "updated_at":  "2026-11-09T03:41:26.3492118+01:00",
+    "next_action":  "Complete Loops authenticated web form for Build with buy with tag celo_dd8616266527, agent wallet 0xf903e8..., ERC8004 #10059 and existing Buy proof. Public static judge proof READY. CLI OAuth callback failed; do not invent confirmation or resend payment.",
+    "updated_at":  "2026-11-09T04:09:23.4247804+01:00",
     "approved_actions":  {
                              "source":  "Explicit user approval in continuation request 2026-11-09",
                              "repository_public":  true,
