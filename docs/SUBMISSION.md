@@ -47,7 +47,7 @@ For local evaluation, follow README quick-start instructions, set a fresh local 
 - Paid execution remains disabled after the single authorized purchase. No repeat spend is authorized.
 - The local ledger is not a multi-instance hosted transactional datastore. Abrupt process-crash and multi-instance recovery remain unverified.
 - The walkthrough is captioned and silent, not narrated.
-- The Vercel project has SSO protection on the deployment host. The temporary share link expires 2026-11-10 06:27 WAT; persistent public judge access needs a narrow production access change or a custom domain.
+- The Vercel project has SSO protection on the deployment host. The temporary share link expires approximately 23 hours after creation; the exact expiry is shown by Vercel; persistent public judge access needs a narrow production access change or a custom domain.
 - No Loops submission receipt exists until the actual form is saved.
 
 ## Entry identity
