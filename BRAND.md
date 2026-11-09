@@ -24,6 +24,6 @@ The original approved product name remained a descriptive placeholder: `Celo Age
 - **Tone:** restrained, audit-friendly, precise. Words such as VERIFIED reserved for independently observed facts; fallback clearly labeled.
 - **Do not use:** fake analytics, fictional streams/users, gradient-heavy AI slop, decorative LLM claims, repeated logo spam, fabricated timelines.
 - **Product demo title:** Celo Procurement Desk | One bounded Buy call -> 18 real X posts -> 0.005 USDC onchain.
-- **Canonical public URL:** https://github.com/ShalyX/celo-open-rails (source); the /proof browser experience is **local only** until separately deployed.
+- **Canonical source:** https://github.com/ShalyX/celo-open-rails. **Read-only judge viewer:** https://celo-procurement-proof.vercel.app/ (deployed; Vercel SSO protection currently applies to the deployment host). **Walkthrough:** https://celo-procurement-proof.vercel.app/walkthrough.mp4.
 
 **Next stage:** distinctive name shortlist with strong collision clearance and genuine preference if similarly strong names survive; do not block truthful evidence/submission while pending.
