@@ -159,7 +159,7 @@
       "status": "DEPLOYED_SSO_PROTECTED_TEMPORARY_SHARE_AVAILABLE",
       "url": "https://celo-procurement-proof.vercel.app/",
       "type": "static_read_only_no_payment_backend",
-      "share_link_expires": "2026-11-10T06:27:54+01:00",
+      "share_link_expires": "TEMPORARY_LINK_APPROX_23H; exact expiry shown by Vercel",
       "latest_deployment": "READY"
     },
     "attribution_review": {
@@ -187,7 +187,7 @@
     "Production multi-user purchasing and abrupt-crash/multi-instance recovery remain unverified"
   ],
   "next_action": "Complete Loops form before 2026-11-09 09:00 UTC / 10:00 WAT. Reconnect Desktop Commander. Use the verified form-ready copy in docs/LOOPS_SUBMISSION_READY.md. Obtain permission before changing Vercel SSO from all_except_custom_domains to preview-only; keep previews protected. Do not claim independent users or authorize additional spend.",
-  "updated_at": "2026-11-09T08:29:00+01:00",
+  "updated_at": "2026-11-09T08:31:00+01:00",
   "approved_actions": {
     "source": "Explicit user approval in continuation request 2026-11-09",
     "repository_public": true,
