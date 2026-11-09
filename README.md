@@ -1,4 +1,4 @@
-# Celo Agent Procurement Desk
+# Celo Procurement Desk
 
 A task-first procurement workstation for agent-selected external services on **Celo**. An operator enters a research objective, inspects the live Buy gateway catalog and exact HTTP 402 quote, authorizes a fixed budget, and receives an auditable outcome. Real blockchain data can be delivered from the gateway's free SQD tier; one authorized paid task has now delivered real provider data and a confirmed receipt. Paid mode remains disabled by default.
 
@@ -10,7 +10,7 @@ A task-first procurement workstation for agent-selected external services on **C
 - Real `@celo/buy` gateway catalog / unpaid 402 quote integration, free SQD dataset discovery, direct Celo RPC account and receipt checks when the network is reachable.
 - Operator-only login. Session cookies are HttpOnly, SameSite=Strict. Authenticated state-changing endpoints require a matching Origin.
 - Exact 6-decimal spend-cap checks and token equality, single-attempt local file locks, no automatic re-execution.
-- 19 passing unit/security/digest tests, TypeScript checked, fresh Next.js production build produced.
+- 35 passing automated tests, TypeScript checked, fresh Next.js production build produced.
 - Own ERC-8004 agent **10059** on Celo mainnet; public registration metadata under `public/.well-known/agent-registration.json`.
 
 ## Local quick start
@@ -37,7 +37,7 @@ npm run build
 ## Workflow
 
 1. Enter a useful research objective or select an advertised capability.
-2. Inspect the gateway's **live** capability entry. With an LLM key configured, the intent engine can use model reasoning; otherwise it clearly labels deterministic matching.
+2. Inspect the gateway's **live** capability entry. With the authenticated Hermes endpoint configured, the intent engine uses live model reasoning against the Buy catalog; when unavailable, any fallback is explicitly labeled.
 3. Run an unpaid gateway request and inspect the exact 402 price. Catalog prices are not authorization.
 4. Review the explicit cap and token, log in as operator and authorize once.
 5. In default safe mode, paid tasks halt before signing. Under the consumed one-time user authorization, the guarded executor bought one TikHub X search for 0.005 USDC and preserved 18 returned tweet records. Free SQD remains available without payment.
@@ -71,7 +71,7 @@ This is a local judge-evaluation build, **not production-ready for public wallet
 - Task `task-1794186340719-t3y6`: **Search for Celo MiniPay**, TikHub `x.posts.search`, **0.005 USDC**, **18 returned tweet records**. [Payment transaction](https://celoscan.io/tx/0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61), block 82285602. [Exact task, response and receipt](docs/evidence/paid-task-20261109.json).
 - On-chain Transfer matched token, operator wallet, payee and exact amount; wallet balance decreased from 0.062383 to 0.057383 USDC. Saved task survived a server restart, and replay returned 409. Paid mode is off.
 
-This is one team-owned local paid API slice. The purchased 18-post research result is independently browser-tested in the operator workspace and in the anonymous, local read-only proof route (`/proof`, run the app before opening); a read-only recovery scenario was checked against the existing Celo receipt without additional purchases. Real model-assisted selection, full abrupt-crash/multi-instance recovery, independent users, final narrated demo, public HTTPS hosting and official enrollment/submission remain unverified. The original product scope remains in [PRODUCT.md](PRODUCT.md).
+This is one team-owned local paid API slice. The purchased 18-post research result was browser-tested in the operator workspace and is presented on the deployed read-only proof viewer at https://celo-procurement-proof.vercel.app/. The viewer cannot initiate purchases. A 48-second captioned, silent walkthrough is available at https://celo-procurement-proof.vercel.app/walkthrough.mp4. Real Hermes inference is now verified in two separate zero-spend intent calls; those calls are distinct from the paid task. Independent-user adoption, production multi-user purchasing, abrupt-crash/multi-instance recovery, and official Loops submission remain unverified. The Vercel project currently has SSO protection on its deployment host; reviewer access must be verified separately. The original product scope remains in [PRODUCT.md](PRODUCT.md).
 
 ## Core references
 
@@ -80,11 +80,11 @@ This is one team-owned local paid API slice. The purchased 18-post research resu
 - [Project requirements](docs/REQUIREMENTS.md)
 - [Submission evidence](docs/SUBMISSION.md)
 
-## Hermes Agent reasoning (new, pending live verification)
+## Hermes Agent reasoning
 
 Celo Procurement Desk now has a first-class Hermes Agent planner, connected through a private authenticated localhost SSH tunnel when configured. The selected service must exist in the **live Buy catalog**; the backend checks its method, URL, required JSON fields and confidence before any quote or human spending approval. The model never receives wallet credentials or permission to purchase. A configured Hermes inference error now fails closed by default instead of silently substituting keyword routing. See [Hermes integration and prerequisites](docs/HERMES_INTEGRATION.md).
 
-**Current verification:** 35/35 automated tests, TypeScript checks, and a production build passed. **Real Hermes inference in the Desk remains unverified** until the VPS API is running with an authenticated, no-tools configuration; this is still P0-02. The public Vercel proof site remains static and cannot submit tasks or spend funds.
+**Current verification:** 35/35 automated tests, TypeScript checks, and a production build passed. Real Hermes inference is verified through two authenticated Desk API calls against the live Buy catalog, with zero executable model tools and zero paid calls. The public Vercel proof site is a static, read-only judge viewer; it cannot submit tasks or spend funds.
 
 
 ## Live Hermes AI reasoning verified (November 9, 2026)
