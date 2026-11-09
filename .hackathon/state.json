@@ -1,122 +1,140 @@
 {
-    "schema_version":  4,
-    "revision":  3,
-    "project_root":  "C:\\Users\\USER\\Documents\\Codex\\2026-11-08\\celo-open-rails",
-    "phase":  "VALIDATION",
-    "active_specialist":  "Product Critic / Engineering",
-    "human_input_required":  false,
-    "pending_gate":  null,
-    "product_locked":  true,
-    "product_lock_revision":  "reconstructed-v1-from-approved-plan",
-    "original_product_reference":  "PRODUCT.md; docs/PROJECT_BRIEF.md; docs/REQUIREMENTS.md; user-approved Antigravity plan",
-    "locked_P0_total":  12,
-    "verified_P0_ids":  [
-                            "P0-01",
-                            "P0-03",
-                            "P0-04",
-                            "P0-05",
-                            "P0-08"
-                        ],
-    "unverified_P0_ids":  [
-                              "P0-02",
-                              "P0-06",
-                              "P0-07",
-                              "P0-09",
-                              "P0-10",
-                              "P0-11",
-                              "P0-12"
-                          ],
-    "product_integrity_verdict":  "BLOCKED",
-    "last_product_integrity_check":  "2026-11-08",
-    "spike_verified":  true,
-    "vertical_slice_complete":  false,
-    "full_product_verified":  false,
-    "name_locked":  false,
-    "name_lock_revision":  null,
-    "brand_kit_complete":  false,
-    "demo_architecture_complete":  false,
-    "evidence_plan_complete":  true,
-    "dependency_attack_complete":  false,
-    "technical_risks_cleared":  false,
-    "happy_path_complete":  false,
-    "art_direction_complete":  false,
-    "references_synthesized":  false,
-    "visual_asset_strategy_complete":  false,
-    "motion_storyboard_complete":  false,
-    "design_locked":  false,
-    "design_lock_revision":  null,
-    "visual_qa_static_complete":  false,
-    "visual_qa_motion_complete":  false,
-    "evidence_status":  "REGISTERED_CRITICAL_CLAIMS_OPEN",
-    "critical_claims_open":  7,
-    "proof_engine_passed":  false,
-    "red_team_passed":  false,
-    "product_hygiene_skill_found":  null,
-    "product_hygiene_fallback_used":  null,
-    "product_hygiene_passed":  false,
-    "demo_production_complete":  false,
-    "demo_qa_passed":  false,
-    "judge_simulation_complete":  false,
-    "feature_freeze":  false,
-    "freeze_at":  null,
-    "deadline":  "2026-11-09T09:00:00Z",
-    "submission_ready":  false,
-    "submission_status":  "NOT_STARTED",
-    "submission_receipt":  null,
-    "milestones":  {
-                       "historical_paid_spike":  {
-                                                     "status":  "VERIFIED",
-                                                     "artifact":  "docs/RESEARCH_AND_RESOURCES.md"
-                                                 },
-                       "free_sqd_api_slice":  {
-                                                  "status":  "VERIFIED",
-                                                  "artifact":  "docs/QA_REPORT.md"
-                                              },
-                       "integrated_paid_procurement":  {
-                                                           "status":  "BLOCKED",
-                                                           "reason":  "New paid dispatch not implemented and no permission to spend"
-                                                       },
-                       "submission":  {
-                                          "status":  "NOT_STARTED"
-                                      },
-                       "intake":  {
-                                      "status":  "VERIFIED_SCOPE_RECONCILED",
-                                      "open_external_requirements":  [
-                                                                         "own_erc8004",
-                                                                         "entry_enrollment",
-                                                                         "public_repo"
-                                                                     ],
-                                      "artifact":  "HACKATHON.md"
-                                  },
-                       "rubric_decode":  {
-                                             "status":  "COMPLETE_UNKNOWN_WEIGHTS",
-                                             "artifact":  "SCORECARD.md"
-                                         },
-                       "research":  {
-                                        "status":  "IN_PROGRESS",
-                                        "independent_user_evidence":  "MISSING",
-                                        "artifact":  "docs/MARKET_RESEARCH.md"
-                                    },
-                       "strategy_validation":  {
-                                                   "status":  "MODIFY",
-                                                   "user_decision":  "Preserve original approved procurement thesis",
-                                                   "artifact":  "docs/STRATEGY_VALIDATION.md"
-                                               },
-                       "paid_executor":  {
-                                             "tests":  "19/19 passing",
-                                             "status":  "IMPLEMENTED_NOT_LIVE_VERIFIED",
-                                             "policy":  "DOUBLE_DISARMED",
-                                             "artifact":  "src/lib/buyExecutor.ts; tests/buy-plan.test.mjs",
-                                             "production_build":  "PASS"
-                                         }
-                   },
-    "blockers":  [
-                     "Own agent ERC-8004 identity not verified",
-                     "GitHub repo private; event requires public",
-                     "Integrated paid Buy transaction not available; no user authorization for spend",
-                     "Independent-user qualifier unverified",
-                     "Brand/hygiene/demo/judge gates incomplete"
-                 ],
-    "next_action":  "Finish Product Integrity validation with real paid result proof; do not spend or register until authorized. Own identity balance=0, GitHub remains private. QA/build green.",
-    "updated_at":  "2026-11-09T01:27:44.3633845+01:00"
+  "schema_version": 4,
+  "revision": 4,
+  "project_root": "C:\\Users\\USER\\Documents\\Codex\\2026-11-08\\celo-open-rails",
+  "phase": "VALIDATION",
+  "active_specialist": "Product Critic / Engineering",
+  "human_input_required": false,
+  "pending_gate": null,
+  "product_locked": true,
+  "product_lock_revision": "reconstructed-v1-from-approved-plan",
+  "original_product_reference": "PRODUCT.md; docs/PROJECT_BRIEF.md; docs/REQUIREMENTS.md; user-approved Antigravity plan",
+  "locked_P0_total": 12,
+  "verified_P0_ids": [
+    "P0-01",
+    "P0-03",
+    "P0-04",
+    "P0-05",
+    "P0-08"
+  ],
+  "unverified_P0_ids": [
+    "P0-02",
+    "P0-06",
+    "P0-07",
+    "P0-09",
+    "P0-10",
+    "P0-11",
+    "P0-12"
+  ],
+  "product_integrity_verdict": "BLOCKED",
+  "last_product_integrity_check": "2026-11-08",
+  "spike_verified": true,
+  "vertical_slice_complete": false,
+  "full_product_verified": false,
+  "name_locked": false,
+  "name_lock_revision": null,
+  "brand_kit_complete": false,
+  "demo_architecture_complete": false,
+  "evidence_plan_complete": true,
+  "dependency_attack_complete": false,
+  "technical_risks_cleared": false,
+  "happy_path_complete": false,
+  "art_direction_complete": false,
+  "references_synthesized": false,
+  "visual_asset_strategy_complete": false,
+  "motion_storyboard_complete": false,
+  "design_locked": false,
+  "design_lock_revision": null,
+  "visual_qa_static_complete": false,
+  "visual_qa_motion_complete": false,
+  "evidence_status": "REGISTERED_CRITICAL_CLAIMS_OPEN",
+  "critical_claims_open": 7,
+  "proof_engine_passed": false,
+  "red_team_passed": false,
+  "product_hygiene_skill_found": null,
+  "product_hygiene_fallback_used": null,
+  "product_hygiene_passed": false,
+  "demo_production_complete": false,
+  "demo_qa_passed": false,
+  "judge_simulation_complete": false,
+  "feature_freeze": false,
+  "freeze_at": null,
+  "deadline": "2026-11-09T09:00:00Z",
+  "submission_ready": false,
+  "submission_status": "NOT_STARTED",
+  "submission_receipt": null,
+  "milestones": {
+    "historical_paid_spike": {
+      "status": "VERIFIED",
+      "artifact": "docs/RESEARCH_AND_RESOURCES.md"
+    },
+    "free_sqd_api_slice": {
+      "status": "VERIFIED",
+      "artifact": "docs/QA_REPORT.md"
+    },
+    "integrated_paid_procurement": {
+      "status": "BLOCKED",
+      "reason": "New paid dispatch not implemented and no permission to spend"
+    },
+    "submission": {
+      "status": "NOT_STARTED"
+    },
+    "intake": {
+      "status": "VERIFIED_SCOPE_RECONCILED",
+      "open_external_requirements": [
+        "own_erc8004",
+        "entry_enrollment",
+        "public_repo"
+      ],
+      "artifact": "HACKATHON.md"
+    },
+    "rubric_decode": {
+      "status": "COMPLETE_UNKNOWN_WEIGHTS",
+      "artifact": "SCORECARD.md"
+    },
+    "research": {
+      "status": "IN_PROGRESS",
+      "independent_user_evidence": "MISSING",
+      "artifact": "docs/MARKET_RESEARCH.md"
+    },
+    "strategy_validation": {
+      "status": "MODIFY",
+      "user_decision": "Preserve original approved procurement thesis",
+      "artifact": "docs/STRATEGY_VALIDATION.md"
+    },
+    "paid_executor": {
+      "tests": "19/19 passing",
+      "status": "IMPLEMENTED_NOT_LIVE_VERIFIED",
+      "policy": "DOUBLE_DISARMED",
+      "artifact": "src/lib/buyExecutor.ts; tests/buy-plan.test.mjs",
+      "production_build": "PASS"
+    },
+    "own_erc8004": {
+      "status": "VERIFIED",
+      "agent_id": 10059,
+      "artifact": "docs/evidence/erc8004-registration-20261109.json",
+      "fee_celo": "0.04531464"
+    },
+    "public_repo": {
+      "status": "VERIFIED",
+      "url": "https://github.com/ShalyX/celo-open-rails"
+    }
+  },
+  "blockers": [
+    "Own agent ERC-8004 identity not verified",
+    "GitHub repo private; event requires public",
+    "Integrated paid Buy transaction not available; no user authorization for spend",
+    "Independent-user qualifier unverified",
+    "Brand/hygiene/demo/judge gates incomplete"
+  ],
+  "next_action": "Execute exactly one approved product Buy task, cap 0.005 USDC; persist full receipt and disarm afterwards.",
+  "updated_at": "2026-11-09T01:02:35.958229+00:00",
+  "approved_actions": {
+    "source": "Explicit user approval in continuation request 2026-11-09",
+    "repository_public": true,
+    "own_identity_registration_max_celo": "0.07",
+    "real_buy_count": 1,
+    "real_buy_max_usdc": "0.005",
+    "other_spend_or_public_actions": false
+  }
 }

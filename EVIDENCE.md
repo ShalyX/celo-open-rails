@@ -38,3 +38,9 @@
 ## Proof Engine
 
 **OPEN / BLOCKED.** E06, E07, E09, E10, E11, E13, E14 prevent a truthful 'full product judged artifact done'. No simulated paid purchase may be represented as verified.
+
+## 2026-11-09 authorized mainnet milestone (supersedes prior permission/identity status)
+
+- E07 VERIFIED: own ERC-8004 agent **10059**, Celo 42220; owner and tokenURI independently read after successful tx `0xbac5c383f43d381d27313694cb4d5141d9d34817f266fdfa54e88eae7d88bd36`, block 82285362. Total fee **0.04531464 CELO**, cap 0.07. Artifact: `docs/evidence/erc8004-registration-20261109.json`.
+- E10 VERIFIED: GitHub visibility PUBLIC, raw registration JSON and image return HTTP 200. History scan: 10 commits / 144 unique blobs; no credential patterns found (heuristic scan, not a guarantee).
+- Authorized remaining action: exactly one real Buy through the product, maximum 0.005 USDC. No independent users or enrollment/submission confirmation claimed.
