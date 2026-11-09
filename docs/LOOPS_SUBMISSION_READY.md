@@ -36,7 +36,7 @@ The judge-facing viewer is read-only and cannot initiate a purchase. Paid mode w
 - **Hermes reasoning evidence:** https://github.com/ShalyX/celo-open-rails/blob/master/docs/evidence/hermes-live-selection-20261109.json
 - **Own ERC-8004 registration:** https://celoscan.io/tx/0xbac5c383f43d381d27313694cb4d5141d9d34817f266fdfa54e88eae7d88bd36
 
-**Access note:** Vercel SSO protection is enabled for the deployment host. A temporary share URL has been generated for immediate review; it expires on 2026-11-10 at 06:27 WAT. Stable public reviewer access requires approval to change production protection to Preview-only or to provide a custom domain.
+**Access note:** Vercel SSO protection is enabled for the deployment host. A temporary share URL has been generated for immediate review; it expires approximately 23 hours after creation; the exact expiry is shown by Vercel. Stable public reviewer access requires approval to change production protection to Preview-only or to provide a custom domain.
 
 ## Identity
 - **Agent wallet / owner / economic payer:** `0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b`
