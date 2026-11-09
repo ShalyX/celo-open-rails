@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
+    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -33,7 +34,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next-release/types/**/*.ts",
-    ".next-final-qa/types/**/*.ts"
+    ".next-final-qa/types/**/*.ts",
+    ".next-operator-qa/types/**/*.ts",
+    ".next-operator-final/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

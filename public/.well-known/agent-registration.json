@@ -1,0 +1,12 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Celo Agent Procurement Desk",
+  "description": "Task-first Celo agent procurement service: discovers live buy gateway capabilities, displays exact unpaid HTTP 402 quotes, requires bounded human authorization, and records authentic service outcomes and settlement evidence. Paid execution is disabled by policy until separately authorized.",
+  "image": "https://raw.githubusercontent.com/ShalyX/celo-open-rails/master/docs/evidence/01-dashboard-authenticated.png",
+  "services": [],
+  "registrations": [],
+  "supportedTrust": [],
+  "active": false,
+  "xOwnerWallet": "0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b",
+  "xReleaseStatus": "Local safety evaluation. No new paid purchase through the web application yet."
+}

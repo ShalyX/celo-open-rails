@@ -9,6 +9,7 @@ import {
   KeystoreReceipt,
 } from "./types";
 import { executeSqdQuery } from "./gateway";
+import { executeAuthorizedPaidBuy } from "./buyExecutor";
 
 // Keep QA fixtures isolated from the real operator ledger when explicitly configured.
 const DATA_DIR = path.resolve(process.cwd(), process.env.PROCUREMENT_DATA_DIR || ".data");
@@ -50,8 +51,8 @@ export function loadProcurements(): ProcurementRecord[] {
     const raw = fs.readFileSync(PROCUREMENTS_FILE, "utf-8");
     return JSON.parse(raw);
   } catch (err) {
-    console.error("Failed to read procurements file:", err);
-    return [];
+    // Fail closed: a malformed ledger must never be silently reset to [].
+    throw new Error("Procurement ledger is unreadable; manual recovery required", { cause: err });
   }
 }
 
@@ -67,7 +68,9 @@ export function saveProcurement(record: ProcurementRecord): void {
   } else {
     existing.unshift(record);
   }
-  fs.writeFileSync(PROCUREMENTS_FILE, JSON.stringify(existing, null, 2), "utf-8");
+  const tempFile = PROCUREMENTS_FILE + "." + process.pid + "." + randomUUID() + ".tmp";
+  fs.writeFileSync(tempFile, JSON.stringify(existing, null, 2), { encoding: "utf8", mode: 0o600, flag: "wx" });
+  fs.renameSync(tempFile, PROCUREMENTS_FILE);
 }
 
 /**
@@ -237,6 +240,7 @@ export async function executeProcurement(recordId: string): Promise<ProcurementR
     return record;
   }
 
-  // If live spend were explicitly enabled (future authorized deployment), call CLI wrapper
-  throw new Error("Live mainnet wallet debiting is disarmed by system administrator.");
+  // Paid executor remains doubly disabled by default. It can only run after a
+  // future separate user spending authorization AND local explicit switches.
+  return executeAuthorizedPaidBuy(record, saveProcurement, loadKeystoreReceipts);
 }

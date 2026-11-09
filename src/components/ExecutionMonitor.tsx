@@ -14,6 +14,7 @@ import {
   Check,
 } from "lucide-react";
 import { ProcurementRecord } from "@/lib/types";
+import { digestProviderResponse } from "@/lib/resultDigest";
 
 interface ExecutionMonitorProps {
   record: ProcurementRecord;
@@ -22,6 +23,8 @@ interface ExecutionMonitorProps {
 export function ExecutionMonitor({ record }: ExecutionMonitorProps) {
   const [copied, setCopied] = useState(false);
   const exec = record.execution;
+  const digest = exec?.status === "delivered" && exec.resultData
+    ? digestProviderResponse(exec.resultData) : null;
 
   const handleCopyResult = () => {
     if (!exec?.resultData) return;
@@ -135,7 +138,36 @@ export function ExecutionMonitor({ record }: ExecutionMonitorProps) {
 
       {/* Delivered Real Output (e.g. SQD Live Multi-Chain Stream) */}
       {exec?.status === "delivered" && Boolean(exec.resultData) && (
-        <div className="space-y-2">
+        <div className="space-y-3">
+          {digest && (
+            <div className="rounded-lg border border-celo-green/25 bg-celo-green/5 px-4 py-4 space-y-2">
+              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-celo-green">
+                <FileCheck className="w-4 h-4" />
+                <span>Task outcome · {digest.headline}</span>
+              </div>
+              <p className="text-sm leading-relaxed text-foreground/90 whitespace-pre-wrap">{digest.summary}</p>
+              {digest.observations.length > 0 && (
+                <ul className="flex flex-wrap gap-2" aria-label="Fields extracted from actual provider data">
+                  {digest.observations.map((item, i) => (
+                    <li key={i} className="rounded border border-surface-border bg-surface-subtle px-2 py-1 text-[11px] font-mono text-foreground/70">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p className="font-mono text-[10px] text-foreground/50">
+                {digest.method === "raw-only"
+                  ? "No inferred claims. Inspect the unmodified source payload below."
+                  : "Mechanical field extraction from the received provider response; not an AI interpretation."}
+              </p>
+              {exec.settlementDetails?.txHash && (
+                <a className="text-xs text-celo-green underline underline-offset-4"
+                  href={`https://celoscan.io/tx/${exec.settlementDetails.txHash}`} rel="noreferrer" target="_blank">
+                  Verify this task's paid Celo receipt
+                </a>
+              )}
+            </div>
+          )}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-xs font-mono text-celo-green font-semibold">
               <Database className="w-3.5 h-3.5" />

@@ -10,6 +10,8 @@
 /.next/
 /.next-release/
 /.next-final-qa/
+/.next-operator-qa/
+/.next-operator-final/
 /out/
 
 # production
@@ -38,3 +40,5 @@ next-env.d.ts
 # local persistent data
 /.data/
 /.data-smoke/
+/.next-hq-phase/
+/.next-operator-audit/

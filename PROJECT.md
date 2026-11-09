@@ -9,7 +9,7 @@
 ## Product integrity
 - Original value: task-driven intelligent selection, real live gateway quote, bounded approval, purchase a service, useful outcome, auditable receipt.
 - Working: live catalog, exact unpaid 402, operator auth, free SQD result, local ledger, old paid transaction clearly separated.
-- Missing core: live paid execution in the actual app, model-backed selector when configured, service-to-useful-result follow-through.
+- Missing core: actual **live paid settlement proof** in the application (implementation now exists behind double-disable, UNVERIFIED), model-backed selector when configured, service-to-useful-result follow-through.
 - No permission to spend additional USDC or publish source/submission has been received.
 - Status: **BLOCKED**, not JUDGE_READY or READY_TO_SUBMIT. `PRODUCT.md` has 12 reconstructed original P0s; P0-01,03,04,05,08 verified in scoped tests, 7 remain incomplete. Own ERC-8004 registration was read-only checked and balance = 0.
 
@@ -17,15 +17,15 @@
 HQ phases and evidence mapped in `docs/OPERATOR_HQ_AUDIT.md`. Earliest canonical-source prerequisite not yet formally passed: complete intake/rubric and reconstruct product lock with immutable coverage ledger. In parallel prioritize Build with buy paid workflow and own ERC-8004 identity because they are deadline-critical.
 
 ## Highest-priority blockers
-1. Own agent ERC-8004 identity and Loops enrollment not confirmed.
+1. Own agent ERC-8004 identity absent: mainnet balanceOf(wallet)=0; read-only registration preflight estimated 229664 gas units (~0.05569352 CELO max estimate), proposed metadata URL is 404 while repo private. See docs/ERC8004_REGISTRATION_PLAN.md. Loops enrollment remains unverified.
 2. Current GitHub repo PRIVATE; contest expects public.
-3. Real paid execution hard-disarmed; previous $0.005 payment belongs to the spike.
+3. Real paid execution code now implemented with exact fresh quote, one-shot CLI, receipt/Transfer verification; remains DOUBLE-DISARMED and unverified on a new paid task. Previous $0.005 payment belongs to spike.
 4. Independent user qualifier without evidence.
 5. No final demo recording, Product Hygiene audit, brand/name lock or judge simulation.
 
 ## Verified useful assets
 - Last pre-checkpoint commit: `e1619e8` (or later)
-- Tests: 12 passing unit/security and 12 live zero-spend smoke steps
+- Tests: 16 passing unit/security and 12 previously completed live zero-spend smoke steps; new TypeScript + isolated production build passed after paid-executor change.
 - Local isolated Next.js production build passed
 - Real screenshots: `docs/evidence/` (3 captured)
 - Historical Celo tx: `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43`

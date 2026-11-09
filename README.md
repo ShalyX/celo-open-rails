@@ -57,6 +57,8 @@ All wallet keystores, local `.data/`, and `.env.local` are ignored by Git. Never
 
 See [QA report](docs/QA_REPORT.md), [project status](docs/STATUS.md), and [submission package](docs/SUBMISSION.md).
 
+The paid executor code is implemented but is **not yet live-transaction verified**. By default paid dispatch requires BOTH `POLICY_DISALLOW_SPEND=false` and `LIVE_BUY_MODE=EXPLICIT_PER_TASK_SPEND_APPROVED`, plus a quoted operator-approved task and a locally installed Buy CLI at `BUY_CLI_ENTRY`. Do not enable these without separate user authorization. It does not attempt to automatically retry ambiguous outcomes.
+
 The production build and security tests pass. An isolated, live production-server smoke run verified gateway catalog discovery (171 capabilities), real unpaid 402 quote, free SQD payload delivery, operator approval, safe paid-policy halt, replay prevention, and local persistence. **There was no new paid purchase.** ERC-8004 identity status still requires a fresh verified chain response.
 
 This is a local judge-evaluation build, **not production-ready for public wallet operation**. Before deployment, implement a transactional shared ledger, robust operator identity, deployed keystore signing strategy, real paid execution after explicit authorization, and run full live end-to-end/regression tests.

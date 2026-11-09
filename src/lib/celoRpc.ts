@@ -112,6 +112,54 @@ export async function getOnChainTransactionReceipt(txHash: string) {
 }
 
 /**
+ * Verify a new paid call against the actual successful ERC-20 Transfer event.
+ * Success status alone does NOT establish who was paid, in what currency, or how much.
+ * This read-only verifier never signs, submits or triggers a transaction.
+ */
+export async function verifyExactTokenSettlement(
+  txHash: string,
+  token: string,
+  recipient: string,
+  atomicAmount: string
+): Promise<{ verified: boolean; blockNumber?: number; reason: string }> {
+  if (!/^0x[a-fA-F0-9]{64}$/.test(txHash)) {
+    return { verified: false, reason: "Invalid transaction hash" };
+  }
+  if (!/^0x[a-fA-F0-9]{40}$/.test(token) || !/^0x[a-fA-F0-9]{40}$/.test(recipient) ||
+      !/^(0|[1-9][0-9]*)$/.test(atomicAmount)) {
+    return { verified: false, reason: "Invalid token, recipient or amount" };
+  }
+  const receipt = await celoRpcCall<{
+    blockNumber: string; status: string; logs: Array<{
+      address: string; topics: string[]; data: string;
+    }>;
+  } | null>("eth_getTransactionReceipt", [txHash]);
+  if (!receipt) return { verified: false, reason: "Transaction receipt not yet indexed" };
+  if (receipt.status !== "0x1") return { verified: false, reason: "Transaction failed on chain" };
+
+  const ERC20_TRANSFER_EVENT =
+    "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
+  const requiredAmount = BigInt(atomicAmount);
+  const matches = receipt.logs.some((entry) => {
+    try {
+      if (entry.address.toLowerCase() !== token.toLowerCase()) return false;
+      if (entry.topics.length < 3 || entry.topics[0].toLowerCase() !== ERC20_TRANSFER_EVENT) return false;
+      if ("0x" + entry.topics[2].slice(-40).toLowerCase() !== recipient.toLowerCase()) return false;
+      return BigInt(entry.data) === requiredAmount;
+    } catch {
+      return false;
+    }
+  });
+  return {
+    verified: matches,
+    blockNumber: parseInt(receipt.blockNumber, 16),
+    reason: matches
+      ? "Successful on-chain ERC-20 Transfer matched exact token, payee and atomic amount"
+      : "No matching ERC-20 Transfer event found at exact token/payee/amount",
+  };
+}
+
+/**
  * Verifies ERC-8004 agent registration and on-chain contract binding.
  * Agent Registry: 0x8004A169FB4a3325136EB29fA0ceB6D2e539a432
  */
@@ -153,7 +201,7 @@ export async function verifyErc8004Agent(
       onChainVerified = true;
     }
   } catch {
-    // Contract might use custom getters or tokenURI; still verify registration JSON and registry binding
+    // RPC failure means UNVERIFIED, regardless of offchain document claims.
   }
 
   // Cross-reference document registration array with registry address
@@ -169,7 +217,10 @@ export async function verifyErc8004Agent(
       r.agentRegistry.toLowerCase().includes(ERC8004_REGISTRY.toLowerCase())
   );
 
-  const verified = Boolean(doc && (onChainVerified || matchesRegistry));
+  // The provider document alone is NOT on-chain proof. Require both a
+  // successful ownerOf() response AND a matching registry claim.
+  const verified = Boolean(onChainVerified && onChainOwner &&
+    !/^0x0{40}$/i.test(onChainOwner) && matchesRegistry && docObj?.active !== false);
 
   return {
     agentId,
@@ -182,7 +233,7 @@ export async function verifyErc8004Agent(
     verified,
     verificationNotes: verified
       ? `Verified against Celo ERC-8004 Registry ${ERC8004_REGISTRY} and upstream provider specification.${onChainOwner ? ` Owner: ${onChainOwner}` : ""}`
-      : `Verification failed or incomplete: ${docError || "Registration record mismatch"}`,
+      : `Verification incomplete: ${docError || "Celo registry owner and provider document did not both verify"}`,
     verifiedAt: new Date().toISOString(),
   };
 }
