@@ -27,4 +27,4 @@
 
 ## Reproduce (no spending)
 
-Start `npm run dev` locally with live spend disabled, open `http://127.0.0.1:3000/proof`. The route is public **within the running app**; no public HTTPS host is deployed. Source of truth is `docs/evidence/paid-task-20261109.json`, not a new API purchase. The recorded video uses this same source.
+The read-only judge viewer is deployed at https://celo-procurement-proof.vercel.app/ and the captioned walkthrough is at https://celo-procurement-proof.vercel.app/walkthrough.mp4. The deployed viewer cannot initiate payments. Vercel SSO protection is enabled on the deployment host; a temporary share URL is available for immediate review but expires 2026-11-10 06:27 WAT. Stable public access requires an approved narrow production access change or a custom domain.\n\nFor local reproduction, start `npm run dev` with live spend disabled and open `http://127.0.0.1:3000/proof`. Source of truth is `docs/evidence/paid-task-20261109.json`, not a new API purchase. The recorded video uses this same source.
