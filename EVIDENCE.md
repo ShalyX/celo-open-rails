@@ -1,46 +1,37 @@
 # EVIDENCE — HQ Proof register
 
-**Checked:** 2026-11-08 on connected Windows PC. Only actually observed evidence earns VERIFIED status. Proof is scoped to the exact operation/environment.
+**Owner:** Operator HQ / Engineering. **Checked:** 2026-11-09 on Windows, Celo mainnet 42220. Evidence is scoped to the observed environment. A green slice is not full-product readiness.
 
-| ID | Material claim | Criticality | Status | Proof method and artifact | Limitation / next step |
-|---|---|---|---|---|---|
-| E01 | Buy can settle 0.005 USDC on Celo from our wallet | CRITICAL sponsor | VERIFIED (historical spike) | Celo tx `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43`, block 82246474, prior @celo/buy run | NOT a new purchase by app |
-| E02 | Gateway catalog is live | IMPORTANT | VERIFIED | 2026-11-08 local production smoke: 171 capabilities | Snapshot changes over time |
-| E03 | Unpaid 402 exact quote works | CRITICAL | VERIFIED | 2026-11-08 live smoke: 5000 USDC atomic units, x.posts.search | No purchase implied |
-| E04 | Genuine free SQD task delivers data | IMPORTANT | VERIFIED | 2026-11-08 isolated production smoke, delivered live response, persisted | Free only; not a scored paid service |
-| E05 | Operator approval/budget/one-shot policy gate works in safe path | CRITICAL | VERIFIED (zero spend) | 12/12 smoke steps, 12/12 unit/security tests, HTTP 401/403/409 and halted_by_policy | No live paid replay/uncertain branch validated |
-| E06 | New paid API call through desk delivers useful paid result | CRITICAL | IMPLEMENTED, UNVERIFIED | `buyPlan.ts` + `buyExecutor.ts`: bound CLI args, preflight re-quote, persistent attempt, explicit double enable, receipt check. **16 unit/security tests pass**; no live paid CLI call | Spending still disabled; no new paid result or tx |
-| E07 | Own agent registered via ERC-8004 | CRITICAL eligibility | BLOCKED | 2026-11-08 read-only viem Celo registry balanceOf(0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b) = **0** | Requires actual registration and onchain proof; provider verification is not our identity |
-| E08 | Provider TikHub agent ID 9895 registered on Celo | SUPPORTING | STALE pending re-run | Previous `/api/trust` returned verified:true; revised verifier now requires both onchain `ownerOf` and matching provider doc | Re-run after build; does not satisfy OUR agent ID |
-| E09 | Model-driven capability reasoning | CRITICAL product | UNPROVEN | Code exists using optional Gemini/OpenAI credentials; deterministic mode labeled | No working model key/live inference checked; don't advertise as verified AI |
-| E10 | Public repo accessible to judges | CRITICAL eligibility | BLOCKED | GitHub CLI confirmed ShalyX/celo-open-rails PRIVATE | Needs user-approved visibility change |
-| E11 | Independent users used product | CRITICAL qualification | UNPROVEN | No independently owned qualifying user/wallet evidence | Do not fabricate or proxy with own secondary wallets |
-| E12 | Production build and basic security checks pass | IMPORTANT | VERIFIED (prior isolated build; latest underway) | 19/19 unit/security/digest tests and TypeScript pass after safe paid-executor code. Prior isolated Next.js build and authenticated screenshots exist. | Latest digest build currently underway; cross-device multi-instance runtime unverified |
-| E13 | Full narrated demo recorded and independently reviewed | CRITICAL presentation | UNPROVEN | `docs/DEMO_SCRIPT.md`, 3 authentic captures at `docs/evidence/` | No finished video/QA |
-| E14 | Entry submitted with Loops confirmation | CRITICAL | BLOCKED | No saved enrollment ID/submission receipt | User account-specific Loops form, final authorization needed |
+| ID | Claim | Status | Proof / artifact | Limits |
+|---|---|---|---|---|
+| E01 | Historical 0.005 USDC Buy mechanism worked | VERIFIED, historical spike | `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43`, block 82246474 | Not the new application task |
+| E02 | Live Buy catalog discovery | VERIFIED | Current product purchase flow fetched catalog and selected available `x.posts.search` | Dynamic catalog can change |
+| E03 | Authoritative unpaid exact quote | VERIFIED | New paid-task artifact records 5000 atomic USDC, Celo, exact request and payee | Exact quote is time-limited |
+| E04 | Genuine free SQD result | VERIFIED, prior local run | `tests/e2e-smoke.mjs`; `docs/QA_REPORT.md` | Free result is not a paid call |
+| E05 | Bounded operator authorization and one-shot execution | VERIFIED, scoped | New task approved at 0.005 USDC, executor fresh-quoted, saved attempt, one CLI call; replay 409 | Multi-instance safety and crash recovery not proven |
+| E06 | New paid service result through product | VERIFIED, local API slice | `docs/evidence/paid-task-20261109.json`: task `task-1794186340719-t3y6`, tx `0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61`, block 82285602, successful exact 5000-atomic Transfer, 18 returned tweet records | Team-owned task; no model or full paid browser QA claim |
+| E07 | Own ERC-8004 identity | VERIFIED | Agent 10059; `docs/evidence/erc8004-registration-20261109.json`; successful registration tx `0xbac5c383f43d381d27313694cb4d5141d9d34817f266fdfa54e88eae7d88bd36`; ownerOf/tokenURI matched | Identity does not prove users or enrollment |
+| E08 | TikHub provider identity | VERIFIED in previous live smoke | Provider ID 9895 matched registry owner and provider metadata | Separate from our own ID 10059; dynamic proof freshness applies |
+| E09 | Live model-driven selection | UNPROVEN | Optional model code exists; new paid task explicitly uses deterministic fallback | No model use claimed or additional API spending authorized |
+| E10 | Public source and registration URI | VERIFIED | GitHub CLI PUBLIC; raw JSON/image HTTP 200 before signing; pushed metadata includes agent 10059 | GitHub raw cache briefly lagged push, then refreshed |
+| E11 | Genuine independent users / demand | UNPROVEN | No qualifying independent wallet or adoption evidence | Own purchase cannot satisfy this |
+| E12 | Build/type/security checks | VERIFIED | 19/19 tests, TypeScript exit 0, fresh `.next-approved` production build exit 0 | Does not prove every P0 or hosted production readiness |
+| E13 | Finished narrated demo | UNPROVEN | Prior authentic screenshots and demo draft exist | Video and demo QA not completed |
+| E14 | Loops enrollment/submission | UNPROVEN | No observed confirmation or receipt | No submission action authorized in this request |
+| E15 | Free Buy CLI invocation | VERIFIED, previous free run | Zero-cap SQD CLI call succeeded | Separate from the new paid purchase |
+| E16 | Exact new settlement from operator wallet | VERIFIED | Raw chain receipt and Transfer in paid-task artifact: USDC `0xcebA9300f2b948710d2653dD7B07f33A8B32118C`, from `0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b`, to `0x20faAca5F980E29639A0FCC6dcA6988E18ed333B`, amount 5000; wallet debit 0.005 | Facilitator sent settlement transaction; owner debit verified from token log |
+| E17 | Registration stayed within cap | MEASURED / VERIFIED | Gas 223776 × 202500000000 wei + reported zero L1 fee = 0.04531464 CELO < 0.07; signed fee bound with reserve 0.0642630175 | No further transaction authorized |
+| E18 | Useful result presentation | PARTIAL | Authentic 18-post output preserved, existing generic digest and raw payload viewer | Paid timeline has no dedicated digest yet; full browser usefulness not verified |
+| E19 | Paid task survives process restart | VERIFIED, local | Disabled-mode server restart: authenticated history returns same delivered task/hash; duplicate PUT 409 | Single Windows instance; not cross-device transactional storage |
 
-| E15 | Free Buy CLI invocation works without signing or spending | IMPORTANT | VERIFIED (FREE ONLY) | `buy --account celo-open-rails --json curl --max-amount 0 --request GET https://gateway.usebuy.ai/sqd/datasets` returned HTTP-success JSON with exit 0, output 6349 bytes on Nov 9 | Does not establish paid Buy command succeeds |
-| E16 | Historic 5000-atomic USDC transfer really matches exact PayTo | IMPORTANT | VERIFIED (historical) | Read-only Forno RPC for 0x7e511...ac43 returned status 0x1 and one Transfer log matching USDC, payee 0x20fa..., amount 5000 | Not a fresh payment; exact token proof function included in new executor |
+## Approval consumption and provenance
 
-| E17 | Own ERC-8004 registration transaction is ready to sign | CRITICAL eligibility | PREPARED, NOT SIGNED | 2026-11-09 Celo read-only preflight: balance 0, register(string) calldata 196 bytes, 229664 gas estimate, max fee estimate 0.05569352 CELO, metadata URL 404 while repo PRIVATE | Require public metadata and user permission before sending; no identity exists yet |
+User approved exactly one registration (total cap 0.07 CELO), repository publication and exactly one product Buy (cap 0.005 USDC). Both monetary actions confirmed within cap. No additional spend, deployment, submission, outreach or independent-user activity occurred. One-time local markers are consumed; paid server stopped and `.env.local` remains disarmed. Signing used the Windows OS credential store; no key export.
 
-| E18 | Real delivered result is distilled without fabricated AI claims | IMPORTANT | UNIT-TESTED | `resultDigest.ts`: count & sample live SQD entries, extract provider model responses, fall back honestly to raw JSON; 3 tests pass | Browser UI screenshot latest version still needed; paid result not observed |
+Paid response includes provider run `01M6YXE89ZFM8S5C4TC3VSP1M1`; quoted body `{"query":"Celo MiniPay","type":"latest"}`. Provider `resultCount: 1` is preserved verbatim; separately measured `output.timeline` contains 18 tweet entries. No independent-user, sentiment, novelty or model-analysis claims are inferred from those records. Application redacts secret-looking fields and truncates deeply nested data.
 
-## Evidence provenance
+A secondary receipt lookup briefly returned null; read-only RPC reconciliation confirmed success. There was no paid retry. Local cpay receipt shards contain duplicates of historical data; count UNIQUE hashes: 1 before, 2 after.
 
-- Local build root: `C:\Users\USER\Documents\Codex\2026-11-08\celo-open-rails`
-- Tests: `tests/procurement.test.mjs`, `tests/security.test.mjs`, `tests/guards.test.mjs`, `tests/e2e-smoke.mjs` (last is live isolated smoke, not auto-run with unit tests).
-- Visual: `docs/evidence/01-dashboard-authenticated.png`, `02-workflow-and-history.png`, `03-history-and-trust.png`.
-- Git: private `ShalyX/celo-open-rails`; do not expose wallet credentials.
-- Network: Celo mainnet 42220; official Buy gateway.
-- Qualifier: timestamps are approximate time of local test in prior run; dynamic external data may become stale.
+## Product Integrity / Proof Engine
 
-## Proof Engine
-
-**OPEN / BLOCKED.** E06, E07, E09, E10, E11, E13, E14 prevent a truthful 'full product judged artifact done'. No simulated paid purchase may be represented as verified.
-
-## 2026-11-09 authorized mainnet milestone (supersedes prior permission/identity status)
-
-- E07 VERIFIED: own ERC-8004 agent **10059**, Celo 42220; owner and tokenURI independently read after successful tx `0xbac5c383f43d381d27313694cb4d5141d9d34817f266fdfa54e88eae7d88bd36`, block 82285362. Total fee **0.04531464 CELO**, cap 0.07. Artifact: `docs/evidence/erc8004-registration-20261109.json`.
-- E10 VERIFIED: GitHub visibility PUBLIC, raw registration JSON and image return HTTP 200. History scan: 10 commits / 144 unique blobs; no credential patterns found (heuristic scan, not a guarantee).
-- Authorized remaining action: exactly one real Buy through the product, maximum 0.005 USDC. No independent users or enrollment/submission confirmation claimed.
+PARTIAL_PRODUCT, local paid API SLICE_VERIFIED. Original 12 P0s preserved; remaining model selection, uncertainty recovery and useful paid-result/browser follow-through stay visible in PRODUCT.md. Proof Engine remains OPEN: E09, E11, E13 and E14 plus presentation/hygiene gates are unresolved. Not JUDGE_READY or submitted.

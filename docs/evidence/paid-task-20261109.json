@@ -1,0 +1,3335 @@
+{
+  "verifiedAt": "2026-11-09T01:07:05.301Z",
+  "chainId": 42220,
+  "owner": "0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b",
+  "taskId": "task-1794186340719-t3y6",
+  "objective": "Search for Celo MiniPay",
+  "capabilityId": "x.posts.search",
+  "txHash": "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
+  "blockNumber": 82285602,
+  "status": "success",
+  "payment": {
+    "token": "USDC",
+    "asset": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+    "atomicAmount": "5000",
+    "humanAmount": "0.005",
+    "payTo": "0x20faAca5F980E29639A0FCC6dcA6988E18ed333B"
+  },
+  "transfers": [
+    {
+      "from": "0xf903e8a6fc3b751d8466469fa85f2a1b9caeba8b",
+      "to": "0x20faaca5f980e29639a0fcc6dca6988e18ed333b",
+      "atomicAmount": "5000"
+    }
+  ],
+  "usdcBalanceBefore": "0.062383",
+  "usdcBalanceAfter": "0.057383",
+  "usdcSpent": "0.005",
+  "receiptCountBefore": 1,
+  "uniqueReceiptCountAfter": 2,
+  "newPaidTransactions": 1,
+  "provider": "tikhub",
+  "upstreamRunId": "01M6YXE89ZFM8S5C4TC3VSP1M1",
+  "returnedTimelineRecords": 18,
+  "returnedTweetRecords": 18,
+  "duplicateExecutionHttpStatus": 409,
+  "persistedAfterServerRestart": true,
+  "paidModeDisarmed": true,
+  "rawChainReceipt": {
+    "blobGasUsed": "0xcd",
+    "blockHash": "0x7637660edbebeae05702bdc6aaf8e2cc340c7de0d7f807630977d0604d6ecb1c",
+    "blockNumber": "0x4e79422",
+    "contractAddress": null,
+    "cumulativeGasUsed": "0x19efb3",
+    "daFootprintGasScalar": "0x1",
+    "effectiveGasPrice": "0x2ec66f1360",
+    "from": "0x0d74d5cefd2e7f24e623330ebe3d8d4cb45ffb48",
+    "gasUsed": "0x14f1a",
+    "l1BaseFeeScalar": "0x0",
+    "l1BlobBaseFee": "0x44f4cd",
+    "l1BlobBaseFeeScalar": "0x0",
+    "l1Fee": "0x0",
+    "l1GasPrice": "0x47864cd",
+    "l1GasUsed": "0xcd0",
+    "logs": [
+      {
+        "address": "0xceba9300f2b948710d2653dd7b07f33a8b32118c",
+        "blockHash": "0x7637660edbebeae05702bdc6aaf8e2cc340c7de0d7f807630977d0604d6ecb1c",
+        "blockNumber": "0x4e79422",
+        "blockTimestamp": "0x6af11c78",
+        "data": "0x",
+        "logIndex": "0x34",
+        "removed": false,
+        "topics": [
+          "0x98de503528ee59b575ef0c0a2576a82497bfc029a5685b209e9ec333479b10a5",
+          "0x000000000000000000000000f903e8a6fc3b751d8466469fa85f2a1b9caeba8b",
+          "0xb683967996418c51bf3f633d76ff2c0fbaad3abee7ef48dbd18d5cd458722d5d"
+        ],
+        "transactionHash": "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
+        "transactionIndex": "0x9"
+      },
+      {
+        "address": "0xceba9300f2b948710d2653dd7b07f33a8b32118c",
+        "blockHash": "0x7637660edbebeae05702bdc6aaf8e2cc340c7de0d7f807630977d0604d6ecb1c",
+        "blockNumber": "0x4e79422",
+        "blockTimestamp": "0x6af11c78",
+        "data": "0x0000000000000000000000000000000000000000000000000000000000001388",
+        "logIndex": "0x35",
+        "removed": false,
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000f903e8a6fc3b751d8466469fa85f2a1b9caeba8b",
+          "0x00000000000000000000000020faaca5f980e29639a0fcc6dca6988e18ed333b"
+        ],
+        "transactionHash": "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
+        "transactionIndex": "0x9"
+      }
+    ],
+    "logsBloom": "0x00000000000000000000100000000000000000000000000000000000000000000000800000000000000000000000000000000040000000000000000200000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000020000004000004000010000000000000000000000000000000000000000000020000000000004000000000000000000000000000000000000020000000000004000400000000000000800000000000000002000000000000020000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000",
+    "status": "0x1",
+    "to": "0xceba9300f2b948710d2653dd7b07f33a8b32118c",
+    "transactionHash": "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
+    "transactionIndex": "0x9",
+    "type": "0x2"
+  },
+  "record": {
+    "id": "task-1794186340719-t3y6",
+    "createdAt": "2026-11-09T01:05:41.010Z",
+    "objective": "Search for Celo MiniPay",
+    "capabilityId": "x.posts.search",
+    "capabilityTitle": "Search X posts",
+    "platform": "x",
+    "intent": {
+      "taskId": "task-1794186340719-t3y6",
+      "objective": "Search for Celo MiniPay",
+      "selectedCapabilityId": "x.posts.search",
+      "reasoning": "",
+      "isAiReasoning": false,
+      "engineModel": "Deterministic Schema Matcher (Fallback Engine — AI Unverified)",
+      "confidenceScore": 0.88,
+      "requestEnvelope": {
+        "method": "POST",
+        "url": "https://gateway.usebuy.ai/v1/social/x/posts/search",
+        "body": {
+          "query": "Celo MiniPay",
+          "type": "latest"
+        }
+      },
+      "estimatedPricing": {
+        "pricingModel": "per_call",
+        "approximateUsd": "0.005",
+        "approximateAtomic": "5000"
+      }
+    },
+    "quote": {
+      "quoteId": "quote-1794186340720-4hzcy",
+      "timestamp": "2026-11-09T01:05:41.010Z",
+      "url": "https://gateway.usebuy.ai/v1/social/x/posts/search",
+      "method": "POST",
+      "requestBody": {
+        "query": "Celo MiniPay",
+        "type": "latest"
+      },
+      "x402Version": 1,
+      "rawHeaderBase64": "eyJ4NDAyVmVyc2lvbiI6MiwiZXJyb3IiOiIiLCJyZXNvdXJjZSI6eyJ1cmwiOiJodHRwczovL2dhdGV3YXkudXNlYnV5LmFpL3YxL3NvY2lhbC94L3Bvc3RzL3NlYXJjaCIsImRlc2NyaXB0aW9uIjoiU2VhcmNoIFggcG9zdHMgdGhyb3VnaCBidXktZ2F0ZXdheSIsIm1pbWVUeXBlIjoiYXBwbGljYXRpb24vanNvbiJ9LCJhY2NlcHRzIjpbeyJzY2hlbWUiOiJleGFjdCIsIm5ldHdvcmsiOiJlaXAxNTU6NDIyMjAiLCJhbW91bnQiOiI1MDAwIiwiYXNzZXQiOiIweGNlYkE5MzAwZjJiOTQ4NzEwZDI2NTNkRDdCMDdmMzNBOEIzMjExOEMiLCJwYXlUbyI6IjB4MjBmYUFjYTVGOTgwRTI5NjM5QTBGQ0M2ZGNBNjk4OEUxOGVkMzMzQiIsIm1heFRpbWVvdXRTZWNvbmRzIjozMDAsImV4dHJhIjp7Im5hbWUiOiJVU0RDIiwidmVyc2lvbiI6IjIiLCJnYXRld2F5Ijp7ImNhcGFiaWxpdHkiOiJ4LnBvc3RzLnNlYXJjaCIsInByb3ZpZGVyIjoidGlraHViIiwicHJpY2luZ01vZGVsIjoicGVyX2NhbGwifX19LHsic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1OjQyMjIwIiwiYW1vdW50IjoiNTAwMCIsImFzc2V0IjoiMHg0ODA2NWZiQkUyNWY3MUM5MjgyZGRmNWUxY0Q2RDZBODg3NDgzRDVlIiwicGF5VG8iOiIweDIwZmFBY2E1Rjk4MEUyOTYzOUEwRkNDNmRjQTY5ODhFMThlZDMzM0IiLCJtYXhUaW1lb3V0U2Vjb25kcyI6MzAwLCJleHRyYSI6eyJuYW1lIjoiVGV0aGVyIFVTRCIsInZlcnNpb24iOiIxIiwiZ2F0ZXdheSI6eyJjYXBhYmlsaXR5IjoieC5wb3N0cy5zZWFyY2giLCJwcm92aWRlciI6InRpa2h1YiIsInByaWNpbmdNb2RlbCI6InBlcl9jYWxsIn19fSx7InNjaGVtZSI6ImV4YWN0IiwibmV0d29yayI6ImVpcDE1NTo0MjIyMCIsImFtb3VudCI6IjUwMDAiLCJhc3NldCI6IjB4RDJhYjNDOUEwMkRCQkFCMjM2QmZFQzQ1RDFkNzU1REY0MjY3Rjc3MSIsInBheVRvIjoiMHgyMGZhQWNhNUY5ODBFMjk2MzlBMEZDQzZkY0E2OTg4RTE4ZWQzMzNCIiwibWF4VGltZW91dFNlY29uZHMiOjMwMCwiZXh0cmEiOnsibmFtZSI6IlRldGhlciBBbWVyaWNhIFVTRCIsInZlcnNpb24iOiIxIiwiZ2F0ZXdheSI6eyJjYXBhYmlsaXR5IjoieC5wb3N0cy5zZWFyY2giLCJwcm92aWRlciI6InRpa2h1YiIsInByaWNpbmdNb2RlbCI6InBlcl9jYWxsIn19fSx7InNjaGVtZSI6ImV4YWN0IiwibmV0d29yayI6ImVpcDE1NToxMTE0MjIyMCIsImFtb3VudCI6IjUwMDAiLCJhc3NldCI6IjB4MDFDNUMwMTIyMDM5NTQ5QUQxNDkzQjgyMjBjQUJFZEQ3MzlCQzQ0RSIsInBheVRvIjoiMHgyMGZhQWNhNUY5ODBFMjk2MzlBMEZDQzZkY0E2OTg4RTE4ZWQzMzNCIiwibWF4VGltZW91dFNlY29uZHMiOjMwMCwiZXh0cmEiOnsibmFtZSI6IlVTREMiLCJ2ZXJzaW9uIjoiMiIsImdhdGV3YXkiOnsiY2FwYWJpbGl0eSI6IngucG9zdHMuc2VhcmNoIiwicHJvdmlkZXIiOiJ0aWtodWIiLCJwcmljaW5nTW9kZWwiOiJwZXJfY2FsbCIsInNhbmRib3giOnRydWV9fX1dfQ==",
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "celo",
+          "maxAmountRequired": "5000",
+          "resource": "https://gateway.usebuy.ai/v1/social/x/posts/search",
+          "description": "Search X posts through buy-gateway",
+          "mimeType": "application/json",
+          "payTo": "0x20faAca5F980E29639A0FCC6dcA6988E18ed333B",
+          "maxTimeoutSeconds": 300,
+          "asset": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+          "extra": {
+            "name": "USDC",
+            "version": "2",
+            "gateway": {
+              "capability": "x.posts.search",
+              "provider": "tikhub",
+              "pricingModel": "per_call"
+            }
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "celo",
+          "maxAmountRequired": "5000",
+          "resource": "https://gateway.usebuy.ai/v1/social/x/posts/search",
+          "description": "Search X posts through buy-gateway",
+          "mimeType": "application/json",
+          "payTo": "0x20faAca5F980E29639A0FCC6dcA6988E18ed333B",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+          "extra": {
+            "name": "Tether USD",
+            "version": "1",
+            "gateway": {
+              "capability": "x.posts.search",
+              "provider": "tikhub",
+              "pricingModel": "per_call"
+            }
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "celo",
+          "maxAmountRequired": "5000",
+          "resource": "https://gateway.usebuy.ai/v1/social/x/posts/search",
+          "description": "Search X posts through buy-gateway",
+          "mimeType": "application/json",
+          "payTo": "0x20faAca5F980E29639A0FCC6dcA6988E18ed333B",
+          "maxTimeoutSeconds": 300,
+          "asset": "0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771",
+          "extra": {
+            "name": "Tether America USD",
+            "version": "1",
+            "gateway": {
+              "capability": "x.posts.search",
+              "provider": "tikhub",
+              "pricingModel": "per_call"
+            }
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "celo-sepolia",
+          "maxAmountRequired": "5000",
+          "resource": "https://gateway.usebuy.ai/v1/social/x/posts/search",
+          "description": "Search X posts through buy-gateway (sandbox: Celo Sepolia test funds)",
+          "mimeType": "application/json",
+          "payTo": "0x20faAca5F980E29639A0FCC6dcA6988E18ed333B",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x01C5C0122039549AD1493B8220cABEdD739BC44E",
+          "extra": {
+            "name": "USDC",
+            "version": "2",
+            "gateway": {
+              "capability": "x.posts.search",
+              "provider": "tikhub",
+              "pricingModel": "per_call",
+              "sandbox": true
+            }
+          }
+        }
+      ],
+      "selectedOffer": {
+        "tokenSymbol": "USDC",
+        "assetContract": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+        "atomicAmount": "5000",
+        "humanAmount": "0.005000",
+        "payTo": "0x20faAca5F980E29639A0FCC6dcA6988E18ed333B",
+        "network": "celo",
+        "timeoutSeconds": 300
+      }
+    },
+    "approval": {
+      "approvedAt": "2026-11-09T01:05:41.033Z",
+      "approvedBy": "authenticated-local-operator",
+      "maxAuthorizedSpend": "0.005",
+      "authorizedToken": "USDC"
+    },
+    "execution": {
+      "attemptedAt": "2026-11-09T01:05:41.324Z",
+      "idempotencyKey": "84f0224f-609f-421d-9aba-17a61c6a9b8f",
+      "status": "delivered",
+      "policyGuardTriggered": false,
+      "settlementDetails": {
+        "network": "eip155:42220",
+        "asset": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+        "amount": "5000",
+        "payTo": "0x20faAca5F980E29639A0FCC6dcA6988E18ed333B",
+        "outcome": "confirmed_on_celo",
+        "txHash": "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
+        "status": 200
+      },
+      "resultData": {
+        "capability": "x.posts.search",
+        "transaction": "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
+        "payment": {
+          "token": "USDC",
+          "asset": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+          "atomic": "5000",
+          "usd": "0.005"
+        },
+        "provider": "tikhub",
+        "upstreamRunId": "01M6YXE89ZFM8S5C4TC3VSP1M1",
+        "resultCount": 1,
+        "output": {
+          "status": "ok",
+          "timeline": [
+            {
+              "type": "tweet",
+              "tweet_id": "2117617865176080595",
+              "screen_name": "minipay",
+              "bookmarks": 6,
+              "favorites": 50,
+              "created_at": "Tue Nov 03 14:00:17 +0000 2026",
+              "text": "Pay like a local in Vietnam, the Philippines, Argentina and Peru, straight from MiniPay.\n\nMeet @SonnyPay_com, a new Mini App that lets you pay merchants from your dollar balance by scanning their national QR code. Powered by USDT. https://t.co/XmGwmFKD6Y",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                230
+              ],
+              "source": null,
+              "quotes": 1,
+              "sensitive": false,
+              "replies": 19,
+              "conversation_id": "2117617865176080595",
+              "retweets": 8,
+              "views": "9424",
+              "entities": {
+                "media": [
+                  {
+                    "additional_media_info": {
+                      "monetizable": false
+                    },
+                    "allow_download_status": {
+                      "allow_download": true
+                    },
+                    "display_url": "pic.x.com/XmGwmFKD6Y",
+                    "expanded_url": "https://x.com/minipay/status/2117617865176080595/video/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "id_str": "2117612314455064576",
+                    "indices": [
+                      231,
+                      254
+                    ],
+                    "media_key": "13_2117612314455064576",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2117612314455064576/img/5zMCgPm-3NfAglwK.jpg",
+                    "original_info": {
+                      "focus_rects": [],
+                      "height": 1080,
+                      "width": 1920
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "video",
+                    "url": "https://t.co/XmGwmFKD6Y",
+                    "video_info": {
+                      "aspect_ratio": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "duration_millis": 22000,
+                      "variants": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ]
+                    }
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "2086669636481998848",
+                    "indices": [
+                      95,
+                      108
+                    ],
+                    "name": "Sonny Pay",
+                    "screen_name": "SonnyPay_com"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "minipay",
+                "name": "MiniPay",
+                "created_at": "Fri Jun 02 11:51:59 +0000 2023",
+                "description": null,
+                "rest_id": "1664600630592151554",
+                "followers_count": 67944,
+                "favorites_count": 1644,
+                "avatar": "https://pbs.twimg.com/profile_images/1891458064877776896/Qs06ZiBX_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": "Business",
+                "verified": true,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "video": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2117612314455064576/img/5zMCgPm-3NfAglwK.jpg",
+                    "variants": [
+                      {
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      },
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      },
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      },
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      },
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      }
+                    ],
+                    "aspect_ratio": [
+                      16,
+                      9
+                    ],
+                    "duration": 22000,
+                    "original_info": {
+                      "focus_rects": [],
+                      "height": 1080,
+                      "width": 1920
+                    },
+                    "id": "2117612314455064576"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2117667279240605882",
+              "screen_name": "Celo",
+              "bookmarks": 0,
+              "favorites": 67,
+              "created_at": "Tue Nov 03 17:16:38 +0000 2026",
+              "text": "In Vietnam, the Philippines, Argentina &amp; Peru, USD₮ on Celo just got even more useful for everyday purchases 🇻🇳 🇵🇭 🇦🇷 🇵🇪\n\n@SonnyPay_com is live in @MiniPay, letting you pay merchants that accept MoMo, GCash, QR 3.0, or Yape directly in USD₮ from your digital dollar wallet!",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                277
+              ],
+              "source": null,
+              "quotes": 1,
+              "sensitive": null,
+              "replies": 10,
+              "conversation_id": "2117667279240605882",
+              "retweets": 9,
+              "views": "5607",
+              "entities": {
+                "user_mentions": [
+                  {
+                    "id_str": "2086669636481998848",
+                    "indices": [
+                      126,
+                      139
+                    ],
+                    "name": "Sonny Pay",
+                    "screen_name": "SonnyPay_com"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      151,
+                      159
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "Celo",
+                "name": "Celo",
+                "created_at": "Tue Jun 19 18:05:23 +0000 2018",
+                "description": null,
+                "rest_id": "1009135067153616896",
+                "followers_count": 503376,
+                "favorites_count": 32893,
+                "avatar": "https://pbs.twimg.com/profile_images/1613170131491848195/InjXBNx9_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": "Business",
+                "verified": true,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": [],
+              "quoted": {
+                "tweet_id": "2117617865176080595",
+                "bookmarks": 6,
+                "created_at": "Tue Nov 03 14:00:17 +0000 2026",
+                "favorites": 50,
+                "text": "Pay like a local in Vietnam, the Philippines, Argentina and Peru, straight from MiniPay.\n\nMeet @SonnyPay_com, a new Mini App that lets you pay merchants from your dollar balance by scanning their national QR code. Powered by USDT. https://t.co/XmGwmFKD6Y",
+                "lang": "en",
+                "views": "9424",
+                "quotes": 1,
+                "sensitive": false,
+                "replies": 19,
+                "retweets": 8,
+                "conversation_id": "2117617865176080595",
+                "author": {
+                  "rest_id": "1664600630592151554",
+                  "created_at": "Fri Jun 02 11:51:59 +0000 2023",
+                  "name": "MiniPay",
+                  "screen_name": "minipay",
+                  "avatar": "https://pbs.twimg.com/profile_images/1891458064877776896/Qs06ZiBX_normal.jpg",
+                  "blue_verified": true
+                },
+                "media": {
+                  "video": [
+                    {
+                      "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2117612314455064576/img/5zMCgPm-3NfAglwK.jpg",
+                      "variants": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "aspect_ratio": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "duration": 22000,
+                      "original_info": {
+                        "focus_rects": "[TRUNCATED]",
+                        "height": "[TRUNCATED]",
+                        "width": "[TRUNCATED]"
+                      },
+                      "id": "2117612314455064576"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "1973339443613540606",
+              "screen_name": "IamjustTony_",
+              "bookmarks": 3,
+              "favorites": 23,
+              "created_at": "Wed Oct 01 10:49:20 +0000 2025",
+              "text": "The future of merchant and micro-payments in Africa: how Celo + MiniPay reduce friction, cut costs, and unlock financial dignity.👇🏾 https://t.co/bGMw55F9bR",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                131
+              ],
+              "source": null,
+              "quotes": 1,
+              "sensitive": false,
+              "replies": 1,
+              "conversation_id": "1973339443613540606",
+              "retweets": 1,
+              "views": "812",
+              "entities": {
+                "media": [
+                  {
+                    "display_url": "pic.x.com/bGMw55F9bR",
+                    "expanded_url": "https://x.com/IamjustTony_/status/1973339443613540606/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "all": {
+                        "tags": "[TRUNCATED]"
+                      },
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "1973339440425611264",
+                    "indices": [
+                      132,
+                      155
+                    ],
+                    "media_key": "3_1973339440425611264",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/G2K1xA_WMAA2Usg.png",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 401,
+                      "width": 764
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/bGMw55F9bR"
+                  },
+                  {
+                    "display_url": "pic.x.com/bGMw55F9bR",
+                    "expanded_url": "https://x.com/IamjustTony_/status/1973339443613540606/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "all": {
+                        "tags": "[TRUNCATED]"
+                      },
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "1973339441193205760",
+                    "indices": [
+                      132,
+                      155
+                    ],
+                    "media_key": "3_1973339441193205760",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/G2K1xD2WwAAXMA5.png",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 512,
+                      "width": 512
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/bGMw55F9bR"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": [],
+                "user_mentions": []
+              },
+              "user_info": {
+                "screen_name": "IamjustTony_",
+                "name": "antonio",
+                "created_at": "Mon Jan 31 17:38:00 +0000 2022",
+                "description": null,
+                "rest_id": "1488204892078546944",
+                "followers_count": 271,
+                "favorites_count": 39813,
+                "avatar": "https://pbs.twimg.com/profile_images/2057432437672607744/MvVDNIAT_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/G2K1xA_WMAA2Usg.png",
+                    "id": "1973339440425611264",
+                    "sizes": {
+                      "h": 401,
+                      "w": 764
+                    }
+                  },
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/G2K1xD2WwAAXMA5.png",
+                    "id": "1973339441193205760",
+                    "sizes": {
+                      "h": 512,
+                      "w": 512
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2034622940730343550",
+              "screen_name": "BSCNews",
+              "bookmarks": 2,
+              "favorites": 62,
+              "created_at": "Thu Mar 19 13:28:05 +0000 2026",
+              "text": "🚨HUGE: OPERA PROPOSES 160M $CELO STAKE TO BECOME KEY NETWORK STAKEHOLDER \n\n@Opera has proposed a 160M $CELO stake that would transform its @MiniPay distribution partner into a major network stakeholder and one of the largest institutional CELO tokenholders.\n\nThe move builds on a five-year partnership with Celo, with @MiniPay having already surpassed 14M users, 420M+ transactions, and expanded to 66 countries and 40+ Mini Apps since its September 2023 launch.",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                279
+              ],
+              "source": null,
+              "quotes": 3,
+              "sensitive": false,
+              "replies": 7,
+              "conversation_id": "2034622940730343550",
+              "retweets": 9,
+              "views": "6121",
+              "entities": {
+                "hashtags": [],
+                "symbols": [
+                  {
+                    "indices": [
+                      27,
+                      32
+                    ],
+                    "tag": {
+                      "info": {
+                        "info": "[TRUNCATED]"
+                      },
+                      "rest_id": "CELO"
+                    },
+                    "text": "CELO"
+                  },
+                  {
+                    "indices": [
+                      102,
+                      107
+                    ],
+                    "tag": {
+                      "info": {
+                        "info": "[TRUNCATED]"
+                      },
+                      "rest_id": "CELO"
+                    },
+                    "text": "CELO"
+                  }
+                ],
+                "timestamps": [],
+                "urls": [],
+                "user_mentions": [
+                  {
+                    "id_str": "1541461",
+                    "indices": [
+                      75,
+                      81
+                    ],
+                    "name": "Opera",
+                    "screen_name": "Opera"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      139,
+                      147
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "MiniPay"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      318,
+                      326
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "MiniPay"
+                  }
+                ]
+              },
+              "user_info": {
+                "screen_name": "BSCNews",
+                "name": "BSCN",
+                "created_at": "Tue Nov 03 23:02:01 +0000 2020",
+                "description": null,
+                "rest_id": "1323762343302615040",
+                "followers_count": 1374749,
+                "favorites_count": 18169,
+                "avatar": "https://pbs.twimg.com/profile_images/1740337106512187392/o0KBpMEp_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": "Business",
+                "verified": false,
+                "friends_count": null,
+                "location": "Global"
+              },
+              "media": {
+                "video": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2034622826771079168/img/yLaaSb2ypaug-Mdt.jpg",
+                    "variants": [
+                      {
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      },
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      },
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      },
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      },
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      }
+                    ],
+                    "aspect_ratio": [
+                      329,
+                      180
+                    ],
+                    "duration": 28333,
+                    "original_info": {
+                      "focus_rects": [],
+                      "height": 1080,
+                      "width": 1974
+                    },
+                    "id": "2034622826771079168"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2057780764708651185",
+              "screen_name": "playblokaz",
+              "bookmarks": 0,
+              "favorites": 6,
+              "created_at": "Fri May 22 11:09:00 +0000 2026",
+              "text": "24 HOURS ON @minipay. Numbers don't lie.\n\n1,743 players \n5,685 on-chain transactions \n3,681 games started\n\nOne day in. This is just the warm-up. iOS coming really soon.\n\nhttps://t.co/BGWwtpJMIx · @Celo · @MiniPay #MiniPay #Celo #Web3Gaming #Blokaz https://t.co/BI3QFTpxfV",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                247
+              ],
+              "source": null,
+              "quotes": 0,
+              "sensitive": false,
+              "replies": 0,
+              "conversation_id": "2057780764708651185",
+              "retweets": 1,
+              "views": "191",
+              "entities": {
+                "hashtags": [
+                  {
+                    "indices": [
+                      213,
+                      221
+                    ],
+                    "text": "MiniPay"
+                  },
+                  {
+                    "indices": [
+                      222,
+                      227
+                    ],
+                    "text": "Celo"
+                  },
+                  {
+                    "indices": [
+                      228,
+                      239
+                    ],
+                    "text": "Web3Gaming"
+                  },
+                  {
+                    "indices": [
+                      240,
+                      247
+                    ],
+                    "text": "Blokaz"
+                  }
+                ],
+                "media": [
+                  {
+                    "allow_download_status": {
+                      "allow_download": true
+                    },
+                    "display_url": "pic.x.com/BI3QFTpxfV",
+                    "expanded_url": "https://x.com/playblokaz/status/2057780764708651185/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "all": {
+                        "tags": "[TRUNCATED]"
+                      },
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2057779869790937088",
+                    "indices": [
+                      248,
+                      271
+                    ],
+                    "media_key": "3_2057779869790937088",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HI6z45TWoAA-HCl.png",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 900,
+                      "width": 1600
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/BI3QFTpxfV"
+                  }
+                ],
+                "urls": [
+                  {
+                    "display_url": "blokaz.xyz",
+                    "expanded_url": "http://blokaz.xyz",
+                    "indices": [
+                      170,
+                      193
+                    ],
+                    "url": "https://t.co/BGWwtpJMIx"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      12,
+                      20
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      196,
+                      201
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      204,
+                      212
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "MiniPay"
+                  }
+                ],
+                "symbols": [],
+                "timestamps": []
+              },
+              "user_info": {
+                "screen_name": "playblokaz",
+                "name": "Blokaz",
+                "created_at": "Tue Apr 21 07:07:53 +0000 2026",
+                "description": null,
+                "rest_id": "2046485941833924608",
+                "followers_count": 683,
+                "favorites_count": 270,
+                "avatar": "https://pbs.twimg.com/profile_images/2052109001966432268/2I7eBvU0_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": true,
+                "friends_count": null,
+                "location": "CeloVerse/MinipayVerse"
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HI6z45TWoAA-HCl.png",
+                    "id": "2057779869790937088",
+                    "sizes": {
+                      "h": 675,
+                      "w": 1200
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2080650539856224262",
+              "screen_name": "Celo",
+              "bookmarks": 10,
+              "favorites": 135,
+              "created_at": "Fri Jul 24 13:45:19 +0000 2026",
+              "text": "Back by popular demand: another 15 fast-track @MiniPay Card codes up for grabs!\n\nTo qualify:\n→ Follow @Celo &amp; @MiniPay\n→ RT this post\n→ Reply w/ the last thing you bought with stablecoins\n\n48 hours to submit. 15 winners will be randomly selected! https://t.co/1PzKlfXZ1V",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                250
+              ],
+              "source": null,
+              "quotes": 3,
+              "sensitive": false,
+              "replies": 68,
+              "conversation_id": "2080650539856224262",
+              "retweets": 74,
+              "views": "15668",
+              "entities": {
+                "media": [
+                  {
+                    "display_url": "pic.x.com/1PzKlfXZ1V",
+                    "expanded_url": "https://x.com/Celo/status/2080650539856224262/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "all": {
+                        "tags": "[TRUNCATED]"
+                      },
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2080650536618221568",
+                    "indices": [
+                      251,
+                      274
+                    ],
+                    "media_key": "3_2080650536618221568",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HN_0o6ja4AAKVH2.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 900,
+                      "width": 1600
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/1PzKlfXZ1V"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      46,
+                      54
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      102,
+                      107
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      114,
+                      122
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "Celo",
+                "name": "Celo",
+                "created_at": "Tue Jun 19 18:05:23 +0000 2018",
+                "description": null,
+                "rest_id": "1009135067153616896",
+                "followers_count": 503376,
+                "favorites_count": 32893,
+                "avatar": "https://pbs.twimg.com/profile_images/1613170131491848195/InjXBNx9_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": "Business",
+                "verified": true,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HN_0o6ja4AAKVH2.jpg",
+                    "id": "2080650536618221568",
+                    "sizes": {
+                      "h": 675,
+                      "w": 1200
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2119338352562282903",
+              "screen_name": "ola_nuell",
+              "bookmarks": 0,
+              "favorites": 1,
+              "created_at": "Sun Nov 08 07:56:53 +0000 2026",
+              "text": "A month ago we started building a money changer for people who live between pesos and dollars.\n\nToday @arbolitoo_  lives in MiniPay and on Telegram: \n· 42 conversions, each with a receipt anyone can verify on @Celo \n· a market maker with 89 fills on Textile FX https://t.co/Bee0yaUDRd",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                260
+              ],
+              "source": null,
+              "quotes": 0,
+              "sensitive": false,
+              "replies": 1,
+              "conversation_id": "2119338352562282903",
+              "retweets": 0,
+              "views": "23",
+              "entities": {
+                "media": [
+                  {
+                    "allow_download_status": {
+                      "allow_download": true
+                    },
+                    "display_url": "pic.x.com/Bee0yaUDRd",
+                    "expanded_url": "https://x.com/ola_nuell/status/2119338352562282903/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "all": {
+                        "tags": "[TRUNCATED]"
+                      },
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2119338163730616320",
+                    "indices": [
+                      261,
+                      284
+                    ],
+                    "media_key": "3_2119338163730616320",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HWlm1MgXkAALoUc.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 867,
+                      "width": 1897
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/Bee0yaUDRd"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1822417278362660864",
+                    "indices": [
+                      102,
+                      113
+                    ],
+                    "name": "Arbolito 🌳",
+                    "screen_name": "arbolitoo_"
+                  },
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      209,
+                      214
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "ola_nuell",
+                "name": "Emmanuel?✨️",
+                "created_at": "Tue Dec 19 13:17:10 +0000 2023",
+                "description": null,
+                "rest_id": "1737099679886675968",
+                "followers_count": 313,
+                "favorites_count": 3697,
+                "avatar": "https://pbs.twimg.com/profile_images/2053467936082276353/GdCm-RMX_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HWlm1MgXkAALoUc.jpg",
+                    "id": "2119338163730616320",
+                    "sizes": {
+                      "h": 548,
+                      "w": 1200
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2072324215676539255",
+              "screen_name": "EddniJoy21096",
+              "bookmarks": 0,
+              "favorites": 17,
+              "created_at": "Wed Jul 01 14:19:29 +0000 2026",
+              "text": "All done ✅ \n\n@Celo @minipay https://t.co/3V0WhJsWkx",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                27
+              ],
+              "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+              "quotes": 0,
+              "sensitive": false,
+              "replies": 2,
+              "conversation_id": "2072324215676539255",
+              "retweets": 0,
+              "views": "2159",
+              "entities": {
+                "media": [
+                  {
+                    "display_url": "pic.x.com/3V0WhJsWkx",
+                    "expanded_url": "https://x.com/EddniJoy21096/status/2072324215676539255/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072324193740365824",
+                    "indices": [
+                      28,
+                      51
+                    ],
+                    "media_key": "3_2072324193740365824",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJf3-NXoAA0kwr.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 1600,
+                      "width": 720
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/3V0WhJsWkx"
+                  },
+                  {
+                    "display_url": "pic.x.com/3V0WhJsWkx",
+                    "expanded_url": "https://x.com/EddniJoy21096/status/2072324215676539255/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072324194583322624",
+                    "indices": [
+                      28,
+                      51
+                    ],
+                    "media_key": "3_2072324194583322624",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJf4BWWIAAPfCh.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 1600,
+                      "width": 720
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/3V0WhJsWkx"
+                  },
+                  {
+                    "display_url": "pic.x.com/3V0WhJsWkx",
+                    "expanded_url": "https://x.com/EddniJoy21096/status/2072324215676539255/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072324199260028928",
+                    "indices": [
+                      28,
+                      51
+                    ],
+                    "media_key": "3_2072324199260028928",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJf4SxXAAALfjD.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 1600,
+                      "width": 720
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/3V0WhJsWkx"
+                  },
+                  {
+                    "display_url": "pic.x.com/3V0WhJsWkx",
+                    "expanded_url": "https://x.com/EddniJoy21096/status/2072324215676539255/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072324205123645440",
+                    "indices": [
+                      28,
+                      51
+                    ],
+                    "media_key": "3_2072324205123645440",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJf4onWsAAGqPm.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 1600,
+                      "width": 720
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/3V0WhJsWkx"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      13,
+                      18
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      19,
+                      27
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "EddniJoy21096",
+                "name": "johnpii",
+                "created_at": "Mon Jan 05 14:42:50 +0000 2026",
+                "description": null,
+                "rest_id": "2008187346584563713",
+                "followers_count": 8,
+                "favorites_count": 88,
+                "avatar": "https://pbs.twimg.com/profile_images/2036509737575931904/PDLkz7DB_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJf3-NXoAA0kwr.jpg",
+                    "id": "2072324193740365824",
+                    "sizes": {
+                      "h": 1200,
+                      "w": 540
+                    }
+                  },
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJf4BWWIAAPfCh.jpg",
+                    "id": "2072324194583322624",
+                    "sizes": {
+                      "h": 1200,
+                      "w": 540
+                    }
+                  },
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJf4SxXAAALfjD.jpg",
+                    "id": "2072324199260028928",
+                    "sizes": {
+                      "h": 1200,
+                      "w": 540
+                    }
+                  },
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJf4onWsAAGqPm.jpg",
+                    "id": "2072324205123645440",
+                    "sizes": {
+                      "h": 1200,
+                      "w": 540
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2072666917966581918",
+              "screen_name": "Celo",
+              "bookmarks": 7,
+              "favorites": 117,
+              "created_at": "Thu Jul 02 13:01:16 +0000 2026",
+              "text": "Missed the @MiniPay Card code yesterday? Here's your second shot\n\nRT this post &amp; reply with proof you've downloaded MiniPay &amp; followed @Celo &amp; @MiniPay to qualify\n\nOpen to residents of @GnosisPay-supported countries. The first 10 qualified winners will be notified by 6pm ET! https://t.co/VBbkPMUjjJ",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                287
+              ],
+              "source": null,
+              "quotes": 6,
+              "sensitive": false,
+              "replies": 72,
+              "conversation_id": "2072666917966581918",
+              "retweets": 53,
+              "views": "12069",
+              "entities": {
+                "media": [
+                  {
+                    "display_url": "pic.x.com/VBbkPMUjjJ",
+                    "expanded_url": "https://x.com/Celo/status/2072666917966581918/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "all": {
+                        "tags": "[TRUNCATED]"
+                      },
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072666914216906752",
+                    "indices": [
+                      288,
+                      311
+                    ],
+                    "media_key": "3_2072666914216906752",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMOXk7eakAAA5u2.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 900,
+                      "width": 1600
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/VBbkPMUjjJ"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      11,
+                      19
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      143,
+                      148
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      155,
+                      163
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1641754309590122497",
+                    "indices": [
+                      197,
+                      207
+                    ],
+                    "name": "Gnosis Pay 💳",
+                    "screen_name": "gnosispay"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "Celo",
+                "name": "Celo",
+                "created_at": "Tue Jun 19 18:05:23 +0000 2018",
+                "description": null,
+                "rest_id": "1009135067153616896",
+                "followers_count": 503376,
+                "favorites_count": 32893,
+                "avatar": "https://pbs.twimg.com/profile_images/1613170131491848195/InjXBNx9_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": "Business",
+                "verified": true,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMOXk7eakAAA5u2.jpg",
+                    "id": "2072666914216906752",
+                    "sizes": {
+                      "h": 675,
+                      "w": 1200
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2118765355581718782",
+              "screen_name": "CeloCommunities",
+              "bookmarks": 1,
+              "favorites": 17,
+              "created_at": "Fri Nov 06 18:00:00 +0000 2026",
+              "text": "You use @MiniPay every day. Now film it 🎬  \n30 seconds of you paying, sending or saving could win you 350 celo:native. \n\n👉 Post your video with #MiniPayInMyDay \n👉 Tag @CeloCommunities @MiniPay  \n\nDo it today 👇",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                209
+              ],
+              "source": null,
+              "quotes": 0,
+              "sensitive": null,
+              "replies": 0,
+              "conversation_id": "2118765355581718782",
+              "retweets": 2,
+              "views": "348",
+              "entities": {
+                "hashtags": [
+                  {
+                    "indices": [
+                      144,
+                      159
+                    ],
+                    "text": "MiniPayInMyDay"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      8,
+                      16
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1825630770527981568",
+                    "indices": [
+                      167,
+                      183
+                    ],
+                    "name": "Celo Communities Guild",
+                    "screen_name": "CeloCommunities"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      184,
+                      192
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  }
+                ],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "CeloCommunities",
+                "name": "Celo Communities Guild",
+                "created_at": "Mon Aug 19 20:28:03 +0000 2024",
+                "description": null,
+                "rest_id": "1825630770527981568",
+                "followers_count": 449,
+                "favorites_count": 1647,
+                "avatar": "https://pbs.twimg.com/profile_images/1825630926778286080/fNBckHly_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": "Worldwide"
+              },
+              "media": [],
+              "quoted": {
+                "tweet_id": "2113914307364995287",
+                "bookmarks": 13,
+                "created_at": "Sat Oct 24 08:43:40 +0000 2026",
+                "favorites": 47,
+                "text": "🎬 Contest time, Celorians!\n\nShow us how you use @MiniPay in your daily life and win a share of 1000 $CELO 💛💚\n\n#MiniPayInMyDay is open from Oct 24to Nov 24\n\nHere's how it works 🧵👇",
+                "lang": "en",
+                "views": "2138",
+                "quotes": 3,
+                "sensitive": null,
+                "replies": 13,
+                "retweets": 8,
+                "conversation_id": "2113914307364995287",
+                "author": {
+                  "rest_id": "1825630770527981568",
+                  "created_at": "Mon Aug 19 20:28:03 +0000 2024",
+                  "name": "Celo Communities Guild",
+                  "screen_name": "CeloCommunities",
+                  "avatar": "https://pbs.twimg.com/profile_images/1825630926778286080/fNBckHly_normal.jpg",
+                  "blue_verified": null
+                },
+                "media": []
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2072320230240502134",
+              "screen_name": "Sochimaobi89987",
+              "bookmarks": 0,
+              "favorites": 4,
+              "created_at": "Wed Jul 01 14:03:39 +0000 2026",
+              "text": "@Celo @minipay @gnosispay Done @Celo @minipay https://t.co/T1uQJBCYVm",
+              "lang": "en",
+              "display_text_range": [
+                26,
+                45
+              ],
+              "source": null,
+              "quotes": 0,
+              "sensitive": false,
+              "replies": 1,
+              "conversation_id": "2072319340318507095",
+              "retweets": 3,
+              "views": "722",
+              "entities": {
+                "media": [
+                  {
+                    "display_url": "pic.x.com/T1uQJBCYVm",
+                    "expanded_url": "https://x.com/Sochimaobi89987/status/2072320230240502134/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072320217238151169",
+                    "indices": [
+                      46,
+                      69
+                    ],
+                    "media_key": "3_2072320217238151169",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJcQglXIAEBbZf.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 1600,
+                      "width": 720
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/T1uQJBCYVm"
+                  },
+                  {
+                    "display_url": "pic.x.com/T1uQJBCYVm",
+                    "expanded_url": "https://x.com/Sochimaobi89987/status/2072320230240502134/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072320217280057344",
+                    "indices": [
+                      46,
+                      69
+                    ],
+                    "media_key": "3_2072320217280057344",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJcQgvWkAAmZr8.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 1600,
+                      "width": 720
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/T1uQJBCYVm"
+                  },
+                  {
+                    "display_url": "pic.x.com/T1uQJBCYVm",
+                    "expanded_url": "https://x.com/Sochimaobi89987/status/2072320230240502134/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072320218144071680",
+                    "indices": [
+                      46,
+                      69
+                    ],
+                    "media_key": "3_2072320218144071680",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJcQj9WYAA3397.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 1600,
+                      "width": 720
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/T1uQJBCYVm"
+                  },
+                  {
+                    "display_url": "pic.x.com/T1uQJBCYVm",
+                    "expanded_url": "https://x.com/Sochimaobi89987/status/2072320230240502134/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072320217275916288",
+                    "indices": [
+                      46,
+                      69
+                    ],
+                    "media_key": "3_2072320217275916288",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJcQguXYAApWeP.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 1600,
+                      "width": 720
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/T1uQJBCYVm"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      0,
+                      5
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      6,
+                      14
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1641754309590122497",
+                    "indices": [
+                      15,
+                      25
+                    ],
+                    "name": "Gnosis Pay 💳",
+                    "screen_name": "gnosispay"
+                  },
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      31,
+                      36
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      37,
+                      45
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "Sochimaobi89987",
+                "name": "Sochimaobi",
+                "created_at": "Wed Jun 25 11:16:28 +0000 2025",
+                "description": null,
+                "rest_id": "1937831944365993984",
+                "followers_count": 173,
+                "favorites_count": 1994,
+                "avatar": "https://pbs.twimg.com/profile_images/2111512211252293633/srBjH21w_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJcQglXIAEBbZf.jpg",
+                    "id": "2072320217238151169",
+                    "sizes": {
+                      "h": 1200,
+                      "w": 540
+                    }
+                  },
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJcQgvWkAAmZr8.jpg",
+                    "id": "2072320217280057344",
+                    "sizes": {
+                      "h": 1200,
+                      "w": 540
+                    }
+                  },
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJcQj9WYAA3397.jpg",
+                    "id": "2072320218144071680",
+                    "sizes": {
+                      "h": 1200,
+                      "w": 540
+                    }
+                  },
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJcQguXYAApWeP.jpg",
+                    "id": "2072320217275916288",
+                    "sizes": {
+                      "h": 1200,
+                      "w": 540
+                    }
+                  }
+                ]
+              },
+              "in_reply_to_screen_name": "Celo",
+              "in_reply_to_status_id_str": "2072319340318507095",
+              "in_reply_to_user_id_str": "1009135067153616896"
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2072319340318507095",
+              "screen_name": "Celo",
+              "bookmarks": 24,
+              "favorites": 178,
+              "created_at": "Wed Jul 01 14:00:07 +0000 2026",
+              "text": "📣 @MiniPay Card Giveaway: we're giving 10 fast-track codes to skip the waitlist!\n\nTo qualify:\n→ Download MiniPay from the App Store\n→ Follow @Celo &amp; @MiniPay\n→ RT this post &amp; reply with proof of all 3\n\n⚠️ @GnosisPay supported countries only. The first 10 qualified entries win https://t.co/vI6rim2TaN",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                284
+              ],
+              "source": null,
+              "quotes": 6,
+              "sensitive": false,
+              "replies": 110,
+              "conversation_id": "2072319340318507095",
+              "retweets": 66,
+              "views": "17750",
+              "entities": {
+                "media": [
+                  {
+                    "display_url": "pic.x.com/vI6rim2TaN",
+                    "expanded_url": "https://x.com/Celo/status/2072319340318507095/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "all": {
+                        "tags": "[TRUNCATED]"
+                      },
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2072319336400990208",
+                    "indices": [
+                      285,
+                      308
+                    ],
+                    "media_key": "3_2072319336400990208",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMJbdPNasAAKsy6.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 900,
+                      "width": 1600
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/vI6rim2TaN"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      2,
+                      10
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      141,
+                      146
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      153,
+                      161
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1641754309590122497",
+                    "indices": [
+                      213,
+                      223
+                    ],
+                    "name": "Gnosis Pay 💳",
+                    "screen_name": "gnosispay"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "Celo",
+                "name": "Celo",
+                "created_at": "Tue Jun 19 18:05:23 +0000 2018",
+                "description": null,
+                "rest_id": "1009135067153616896",
+                "followers_count": 503376,
+                "favorites_count": 32893,
+                "avatar": "https://pbs.twimg.com/profile_images/1613170131491848195/InjXBNx9_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": "Business",
+                "verified": true,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMJbdPNasAAKsy6.jpg",
+                    "id": "2072319336400990208",
+                    "sizes": {
+                      "h": 675,
+                      "w": 1200
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2119551986143998435",
+              "screen_name": "BaburiKaranja",
+              "bookmarks": 0,
+              "favorites": 0,
+              "created_at": "Sun Nov 08 22:05:47 +0000 2026",
+              "text": "I just bought CELO on MiniPay. https://t.co/GbsrCeiJ77 I just bought CELO on MiniPay. https://t.co/GbsrCeiJ77",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                109
+              ],
+              "source": null,
+              "quotes": 0,
+              "sensitive": false,
+              "replies": 0,
+              "conversation_id": "2119551986143998435",
+              "retweets": 0,
+              "views": null,
+              "entities": {
+                "urls": [
+                  {
+                    "display_url": "link.minipay.xyz/miniapp?id=913…",
+                    "expanded_url": "https://link.minipay.xyz/miniapp?id=913f42d2-fc1e-4e91-aae1-1c3beb69acd3",
+                    "indices": [
+                      31,
+                      54
+                    ],
+                    "url": "https://t.co/GbsrCeiJ77"
+                  },
+                  {
+                    "display_url": "link.minipay.xyz/miniapp?id=913…",
+                    "expanded_url": "https://link.minipay.xyz/miniapp?id=913f42d2-fc1e-4e91-aae1-1c3beb69acd3",
+                    "indices": [
+                      86,
+                      109
+                    ],
+                    "url": "https://t.co/GbsrCeiJ77"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "user_mentions": []
+              },
+              "user_info": {
+                "screen_name": "BaburiKaranja",
+                "name": "Kbaburi",
+                "created_at": "Thu Jun 13 21:14:32 +0000 2024",
+                "description": null,
+                "rest_id": "1801362310671249408",
+                "followers_count": 15,
+                "favorites_count": 7,
+                "avatar": "https://pbs.twimg.com/profile_images/1801362763660304384/Ic8uoYJ7_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": "Nairobi, Kenya"
+              },
+              "media": []
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2117197973771649429",
+              "screen_name": "DeCryptoCitizen",
+              "bookmarks": 1,
+              "favorites": 13,
+              "created_at": "Mon Nov 02 10:11:47 +0000 2026",
+              "text": "Good morning, CT fam! ☀️ \n\nHappy new week and a fresh month of November!\n\n@minipay fam, don't miss the @CeloCommunities contest! Join #MiniPayInMyDay and show how you use MiniPay for a chance to win a share of 1000 celo:native! 🔥\n\nHere is how you can join 👇 https://t.co/1pf1Q8CxTu",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                257
+              ],
+              "source": null,
+              "quotes": 0,
+              "sensitive": false,
+              "replies": 0,
+              "conversation_id": "2117197973771649429",
+              "retweets": 2,
+              "views": "317",
+              "entities": {
+                "hashtags": [
+                  {
+                    "indices": [
+                      134,
+                      149
+                    ],
+                    "text": "MiniPayInMyDay"
+                  }
+                ],
+                "media": [
+                  {
+                    "display_url": "pic.x.com/1pf1Q8CxTu",
+                    "expanded_url": "https://x.com/DeCryptoCitizen/status/2117197973771649429/photo/1",
+                    "ext_alt_text": "Video Game Fall GIF",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "id_str": "2117197960576368640",
+                    "indices": [
+                      258,
+                      281
+                    ],
+                    "media_key": "16_2117197960576368640",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HWHMU-dWAAAsMc5.jpg",
+                    "original_info": {
+                      "focus_rects": [],
+                      "height": 270,
+                      "width": 480
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "animated_gif",
+                    "url": "https://t.co/1pf1Q8CxTu",
+                    "video_info": {
+                      "aspect_ratio": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "variants": [
+                        "[TRUNCATED]"
+                      ]
+                    }
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      74,
+                      82
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  },
+                  {
+                    "id_str": "1825630770527981568",
+                    "indices": [
+                      103,
+                      119
+                    ],
+                    "name": "Celo Communities Guild",
+                    "screen_name": "CeloCommunities"
+                  }
+                ],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "DeCryptoCitizen",
+                "name": "Decrypto C.(🧙‍♂️🌳)™",
+                "created_at": "Tue Jun 07 19:57:24 +0000 2016",
+                "description": null,
+                "rest_id": "740271459671494656",
+                "followers_count": 337,
+                "favorites_count": 11945,
+                "avatar": "https://pbs.twimg.com/profile_images/2100928642616324096/cGS6XBPj_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": "Onchain"
+              },
+              "media": {
+                "video": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HWHMU-dWAAAsMc5.jpg",
+                    "variants": [
+                      {
+                        "bitrate": "[TRUNCATED]",
+                        "content_type": "[TRUNCATED]",
+                        "url": "[TRUNCATED]"
+                      }
+                    ],
+                    "aspect_ratio": [
+                      16,
+                      9
+                    ],
+                    "duration": null,
+                    "original_info": {
+                      "focus_rects": [],
+                      "height": 270,
+                      "width": 480
+                    },
+                    "id": "2117197960576368640"
+                  }
+                ]
+              },
+              "quoted": {
+                "tweet_id": "2113914307364995287",
+                "bookmarks": 13,
+                "created_at": "Sat Oct 24 08:43:40 +0000 2026",
+                "favorites": 47,
+                "text": "🎬 Contest time, Celorians!\n\nShow us how you use @MiniPay in your daily life and win a share of 1000 $CELO 💛💚\n\n#MiniPayInMyDay is open from Oct 24to Nov 24\n\nHere's how it works 🧵👇",
+                "lang": "en",
+                "views": "2138",
+                "quotes": 3,
+                "sensitive": null,
+                "replies": 13,
+                "retweets": 8,
+                "conversation_id": "2113914307364995287",
+                "author": {
+                  "rest_id": "1825630770527981568",
+                  "created_at": "Mon Aug 19 20:28:03 +0000 2024",
+                  "name": "Celo Communities Guild",
+                  "screen_name": "CeloCommunities",
+                  "avatar": "https://pbs.twimg.com/profile_images/1825630926778286080/fNBckHly_normal.jpg",
+                  "blue_verified": null
+                },
+                "media": []
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2075218535794840013",
+              "screen_name": "Celo",
+              "bookmarks": 11,
+              "favorites": 189,
+              "created_at": "Thu Jul 09 14:00:29 +0000 2026",
+              "text": "The @MiniPay Card is expanding its geographic footprint! This calls for another fast-track code giveaway\n\n→ Follow @Celo &amp; @MiniPay\n→ RT this post\n→ Reply w/ how you use stablecoins in daily life\n\n24 hours to submit, 15 winners will be randomly selected! https://t.co/XjgvcwUP5e",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                258
+              ],
+              "source": null,
+              "quotes": 6,
+              "sensitive": false,
+              "replies": 96,
+              "conversation_id": "2075218535794840013",
+              "retweets": 103,
+              "views": "17947",
+              "entities": {
+                "media": [
+                  {
+                    "display_url": "pic.x.com/XjgvcwUP5e",
+                    "expanded_url": "https://x.com/Celo/status/2075218535794840013/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "all": {
+                        "tags": "[TRUNCATED]"
+                      },
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "2075218532166721536",
+                    "indices": [
+                      259,
+                      282
+                    ],
+                    "media_key": "3_2075218532166721536",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/HMyoQpEa4AA99uL.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 900,
+                      "width": 1600
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/XjgvcwUP5e"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      4,
+                      12
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "MiniPay"
+                  },
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      115,
+                      120
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      127,
+                      135
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "MiniPay"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "Celo",
+                "name": "Celo",
+                "created_at": "Tue Jun 19 18:05:23 +0000 2018",
+                "description": null,
+                "rest_id": "1009135067153616896",
+                "followers_count": 503376,
+                "favorites_count": 32893,
+                "avatar": "https://pbs.twimg.com/profile_images/1613170131491848195/InjXBNx9_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": "Business",
+                "verified": true,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/HMyoQpEa4AA99uL.jpg",
+                    "id": "2075218532166721536",
+                    "sizes": {
+                      "h": 675,
+                      "w": 1200
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "1989268694736760966",
+              "screen_name": "dlt_africa",
+              "bookmarks": 3,
+              "favorites": 19,
+              "created_at": "Fri Nov 14 09:46:30 +0000 2025",
+              "text": "The Celo MiniPay Hackathon 2025 is officially LIVE!\n\nWe’re proud partners in this Africa-wide innovation challenge organized by Celo Africa DAO 💚💛\n\nHere’s your chance to:\n✅ Build with MiniPay — the lightweight, mobile-first Celo wallet\n✅ Join Africa’s brightest Web3 minds\n✅ Compete for $5500 in prizes\n\n🗓️ Runs from Nov 14–30, 2025\n\n🔗 https://t.co/QJ5wpsiU81\n\nJoin Now...",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                274
+              ],
+              "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+              "quotes": 0,
+              "sensitive": null,
+              "replies": 1,
+              "conversation_id": "1989268694736760966",
+              "retweets": 6,
+              "views": "769",
+              "entities": {
+                "hashtags": [],
+                "symbols": [],
+                "urls": [
+                  {
+                    "display_url": "hackersdao.com/celo-minipay-h…",
+                    "expanded_url": "https://www.hackersdao.com/celo-minipay-hackathon",
+                    "indices": [
+                      336,
+                      359
+                    ],
+                    "url": "https://t.co/QJ5wpsiU81"
+                  }
+                ],
+                "user_mentions": []
+              },
+              "user_info": {
+                "screen_name": "dlt_africa",
+                "name": "DLT HUB",
+                "created_at": "Sun Oct 30 06:37:22 +0000 2022",
+                "description": null,
+                "rest_id": "1586608109501415425",
+                "followers_count": 1512,
+                "favorites_count": 1581,
+                "avatar": "https://pbs.twimg.com/profile_images/1772916583477682176/eO4Ow016_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": "Africa"
+              },
+              "media": [],
+              "quoted": {
+                "tweet_id": null,
+                "bookmarks": null,
+                "created_at": null,
+                "favorites": null,
+                "text": null,
+                "lang": null,
+                "views": null,
+                "quotes": null,
+                "sensitive": null,
+                "replies": null,
+                "retweets": null,
+                "conversation_id": null,
+                "author": {
+                  "rest_id": null,
+                  "created_at": null,
+                  "name": null,
+                  "screen_name": null,
+                  "avatar": null,
+                  "blue_verified": null
+                },
+                "media": []
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "1911843226958586043",
+              "screen_name": "CeloDevs",
+              "bookmarks": 6,
+              "favorites": 37,
+              "created_at": "Mon Apr 14 18:05:20 +0000 2025",
+              "text": "Build on MiniPay on @Celo with @minipay 📱\n\nMiniPay is the fastest-growing stablecoin wallet in the Global South, with 7M+ activations and counting.\n\n🟡 Send, save, and spend with USDT, USDC, &amp; cUSD\n🌍 Designed for real-world use\n📱 Built into Opera Mini\n\nCheck out the docs 👇 https://t.co/KbOAjgKtPU",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                276
+              ],
+              "source": "<a href=\"https://typefully.com/\" rel=\"nofollow\">Typefully</a>",
+              "quotes": 2,
+              "sensitive": false,
+              "replies": 2,
+              "conversation_id": "1911843226958586043",
+              "retweets": 6,
+              "views": "3375",
+              "entities": {
+                "media": [
+                  {
+                    "display_url": "pic.x.com/KbOAjgKtPU",
+                    "expanded_url": "https://x.com/CeloDevs/status/1911843226958586043/photo/1",
+                    "ext_media_availability": {
+                      "status": "Available"
+                    },
+                    "features": {
+                      "large": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "orig": {
+                        "faces": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "faces": "[TRUNCATED]"
+                      }
+                    },
+                    "id_str": "1911843222697197568",
+                    "indices": [
+                      277,
+                      300
+                    ],
+                    "media_key": "3_1911843222697197568",
+                    "media_results": {
+                      "result": {
+                        "media_key": "[TRUNCATED]"
+                      }
+                    },
+                    "media_url_https": "https://pbs.twimg.com/media/Gog7SBsawAAvWp1.jpg",
+                    "original_info": {
+                      "focus_rects": [
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]",
+                        "[TRUNCATED]"
+                      ],
+                      "height": 900,
+                      "width": 1600
+                    },
+                    "sizes": {
+                      "large": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "medium": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "small": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      },
+                      "thumb": {
+                        "h": "[TRUNCATED]",
+                        "resize": "[TRUNCATED]",
+                        "w": "[TRUNCATED]"
+                      }
+                    },
+                    "type": "photo",
+                    "url": "https://t.co/KbOAjgKtPU"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1009135067153616896",
+                    "indices": [
+                      20,
+                      25
+                    ],
+                    "name": "Celo",
+                    "screen_name": "Celo"
+                  },
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      31,
+                      39
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  }
+                ],
+                "hashtags": [],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "CeloDevs",
+                "name": "Celo Developers ◘ 🦇🌳",
+                "created_at": "Fri Jun 21 22:22:53 +0000 2019",
+                "description": null,
+                "rest_id": "1142196216014336000",
+                "followers_count": 12810,
+                "favorites_count": 10734,
+                "avatar": "https://pbs.twimg.com/profile_images/1613170198080544774/nWgD2Eib_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": true,
+                "friends_count": null,
+                "location": ""
+              },
+              "media": {
+                "photo": [
+                  {
+                    "media_url_https": "https://pbs.twimg.com/media/Gog7SBsawAAvWp1.jpg",
+                    "id": "1911843222697197568",
+                    "sizes": {
+                      "h": 675,
+                      "w": 1200
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "tweet",
+              "tweet_id": "2117307599016415555",
+              "screen_name": "CeloCommunities",
+              "bookmarks": 1,
+              "favorites": 14,
+              "created_at": "Mon Nov 02 17:27:23 +0000 2026",
+              "text": "3 weeks left to join #MiniPayInMyDay 🎬  \n\nShow us a real moment where you use @MiniPay in your day and you could win up to 350 celo:native 💛💚  \n\nAll the details are in the thread below 👇",
+              "lang": "en",
+              "display_text_range": [
+                0,
+                186
+              ],
+              "source": null,
+              "quotes": 0,
+              "sensitive": null,
+              "replies": 1,
+              "conversation_id": "2117307599016415555",
+              "retweets": 3,
+              "views": "249",
+              "entities": {
+                "hashtags": [
+                  {
+                    "indices": [
+                      21,
+                      36
+                    ],
+                    "text": "MiniPayInMyDay"
+                  }
+                ],
+                "user_mentions": [
+                  {
+                    "id_str": "1664600630592151554",
+                    "indices": [
+                      78,
+                      86
+                    ],
+                    "name": "MiniPay",
+                    "screen_name": "minipay"
+                  }
+                ],
+                "symbols": [],
+                "timestamps": [],
+                "urls": []
+              },
+              "user_info": {
+                "screen_name": "CeloCommunities",
+                "name": "Celo Communities Guild",
+                "created_at": "Mon Aug 19 20:28:03 +0000 2024",
+                "description": null,
+                "rest_id": "1825630770527981568",
+                "followers_count": 449,
+                "favorites_count": 1647,
+                "avatar": "https://pbs.twimg.com/profile_images/1825630926778286080/fNBckHly_normal.jpg",
+                "url": null,
+                "cover_image": null,
+                "verified_type": null,
+                "verified": false,
+                "friends_count": null,
+                "location": "Worldwide"
+              },
+              "media": [],
+              "quoted": {
+                "tweet_id": "2113914307364995287",
+                "bookmarks": 13,
+                "created_at": "Sat Oct 24 08:43:40 +0000 2026",
+                "favorites": 47,
+                "text": "🎬 Contest time, Celorians!\n\nShow us how you use @MiniPay in your daily life and win a share of 1000 $CELO 💛💚\n\n#MiniPayInMyDay is open from Oct 24to Nov 24\n\nHere's how it works 🧵👇",
+                "lang": "en",
+                "views": "2138",
+                "quotes": 3,
+                "sensitive": null,
+                "replies": 13,
+                "retweets": 8,
+                "conversation_id": "2113914307364995287",
+                "author": {
+                  "rest_id": "1825630770527981568",
+                  "created_at": "Mon Aug 19 20:28:03 +0000 2024",
+                  "name": "Celo Communities Guild",
+                  "screen_name": "CeloCommunities",
+                  "avatar": "https://pbs.twimg.com/profile_images/1825630926778286080/fNBckHly_normal.jpg",
+                  "blue_verified": null
+                },
+                "media": []
+              }
+            }
+          ],
+          "next_cursor": "DAACCgACHWpSifrAJxAKAAMdalKJ-r_Y8AgABAAAAAILAAUAAAD8RW1QQzZ3QUFBZlEvZ0dKTjB2R3AvQUFBQUJVZFkwbzZqOWRnMHgxbkM4NmNGM0gwSFdITVZ2bldBWlViWXJYRXpkb2cvaHpNcUVOcFc1SE5ITU9YbEpjYUVKNGN3bUtPZ1pyaGZodWJUVmFZbHZDR0hNSmNSUkJYUVhZY2pyU3o4aGRBc1J3OGJzamlGOEIrSE1KYmRkemJRRmNkYWlsTk1SWXg0eDFuWGQxOTJrRCtITUpmNVA3WEVYY2FpRHRKR1JwZ3V4emY5S1JwMnVBR0hXWnFITithOFI0ZGFXY0F2MVlobHgxamR5dXJtckM2SFdJd0N4ZWIwVU09CAAGAAAAAAgABwAAAAAMAAgKAAEaiDtJGRpguwAAAA",
+          "prev_cursor": "DAACCgACHWpSifrAJxAKAAMdalKJ-r_Y8AgABAAAAAELAAUAAAD8RW1QQzZ3QUFBZlEvZ0dKTjB2R3AvQUFBQUJVZFkwbzZqOWRnMHgxbkM4NmNGM0gwSFdITVZ2bldBWlViWXJYRXpkb2cvaHpNcUVOcFc1SE5ITU9YbEpjYUVKNGN3bUtPZ1pyaGZodWJUVmFZbHZDR0hNSmNSUkJYUVhZY2pyU3o4aGRBc1J3OGJzamlGOEIrSE1KYmRkemJRRmNkYWlsTk1SWXg0eDFuWGQxOTJrRCtITUpmNVA3WEVYY2FpRHRKR1JwZ3V4emY5S1JwMnVBR0hXWnFITithOFI0ZGFXY0F2MVlobHgxamR5dXJtckM2SFdJd0N4ZWIwVU09CAAGAAAAAAgABwAAAAAMAAgKAAEaiDtJGRpguwAAAA"
+        }
+      },
+      "deliveredAt": "2026-11-09T01:06:02.007Z"
+    }
+  },
+  "limitations": [
+    "Team-owned wallet: no independent-user evidence",
+    "Deterministic capability selection: no live model reasoning claimed",
+    "Local application: not public production deployment",
+    "Provider JSON is redacted/truncated for secrets/depth by the application; no claim every media field was preserved",
+    "Initial independent receipt lookup briefly returned null; subsequent direct RPC confirmed exact successful transfer, no paid retry performed"
+  ]
+}

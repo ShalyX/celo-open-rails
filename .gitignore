@@ -42,3 +42,7 @@ next-env.d.ts
 /.data-smoke/
 /.next-hq-phase/
 /.next-operator-audit/
+
+# Approved-action local build and private execution scratch
+/.next-approved/
+/work/

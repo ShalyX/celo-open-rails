@@ -8,12 +8,12 @@
 - **Track:** Build with buy; $1,000 worth of CELO across five projects, $200 equivalent per award. Total event prize pool $5,000 equivalent; this is not a $5,000 track payout.
 - **Deadline:** Monday **2026-11-09 09:00 GMT = 10:00 West Africa Time**. Registration AND submission end together.
 - **Winner announcement:** 2026-11-13, per organizer.
-- **User's entry:** `celo-open-rails`, wallet `0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b`. Enrollment/agent ID status UNKNOWN; do not claim registered.
+- **User's entry:** `celo-open-rails`, wallet `0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b`. Own ERC-8004 agent ID **10059** verified Nov 9; Loops enrollment/submission remain UNKNOWN.
 
 ## Mandatory conditions from official page
 
 1. Celo mainnet chain ID 42220; real service calls, real settlement and truthful proof.
-2. **Public GitHub repo from registration through judging.** This repo is currently PRIVATE; must obtain permission before visibility change.
+2. **Public GitHub repo from registration through judging.** This repo is now PUBLIC following explicit user approval on Nov 9; verified by GitHub CLI and public metadata fetch.
 3. **Own ERC-8004 agent ID**, registered from entry wallet before deadline. Current UI only verifies buy provider TikHub ID 9895 — that does not count for our own submission.
 4. Submit registration/entry on Loops with wallet + agent ID + GitHub link and any live/demo artifacts required by the live entry form. We have no observed platform confirmation.
 5. Code must be written within event window; repository history dated Nov 8 is available.
@@ -43,9 +43,13 @@ Earlier 0.005 USDC payment `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee
 ## Unknown / cannot claim passed
 
 - Whether user completed Loops enrollment, assigned attribution, connected the entry wallet, or submitted details.
-- **Verified NO own identity:** read-only Celo mainnet ERC-8004 Identity Registry `balanceOf(0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b)` returned **0** on 2026-11-09 00:03 WAT. Onchain registration is required before eligibility is satisfied. No registration transaction attempted.
+- **Historical pre-approval check:** read-only Celo mainnet ERC-8004 Identity Registry `balanceOf(0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b)` returned **0** on 2026-11-09 00:03 WAT. Superseded by Nov 9 successful registration of own ID 10059, recorded in EVIDENCE.md.
 - Whether a genuine independent user has actually used this product and has an eligible historic wallet.
 - Whether sponsor requires additional media/form fields on account-specific entry page.
-- Whether a safe fully functional paid workflow can be proven before the deadline; no authorization for extra payment.
+- A local paid API slice is now VERIFIED by one authorized 0.005 USDC purchase; full browser/model/result usability remains incomplete. No extra payment authorized.
 
 **Intake gate:** event rules and current build reconciled; external enrollment/identity/public repo remain tracked blockers, not silently assumed passed.
+
+## Nov 9 authorization closeout
+
+Public source and own identity are VERIFIED. Registration tx `0xbac5c383f43d381d27313694cb4d5141d9d34817f266fdfa54e88eae7d88bd36`, fee 0.04531464 CELO. New product Buy tx `0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61`, 0.005 USDC. These do not prove independent users or entry enrollment. Official page rechecked 2026-11-09; deadline remains 09:00 GMT / 10:00 WAT. No submission performed.

@@ -3,7 +3,7 @@
 **Source of original decision:** User's Celo hackathon build instruction, accepted Antigravity implementation plan with mandatory corrections on 2026-11-08, `docs/PROJECT_BRIEF.md`, `docs/REQUIREMENTS.md`. This file **preserves**, rather than revises, the approved product. Formal original HQ lock record did not previously exist.
 
 **Lock:** Reconstructed revision 1, 2026-11-08, no substantive scope changes permitted without user approval.
-**Current classification:** **PARTIAL PRODUCT**. Paid mechanism spike independently verified; free-data vertical slice verified; full product NOT VERIFIED.
+**Current classification:** **PARTIAL PRODUCT**. Historical spike and real local paid API slice independently verified; full product NOT VERIFIED.
 
 ## Target user and problem
 
@@ -21,7 +21,7 @@ Task intake -> intelligent capability selection -> authoritative unpaid HTTP 402
 
 ## Full user journey
 
-Entry -> operator sign-in and wallet readiness -> research objective -> capability selection (model-driven if configured, honestly labeled fallback otherwise) -> price and exact input preview -> human authorization -> real paid one-shot call (or free route) -> service response made useful -> durable status/receipt -> revisit/result follow-through. The paid leg is still missing.
+Entry -> operator sign-in and wallet readiness -> research objective -> capability selection (model-driven if configured, honestly labeled fallback otherwise) -> price and exact input preview -> human authorization -> real paid one-shot call (or free route) -> service response made useful -> durable status/receipt -> revisit/result follow-through. The local paid API leg is now verified; full browser acceptance and useful result follow-through remain incomplete.
 
 ## Immutable P0 coverage ledger
 
@@ -33,17 +33,17 @@ Statuses: VERIFIED = directly tested; IMPLEMENTED = present but unverified; BLOC
 | P0-02 | Agent selects appropriate capabilities, explains why | Intent reasoning card | `src/lib/intentEngine.ts` | Real model selects provider, schema-valid payload, user can inspect reasoning | IMPLEMENTED | No live model configured/verified; deterministic fallback tested |
 | P0-03 | Discover actual Buy services dynamically | Capability chooser | `src/lib/gateway.ts`, `/api/catalog` | Live catalog returned 171 capabilities during smoke run | VERIFIED | May change with gateway |
 | P0-04 | Present exact unpaid quote, asset and payee | 402 quote inspector | `/api/quote`, `src/lib/gateway.ts` | Live 402 quotes 5,000 atomic USDC units | VERIFIED | Quote revalidation on eventual paid dispatch needed |
-| P0-05 | Only authorized bounded spending | Approval barrier | `/api/operator`, `/api/procure`, `requestSafety.ts` | Operator login, spend/token caps, same-origin guard, policy halt smoke | VERIFIED (safe path) | Actual paid mode not enabled |
-| P0-06 | Execute one real paid outside service call | Execution monitor | `src/lib/buyPlan.ts`, `src/lib/buyExecutor.ts`, `procurementStore.ts` | Authenticated task buys external API once, paid proof, no blind retry | IMPLEMENTED, UNVERIFIED | Code + quote/CLI/guard tests pass; real paid task blocked pending explicit spending authorization |
-| P0-07 | Receive useful result from purchased capability | Result panel | `src/components/ExecutionMonitor.tsx` | New paid call returns real data tied to task and displayed without fabrication | BLOCKED | No purchased result; only free SQD delivers |
+| P0-05 | Only authorized bounded spending | Approval barrier | `/api/operator`, `/api/procure`, `requestSafety.ts` | Operator login, spend/token caps, same-origin guard, policy halt smoke | VERIFIED (safe path) | One authorized live API run verified; default mode disarmed |
+| P0-06 | Execute one real paid outside service call | Execution monitor | `src/lib/buyPlan.ts`, `src/lib/buyExecutor.ts`, `procurementStore.ts` | New task `task-1794186340719-t3y6`, 0.005 USDC, confirmed tx; paid-task artifact E06 | VERIFIED (local API) | Full browser acceptance pending; approval consumed, no new spend |
+| P0-07 | Receive useful result from purchased capability | Result panel | `src/components/ExecutionMonitor.tsx` | Real TikHub output for Celo MiniPay query, 18 tweet records tied to new task and tx, E06 | VERIFIED (API payload) | Paid UI readability still P0-12; no invented interpretation |
 | P0-08 | Provide genuine free blockchain-data route | SQD preset/results | `executeSqdQuery`, `/api/procure` | Real free SQD dataset response persists | VERIFIED | None in tested path |
-| P0-09 | Durable auditable task/settlement history | History and receipts | `procurementStore.ts`, `/api/receipts` | Reload same task and tx receipt; historical receipt labeled independently | IMPLEMENTED | Paid app receipt not possible yet; local JSON nontransactional for hosted runtime |
-| P0-10 | Handle uncertainty, replays, and failures safely | Backend / statuses | `withProcurementLock` and task state | Duplicate PUT 409; failure/uncertain settlement requires manual verification | IMPLEMENTED | Full post-send uncertainty case and crash recovery unverified |
-| P0-11 | Verify own agent identity and show provider identity truthfully | Trust drawer + submission | `/api/trust`, operator wallet | Own ERC-8004 token ID linked to entry wallet and registry | BLOCKED | Read-only mainnet balanceOf(account) = 0 on Nov 8; provider ID ≠ our ID |
-| P0-12 | Make results usable beyond raw API response | Delivery/history view | `ExecutionMonitor.tsx`, `resultDigest.ts`, persisted data | User sees authentic field-extracted outcome, can inspect/copy raw data, revisit task | IMPLEMENTED (free path) | Deterministic digest tests pass, but no paid result and no model-generated research analysis |
+| P0-09 | Durable auditable task/settlement history | History and receipts | `procurementStore.ts`, `/api/receipts` | Disabled-mode server restart returns same delivered task/hash; E19 | VERIFIED (local single-instance) | Local JSON is not transactional across hosted instances |
+| P0-10 | Handle uncertainty, replays, and failures safely | Backend / statuses | `withProcurementLock` and task state | Duplicate PUT 409; failure/uncertain settlement requires manual verification | IMPLEMENTED | Paid replay returned 409; full post-send uncertainty case and crash recovery unverified |
+| P0-11 | Verify own agent identity and show provider identity truthfully | Trust drawer + submission | Registry / public metadata; `/api/trust` separately verifies provider | Own ID 10059 ownerOf and tokenURI match entry wallet, E07; provider remains ID 9895 | VERIFIED (chain identity) | Own-ID UI integration and official enrollment remain separate |
+| P0-12 | Make results usable beyond raw API response | Delivery/history view | `ExecutionMonitor.tsx`, `resultDigest.ts`, persisted data | User sees authentic field-extracted outcome, can inspect/copy raw data, revisit task | IMPLEMENTED (free path) | Paid data received; timeline digest/browser usability and model-generated research analysis remain unverified |
 
-**Verified P0 IDs (scoped):** P0-01, P0-03, P0-04, P0-05, P0-08.
-**P0 not yet fully verified:** P0-02, P0-06, P0-07, P0-09, P0-10, P0-11, P0-12.
+**Verified P0 IDs (scoped):** P0-01, P0-03, P0-04, P0-05, P0-06, P0-07, P0-08, P0-09, P0-11.
+**P0 not yet fully verified:** P0-02, P0-10, P0-12. Verified rows retain their API/local limits; full paid browser acceptance remains open.
 **P0 total:** 12. Neither a historical Celo transaction nor a green build satisfies this inventory.
 
 ## Separate feasibility spikes
@@ -62,16 +62,18 @@ No unlimited autonomous spend, no synthetic paid result, no fake user data, no w
 
 approved_product: Original task-to-paid-outcome agent procurement desk, revision 1 reconstructed from approved sources.
 current_deliverable: PARTIAL_PRODUCT.
-mechanism_proven: One historical Buy settlement + unpaid quote and a real free-data flow.
-full_user_journey: login -> task -> quote -> approval -> paid result **BLOCKED** -> receipt followthrough **INCOMPLETE**.
+mechanism_proven: Historical Buy settlement, genuine free-data flow, and ONE new 0.005 USDC product task with authentic provider output and chain receipt.
+full_user_journey: API login -> task -> quote -> approval -> actual paid data -> confirmed receipt -> persisted history VERIFIED locally; paid browser usefulness and model reasoning remain INCOMPLETE.
 locked_P0_total: 12.
-P0_verified: 01,03,04,05,08.
-P0_missing_or_blocked: 02,06,07,09,10,11,12.
-differentiators_retained: explicit spend policy, real gateway quote, honest audit; real paid magic missing.
+P0_verified (scoped): 01,03,04,05,06,07,08,09,11.
+P0_missing_or_blocked: 02 (model selection), 10 (uncertainty/crash recovery), 12 (paid result readability/follow-through).
+differentiators_retained: task-first purchase, exact cap, real data and Celo audit; model-driven reasoning and polished result follow-through remain unverified.
 new_or_replaced_thesis: **NO approved rewrite; YES danger of falsely substituting demo spike as product**.
-next_action: implement safe paid call executor and own ERC-8004 identity proof, preserving exact locked product.
+next_action: non-spending browser acceptance of saved paid result, uncertainty recovery and original P0 follow-through; never repeat the consumed purchase approval.
 verdict: **BLOCKED**.
 
 ## Scope and decisions
 
 2026-11-08: User approved implementation plan with mandatory anti-fabrication corrections. No user authorization for additional spending, public publishing, project submission, or new product thesis has been granted.
+
+2026-11-09: Explicit user approval consumed: repo public, own agent 10059 registration fee 0.04531464 CELO < 0.07, exactly one product Buy 0.005 USDC. See EVIDENCE.md. No additional spend or other public-account action authorized. Original lock is unchanged.

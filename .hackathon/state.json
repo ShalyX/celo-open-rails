@@ -1,9 +1,9 @@
 {
   "schema_version": 4,
-  "revision": 4,
+  "revision": 5,
   "project_root": "C:\\Users\\USER\\Documents\\Codex\\2026-11-08\\celo-open-rails",
   "phase": "VALIDATION",
-  "active_specialist": "Product Critic / Engineering",
+  "active_specialist": "Engineering / Proof",
   "human_input_required": false,
   "pending_gate": null,
   "product_locked": true,
@@ -15,21 +15,21 @@
     "P0-03",
     "P0-04",
     "P0-05",
-    "P0-08"
+    "P0-06",
+    "P0-07",
+    "P0-08",
+    "P0-09",
+    "P0-11"
   ],
   "unverified_P0_ids": [
     "P0-02",
-    "P0-06",
-    "P0-07",
-    "P0-09",
     "P0-10",
-    "P0-11",
     "P0-12"
   ],
   "product_integrity_verdict": "BLOCKED",
-  "last_product_integrity_check": "2026-11-08",
+  "last_product_integrity_check": "2026-11-09",
   "spike_verified": true,
-  "vertical_slice_complete": false,
+  "vertical_slice_complete": true,
   "full_product_verified": false,
   "name_locked": false,
   "name_lock_revision": null,
@@ -48,7 +48,7 @@
   "visual_qa_static_complete": false,
   "visual_qa_motion_complete": false,
   "evidence_status": "REGISTERED_CRITICAL_CLAIMS_OPEN",
-  "critical_claims_open": 7,
+  "critical_claims_open": 4,
   "proof_engine_passed": false,
   "red_team_passed": false,
   "product_hygiene_skill_found": null,
@@ -73,8 +73,13 @@
       "artifact": "docs/QA_REPORT.md"
     },
     "integrated_paid_procurement": {
-      "status": "BLOCKED",
-      "reason": "New paid dispatch not implemented and no permission to spend"
+      "status": "VERIFIED_LOCAL_API_SLICE",
+      "artifact": "docs/evidence/paid-task-20261109.json",
+      "task_id": "task-1794186340719-t3y6",
+      "tx_hash": "0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61",
+      "usdc_spent": "0.005",
+      "paid_calls": 1,
+      "paid_mode": "DISARMED_AFTER_RUN"
     },
     "submission": {
       "status": "NOT_STARTED"
@@ -82,9 +87,7 @@
     "intake": {
       "status": "VERIFIED_SCOPE_RECONCILED",
       "open_external_requirements": [
-        "own_erc8004",
-        "entry_enrollment",
-        "public_repo"
+        "entry_enrollment"
       ],
       "artifact": "HACKATHON.md"
     },
@@ -104,10 +107,11 @@
     },
     "paid_executor": {
       "tests": "19/19 passing",
-      "status": "IMPLEMENTED_NOT_LIVE_VERIFIED",
-      "policy": "DOUBLE_DISARMED",
+      "status": "LIVE_VERIFIED_ONCE",
+      "policy": "DISARMED_AFTER_APPROVED_SINGLE_RUN",
       "artifact": "src/lib/buyExecutor.ts; tests/buy-plan.test.mjs",
-      "production_build": "PASS"
+      "production_build": "PASS .next-approved",
+      "limitations": "local single-instance; post-dispatch crash recovery unverified"
     },
     "own_erc8004": {
       "status": "VERIFIED",
@@ -121,20 +125,23 @@
     }
   },
   "blockers": [
-    "Own agent ERC-8004 identity not verified",
-    "GitHub repo private; event requires public",
-    "Integrated paid Buy transaction not available; no user authorization for spend",
-    "Independent-user qualifier unverified",
+    "Independent-user and demand validation unverified",
+    "P0-02 live model reasoning unverified",
+    "P0-10 uncertainty/crash recovery unverified",
+    "P0-12 paid result readability/browser follow-through unverified",
+    "Official enrollment/submission unverified",
     "Brand/hygiene/demo/judge gates incomplete"
   ],
-  "next_action": "Execute exactly one approved product Buy task, cap 0.005 USDC; persist full receipt and disarm afterwards.",
-  "updated_at": "2026-11-09T01:02:35.958229+00:00",
+  "next_action": "Non-spending browser acceptance of saved real paid task; complete remaining original P0s and Operator gates. Do not register or purchase again: approvals consumed.",
+  "updated_at": "2026-11-09T01:09:04.249860+00:00",
   "approved_actions": {
     "source": "Explicit user approval in continuation request 2026-11-09",
     "repository_public": true,
     "own_identity_registration_max_celo": "0.07",
     "real_buy_count": 1,
     "real_buy_max_usdc": "0.005",
-    "other_spend_or_public_actions": false
-  }
+    "other_spend_or_public_actions": false,
+    "consumed": true
+  },
+  "proof_classification": "SLICE_VERIFIED_LOCAL_PAID_API"
 }

@@ -1,46 +1,22 @@
-# QA Report — Celo Agent Procurement Desk
+# QA Report — 2026-11-09 current checkpoint
 
-**Date:** 2026-11-08
-**Scope:** Local Windows implementation, not a released or publicly hosted product.
-**Verdict:** CORE IMPLEMENTATION + REAL ZERO-SPEND E2E VERIFIED; **NOT YET PUBLIC-RELEASE READY**.
-This report supersedes the original overly optimistic "READY / no blockers" claim.
+**Scope:** Windows local production build and real Celo mainnet integrations. **Verdict:** local paid API slice VERIFIED; full product / public hosted wallet release NOT READY.
 
-## Evidence actually verified
-
-| Check | Status | Evidence / qualification |
+| Check | Result / proof | Limits |
 |---|---|---|
-| App source / frontend / API routes | PASS | Next.js App Router source, task intake, quotes, approval, execution status, receipt history, trust drawer present. |
-| Automated tests | PASS | `npm test`: 12/12 passing on Windows; four original tests assert fixtures or mock logic, the newer guards test actual pure functions. |
-| TypeScript | PASS | `npx tsc --noEmit --pretty false`: exit 0 after security changes. |
-| Operator auth | PASS (API and browser session) | Anonymous history/account/receipts returned 401; wrong credential 401; test-only operator login 200; cross-origin mutation 403. Headless Chrome authenticated and rendered the operator workspace. Form click-through recording not yet captured. |
-| Approved-spend gate | PASS (safe live API smoke) | Authenticated PUT for real 402 quote returned policy halt BEFORE signing. Both free and paid duplicate PUTs returned 409. No additional paid transaction executed. |
-| SSRF and route isolation | UNIT-TESTED | Official HTTPS buy gateway URL allowlist; arbitrary host, internal routes and non-SQD free paths rejected. Test direct API response separately. |
-| Mainnet historical settlement | PREVIOUSLY VERIFIED | 0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43 is an earlier real purchase. It is NOT evidence that the new app has completed an additional paid procurement. |
-| Zero-spend | CODE-PROVEN | `POLICY_DISALLOW_SPEND=true` and debit path is disarmed. No additional payments authorized or attempted. |
-| Real AI reasoning | NOT VERIFIED | Requires configured working model credential; deterministic matching is explicitly the fallback. A deterministic result digest is derived from actual fields and makes no model inference claim. |
-| Live catalog, quote, free result | PASS (safe live API smoke) | Independent test on loopback production server fetched 171 catalog capabilities, delivered authentic free SQD output, and received unpaid real 402 quote for 5,000 atomic USDC units. |
-| Current ERC-8004 identity | PROVIDER VERIFIED | Live `/api/trust?agentId=9895&provider=tikhub` returned HTTP 200 with `verified:true` for gateway provider. The procurement desk itself is NOT registered or verified. |
-| Persistence and deployment | PARTIAL | Local JSON ledger present. Not hardened for parallel serverless deployment or cross-device durable storage. |
-| Visual / judge walkthrough | PARTIAL PASS | Real authenticated headless Chrome screenshots captured under `docs/evidence/`, visually inspected: 171 live gateway capabilities, genuine free/policy-halt ledger, historical receipt, live Celo balances, provider trust badge. Final narrated video/UI click-through still pending. |
+| Automated checks | 19/19 unit/security/digest tests PASS; TypeScript PASS; fresh `.next-approved` build PASS | Four original tests use fixture/mock logic; tests do not prove the entire product |
+| Existing zero-spend smoke | Earlier 12-step live flow verified auth, catalog, unpaid quote, genuine SQD, policy halt, replay/history | Historical smoke does not prove a paid call |
+| New paid task | Authenticated product created task, obtained exact unpaid quote and accepted bounded 0.005 USDC approval; one guarded Buy call delivered authentic TikHub data | API-driven local run, no final browser click-through |
+| Exact settlement | Successful tx `0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61`, block 82285602; exact USDC Transfer from operator to quoted payee for 5000 atoms | First secondary receipt lookup briefly returned null; read-only reconciliation confirmed receipt; no paid retry |
+| Result | 18 actual tweet entries in `output.timeline`; provider run and exact response preserved in paid-task artifact | Provider `resultCount: 1` is a separate upstream field, not tweet count; redaction/depth truncation applies |
+| Replay / persistence | Disabled-mode server restart read same delivered task/hash; duplicate authorization HTTP 409 | Single-instance file ledger, uncertainty/crash recovery and multi-instance durability unproven |
+| Own ERC-8004 | ID 10059, successful Registered event plus ownerOf and tokenURI; fee 0.04531464 CELO < 0.07 | Provider ID 9895 remains separate; official entry not inferred |
+| Public source | Repo PUBLIC; raw JSON/image HTTP 200 before registration; latest registration list re-fetched after cache propagation | Heuristic secret scan: 10 commits, 144 unique blobs, no findings; not a guarantee |
+| Spend closeout | Exactly one new USDC payment; unique local receipts 1 -> 2 including historical spike; wallet 0.062383 -> 0.057383 USDC | Approval consumed; no further spending authorized |
+| Disarm | Approved paid server terminated; ignored local env remains POLICY_DISALLOW_SPEND=true / LIVE_BUY_MODE=DISABLED | Prior local safe-mode servers were not changed |
+| Model selection / full product | UNPROVEN live model; deterministic fallback used and labeled | P0-02, P0-10 and P0-12 remain open; original scope preserved |
+| Browser/demo/hygiene | Previous genuine screenshots retained | Paid browser QA, complete narrated demo, Product Hygiene and judge review remain open |
 
-| New paid task execution | CODE IMPLEMENTED; LIVE UNVERIFIED | Buy CLI is bound to exact approved quote and fresh re-quote, double-disabled by environment, records attempt before dispatch, never retries, verifies new receipt and exact Celo ERC-20 Transfer amount/recipient. **No new paid purchase occurred.** |
-| Own ERC-8004 identity | BLOCKED | On-chain registry read-only `balanceOf(0xf903...eba8b)=0` on Nov 9; metadata URI 404 while GitHub is private; registration must be signed with user's permission. |
+Artifacts: `docs/evidence/erc8004-registration-20261109.json`, `docs/evidence/paid-task-20261109.json`. Credentials stayed in the Windows OS credential store or ignored local environment; no secret exported into repository or evidence.
 
-## Security conditions
-
-- A random operator access token is stored ONLY in ignored `.env.local`, not in Git.
-- Operator login issues an HttpOnly SameSite=Strict cookie. Mutations require same-origin requests and an authenticated operator.
-- A live Buy executor is coded, but the application still **cannot spend by default**: both `POLICY_DISALLOW_SPEND=false` and `LIVE_BUY_MODE=EXPLICIT_PER_TASK_SPEND_APPROVED` must be configured after explicit user permission; each task also needs authorized exact cap and quote. The payment path is UNVERIFIED and remains a **core product-completeness blocker**.
-- Local task storage uses a task lock to prevent accidental duplicate dispatch. Multi-instance production operation will need a durable transactional database and idempotency keys in persistent shared storage.
-- Do not deploy this local-wallet build publicly; keep keystore materials out of any hosted runtime until the auth/security/storage model has been reviewed.
-
-## Explicit release gates
-
-1. [x] Live catalog fetch, exact unpaid 402 quote, and authentic free SQD result verified by `tests/e2e-smoke.mjs` against an isolated local production server with test-only auth and data directory.
-2. [x] Authenticated local browser session and three genuine product screenshots captured and inspected. [ ] Narrated click-through video remains outstanding.
-3. Verify that invalid budget, token mismatch, stale quote, replay, and blocked remote URL fail through real routes.
-4. [x] Production build PASS using isolated output directory `.next-final-qa`, avoiding concurrent Next.js build collisions.
-5. [x] Source backed up in PRIVATE GitHub repo ShalyX/celo-open-rails, without secrets. [x] Demo script/screenshots prepared. [ ] Final walkthrough video and formal hackathon submission not completed.
-6. Only after a separate spending authorization: enable and test a real paid procurement. No extra spend is permitted in this QA session.
-
-**Judge-facing accuracy:** a green build and historical on-chain proof are valuable evidence, but neither alone proves a new successful end-to-end paid procurement inside this app.
+No deployment, independent user, outreach, Loops enrollment or submission is claimed. The new slice proves one real paid task, not full product readiness.

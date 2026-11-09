@@ -1,3 +1,15 @@
+# Current submission status — NOT SUBMITTED
+
+**2026-11-09 correction:** The following older draft is historical and must be re-audited before use. Canonical current proof is `../EVIDENCE.md` and `../PROJECT.md`.
+
+The repository is now PUBLIC. Own agent **10059** is registered on Celo mainnet, registration fee **0.04531464 CELO**. One fresh paid product task `task-1794186340719-t3y6` bought `x.posts.search` for **0.005 USDC** and received 18 tweet records. Payment tx `0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61`, block 82285602. See `evidence/paid-task-20261109.json` and `evidence/erc8004-registration-20261109.json`.
+
+The old `0x7e511...ac43` transaction remains historical mechanism proof. No independent users, model-driven selection, full product, finished demo, Loops enrollment or submission is claimed. The three approved actions are complete and spend authorization is consumed. No form was submitted.
+
+---
+
+## Historical draft (superseded where inconsistent above)
+
 # Hackathon Submission Package — Celo Agent Procurement Desk
 
 **Official Event**: Celo Agents on Open Rails Hackathon  

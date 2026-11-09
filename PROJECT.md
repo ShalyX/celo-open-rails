@@ -1,38 +1,32 @@
 # Celo Agent Procurement Desk — Hackathon Operator HQ checkpoint
 
-**Correct Operator:** ChatGPT plugin `hackathon-operator/hackathon-operator`, not the older local `hackathon-workflow`.
-**Project:** `C:\Users\USER\Documents\Codex\2026-11-08\celo-open-rails`
-**Proof classification:** PARTIAL_PRODUCT / SPIKE_VERIFIED; free SQD vertical slice verified, full paid journey not.
-**Original approved source:** `docs/PROJECT_BRIEF.md`, `docs/REQUIREMENTS.md`, approved implementation plan in conversation. Formal HQ product lock not yet reconstructed.
-**Full audit:** `docs/OPERATOR_HQ_AUDIT.md`. Previous `docs/OPERATOR_PHASE_AUDIT.md` used wrong workflow and is superseded. Canonical HQ files now include `HACKATHON.md`, `PRODUCT.md`, `SCORECARD.md`, `EVIDENCE.md`.
+**Updated:** 2026-11-09, Africa/Lagos. Correct installed ChatGPT Operator HQ v0.5.0, release `pluginrel_6aebc44b25c881918ef57530f6408b50`; source and product-integrity instructions read from the installed plugin.
+**Phase:** VALIDATION / MODIFY. **Classification:** PARTIAL_PRODUCT with a verified local paid API slice. Full product and submission readiness remain BLOCKED.
+**Approved purpose:** original research task -> capability selection -> exact quote -> bounded approval -> external service purchase -> usable result -> durable settlement history. No thesis change, P0 removal or independent-user claim.
 
-## Product integrity
-- Original value: task-driven intelligent selection, real live gateway quote, bounded approval, purchase a service, useful outcome, auditable receipt.
-- Working: live catalog, exact unpaid 402, operator auth, free SQD result, local ledger, old paid transaction clearly separated.
-- Missing core: actual **live paid settlement proof** in the application (implementation now exists behind double-disable, UNVERIFIED), model-backed selector when configured, service-to-useful-result follow-through.
-- No permission to spend additional USDC or publish source/submission has been received.
-- Status: **BLOCKED**, not JUDGE_READY or READY_TO_SUBMIT. `PRODUCT.md` has 12 reconstructed original P0s; P0-01,03,04,05,08 verified in scoped tests, 7 remain incomplete. Own ERC-8004 registration was read-only checked and balance = 0.
+## Completed approved actions
 
-## Operator stage
-HQ phases mapped in `docs/OPERATOR_HQ_AUDIT.md`. **Intake/rubric, P0 reconstruction and a retrospective idea comparison/competitive kill-search are documented. Validation is MODIFY (not PASS): outside-user demand and complete paid user outcome remain unverified.** Engineering has a double-disabled paid executor but needs authorized real settlement proof. Own ERC-8004 identity remains absent.
+1. `ShalyX/celo-open-rails` is PUBLIC. Public raw registration metadata and image were fetched successfully before registration. A heuristic history scan covered 10 commits / 144 unique blobs without credential-pattern findings; real credentials remain outside Git.
+2. Own Celo mainnet ERC-8004 agent **10059**, wallet `0xf903e8a6FC3B751D8466469Fa85F2A1B9Caeba8b`. Successful registration tx `0xbac5c383f43d381d27313694cb4d5141d9d34817f266fdfa54e88eae7d88bd36`, block **82285362**. Fee **0.04531464 CELO**, under approved **0.07 CELO** total cap. Registered event, ownerOf and tokenURI verified. Evidence: `docs/evidence/erc8004-registration-20261109.json`.
+3. Exactly **one** real Buy purchase through the authenticated product API: task `task-1794186340719-t3y6`, objective **Search for Celo MiniPay**, capability `x.posts.search`, provider TikHub. Exact quote/payment **5,000 atomic USDC = 0.005 USDC**, matching the approved cap. New tx `0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61`, block **82285602**. Returned **18 timeline tweet records**, provider run `01M6YXE89ZFM8S5C4TC3VSP1M1`. Exact token/from/to/amount and successful receipt independently checked; USDC balance **0.062383 -> 0.057383**. Evidence: `docs/evidence/paid-task-20261109.json`.
 
-## Highest-priority blockers
-1. Own agent ERC-8004 identity absent: mainnet balanceOf(wallet)=0; read-only registration preflight estimated 229664 gas units (~0.05569352 CELO max estimate), proposed metadata URL is 404 while repo private. See docs/ERC8004_REGISTRATION_PLAN.md. Loops enrollment remains unverified.
-2. Current GitHub repo PRIVATE; contest expects public.
-3. Real paid execution code now implemented with exact fresh quote, one-shot CLI, receipt/Transfer verification; remains DOUBLE-DISARMED and unverified on a new paid task. Previous $0.005 payment belongs to spike.
-4. Independent user qualifier without evidence.
-5. No final demo recording, Product Hygiene audit, brand/name lock or judge simulation.
+The earlier `0x7e511...ac43` remains a separate historical integration spike. The new task is team-owned usage and does not establish independent demand.
 
-## Verified useful assets
-- Last pre-checkpoint commit: `e1619e8` (or later)
-- Tests: **19/19 passing** including paid-plan safety and result digest, plus 12 previously completed live zero-spend smoke steps. **2026-11-09 isolated Next.js production build exit 0** after guarded paid-executor changes (no live new payment).
-- Local isolated Next.js production build passed
-- Real screenshots: `docs/evidence/` (3 captured)
-- Historical Celo tx: `0x7e511e9094756923f3373c01ae7965a3f1ea1f5b43b03172ee91d97e19d8ac43`
-- Official deadline: 2026-11-09 09:00 GMT / 10:00 WAT
+## Verification and limits
 
-## Human gate
-Permissions needed only when actually making payments, registering an onchain identity if it costs funds, making repo public or submitting. Continue non-spending engineering and research without additional approval.
+- **19/19 tests PASS**, TypeScript PASS, fresh isolated production build `.next-approved` PASS.
+- Genuine task was created, quoted and authorized through `/api/procure`; guarded executor dispatched Buy once. Local task persisted and was read back after restarting the product. Duplicate authorization returned **409**. Unique cpay transaction receipts increased from one to two, including the historical spike.
+- The first secondary receipt lookup briefly returned null after the product verified settlement. Read-only reconciliation confirmed successful settlement. **No paid retry occurred.**
+- Paid server stopped. Local `.env.local` remains `POLICY_DISALLOW_SPEND=true`, `LIVE_BUY_MODE=DISABLED`; approved-action markers are consumed and prevent reruns. No further spending authorized.
+- Selection for this run used visibly labeled deterministic fallback; model reasoning remains UNPROVEN. Provider data was authentic but application redaction/depth limits apply. No full browser click-through of the paid result was captured.
+- Local JSON ledger only: multi-instance production safety remains unverified. This is not a public production wallet deployment.
 
-## Next recommended action
-Next highest-priority Operator gate: validate the full paid task result safely, then obtain user authorization for own ERC-8004 registration, a tightly capped real payment and public repo. Run actual Product Hygiene, demo and judge simulation before submission. No action that spends, publishes or submits without authorization.
+## Operator gates still open
+
+Independent-user/demand validation, P0-02 model-assisted selection, P0-10 post-dispatch uncertainty/crash recovery, P0-12 paid-result readability and follow-through; paid browser acceptance; name/brand/art-direction, Product Hygiene, demo production/QA and judge simulation. Loops enrollment and submission are unverified. No entry was submitted or external outreach sent.
+
+## Authorization record and next action
+
+User explicitly approved public repository, own registration up to 0.07 CELO and exactly one Buy up to 0.005 USDC. These three actions are complete; budgets are consumed for this approval. Public Git evidence/checkpoint updates are within the requested work. No further spend, deployment, enrollment/submission or other public-account action authorized.
+
+Next: continue non-spending validation of the original P0s, beginning with the existing paid result in the actual browser and its useful presentation. Keep independent-user evidence and official enrollment as explicit external requirements. Do not repeat the paid task or registration to produce a demo. Reuse the authentic saved result and receipts.

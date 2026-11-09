@@ -7,12 +7,12 @@
 | Actual criterion | Existing observable proof | Missing judge-facing proof | Current verdict | Highest-value correction |
 |---|---|---|---|---|
 | Solves a real user problem | Task-first operator procurement UI and explicit budget cap; plausible need | Evidence from named independent user and a concrete recurring research task | PARTIAL / low confidence | Obtain one genuine outside-user task, recorded with consent |
-| Depth of integration with buy | Real gateway catalog, 402 preflight, historical buy transaction | Integrated paid call + returned paid service output in the application | BLOCKED / high risk | Build live payment executor, verify one authorized call |
-| Verified paid external services | Historical 0.005 USDC payment on Celo before the app | New paid task/transaction hash bound to a result, service and task ID | BLOCKED / high risk | Keep historical proof labeled; collect new authorized transaction proof |
-| Demand/growth for outside services | Prior single successful Buy payment | Real repeat/independent purchases; quantification unavailable | UNVERIFIED | Never fabricate demand; collect honest available evidence |
+| Depth of integration with buy | Real catalog, fresh exact quote, new paid product task and 18 returned posts; E06 | Full paid browser usefulness, model selection | VERIFIED local API / PARTIAL full product | Demonstrate saved authentic result without another purchase |
+| Verified paid external services | New 0.005 USDC task, exact chain Transfer and provider run bound to result; E06/E16 | Broader real demand | VERIFIED one purchase | Present exact recorded evidence; no additional spend authorized |
+| Demand/growth for outside services | Two team-owned payments total: historical spike plus one product task | Real repeat/independent purchases; quantification unavailable | UNVERIFIED | Never fabricate demand; collect honest available evidence |
 | Independent users | None found | Independent user/wallet using the product and attributable proof | BLOCKED eligibility | Genuine external user adoption, do not self-fund another wallet |
-| Agent identity & official compliance | Verified TikHub provider ERC-8004 (not our identity) | Own agent ID, public GitHub, Loops enrollment/submission | BLOCKED eligibility | Verify own identity first; seek authorization only for onchain/public actions |
-| Usable front end | Authenticated browser screenshots, live free SQD response | Complete paid result path, final UI recording, judge access | PARTIAL | Finish paid result and user-facing end-to-end demo |
+| Agent identity & official compliance | Own agent 10059, confirmed owner/URI, public GitHub; E07/E10 | Loops enrollment/submission receipt | PARTIAL eligibility | Verify official entry status; no submission performed |
+| Usable front end | Authenticated browser screenshots, live free SQD response | Paid browser usefulness, final UI recording, judge access | PARTIAL | Finish paid result and user-facing end-to-end demo |
 
 ## Sponsor interpretation
 
@@ -24,8 +24,10 @@ No numerical simulated score is assigned without an organizer rubric and compara
 
 ## Priority order
 
-1. Own agent registration, public repo and official enrollment (eligibility).
-2. Full paid API task, bounded payment, authentic result, verified Celo receipt (sponsor's actual magic moment).
+1. Official enrollment remains unverified; own agent registration and public repo are VERIFIED.
+2. Paid API slice is VERIFIED once. Verify its saved result in the browser and finish remaining P0s without new spend.
 3. Independent user and task, user-result evidence.
 4. Judge-readable 60–90s final demo and audited submission.
 5. Naming/brand/art QA and Product Hygiene; avoid cosmetic work before sponsor P0s.
+
+2026-11-09 checkpoint: the three approved actions completed within caps. No numerical score, independent demand or full-product readiness inferred. Phase remains VALIDATION/MODIFY.
