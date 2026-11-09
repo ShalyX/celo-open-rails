@@ -41,3 +41,20 @@ Hermes model-driven capability planning has been implemented in `src/lib/hermesI
 **12/12 original P0 requirements now have scoped local proof.** Genuine Hermes `forge` model decisions from two authenticated desk `/api/intent` requests correctly selected `x.posts.search` and `sqd.datasets`. Caraxes endpoint is authenticated, bound to private loopback, tunneled by SSH, and exposes zero executable tools. No additional payment was made. Proof: `docs/evidence/hermes-live-selection-20261109.json`.
 
 **Do not confuse the original locked product with the demo:** the public Vercel site remains read-only; proper multi-user accounts, durable hosted storage, per-user wallet/payment rights, crash recovery and independent users are not verified. Loops submission receipt remains unconfirmed. Live Hermes reasoning repairs the missing P0-02 core feature, not public product availability.
+
+
+## Submission sprint checkpoint — 2026-11-09
+
+**Current operator phase:** SUBMISSION_AUDIT. **Feature freeze:** enabled; no new product features or paid actions before the deadline.
+
+- Public source: https://github.com/ShalyX/celo-open-rails
+- Read-only judge viewer: https://celo-procurement-proof.vercel.app/ (latest production deployment READY; Vercel SSO protection is enabled for the deployment host).
+- Walkthrough: https://celo-procurement-proof.vercel.app/walkthrough.mp4 (48 seconds, captioned, silent).
+- Paid Buy proof: 0.005 USDC to TikHub `x.posts.search`, 18 actual X records, transaction `0xba529f67e679cfafb1ffeb6749cebd06cf967b0dc43ce6cf79b0255bcec63a61`.
+- Own ERC-8004 agent #10059, registration `0xbac5c383f43d381d27313694cb4d5141d9d34817f266fdfa54e88eae7d88bd36`.
+- Hermes model reasoning is verified in two separate zero-spend intent checks; it did not select the paid task.
+- Submission copy is updated in `docs/LOOPS_SUBMISSION_READY.md` and `docs/SUBMISSION.md`.
+
+**Unresolved qualification/access facts:** no independent-user adoption is verified (the Build with buy FAQ lists independent users as a qualification criterion); Vercel SSO currently protects the deployment host; Loops form submission and receipt are not yet observed. A temporary reviewer share URL expires 2026-11-10 06:27 WAT. Changing production SSO to Preview-only requires explicit user authorization. The Loops form is already open and signed in, but Desktop Commander is currently offline.
+
+**Exact next action:** reconnect Desktop Commander, complete the Loops form using the verified copy, select Build with buy, enter the public GitHub repo, judge viewer/video, own wallet and ERC-8004 #10059, include the paid Buy transaction proof, then verify a saved-entry confirmation. Do not claim independent users, do not use the provider's ERC-8004 ID, and do not authorize another payment.
